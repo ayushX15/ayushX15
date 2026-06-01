@@ -21,13 +21,13 @@ COMMON_DEFS = """
       
       /* Animation keyframes */
       @keyframes pulse-cyan {
-        0% { transform: scale(1) translate(0px, 0px); opacity: 0.3; }
-        50% { transform: scale(1.2) translate(30px, -20px); opacity: 0.5; }
-        100% { transform: scale(1) translate(0px, 0px); opacity: 0.3; }
+        0% { transform: scale(1) translate(0px, 0px); opacity: 0.35; }
+        50% { transform: scale(1.15) translate(25px, -15px); opacity: 0.55; }
+        100% { transform: scale(1) translate(0px, 0px); opacity: 0.35; }
       }
       @keyframes pulse-pink {
         0% { transform: scale(1.1) translate(0px, 0px); opacity: 0.25; }
-        50% { transform: scale(0.9) translate(-40px, 30px); opacity: 0.40; }
+        50% { transform: scale(0.9) translate(-35px, 25px); opacity: 0.45; }
         100% { transform: scale(1.1) translate(0px, 0px); opacity: 0.25; }
       }
       @keyframes pulse-purple {
@@ -41,6 +41,62 @@ COMMON_DEFS = """
         100% { transform: scale(1) translate(0px, 0px); opacity: 0.2; }
       }
       
+      /* Glare sweep animation across card */
+      @keyframes glare-sweep-anim {
+        0% { transform: translate(-350px, 0) skewX(-25deg); }
+        35% { transform: translate(950px, 0) skewX(-25deg); }
+        100% { transform: translate(950px, 0) skewX(-25deg); }
+      }
+      .glare-sweep {
+        animation: glare-sweep-anim 8s ease-in-out infinite;
+      }
+      
+      /* Flowing neon segment around the border */
+      @keyframes border-flow-anim {
+        0% { stroke-dashoffset: 2140; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .border-flow {
+        stroke-dasharray: 200, 870;
+        animation: border-flow-anim 9s linear infinite;
+      }
+      
+      /* Signals flowing along neural graph lines */
+      @keyframes signal-flow-anim {
+        to { stroke-dashoffset: -40; }
+      }
+      .signal-line {
+        stroke-dasharray: 6, 24;
+        animation: signal-flow-anim 2.5s linear infinite;
+      }
+      .signal-line-reverse {
+        stroke-dasharray: 6, 24;
+        animation: signal-flow-anim 3.5s linear infinite reverse;
+      }
+      
+      /* Live signal EQ Visualizer columns */
+      @keyframes eq-scale-anim {
+        0% { transform: scaleY(0.25); }
+        50% { transform: scaleY(1.15); }
+        100% { transform: scaleY(0.25); }
+      }
+      .bar-anim-1 { animation: eq-scale-anim 1s ease-in-out infinite; }
+      .bar-anim-2 { animation: eq-scale-anim 0.6s ease-in-out infinite alternate; }
+      .bar-anim-3 { animation: eq-scale-anim 1.3s ease-in-out infinite; }
+      .bar-anim-4 { animation: eq-scale-anim 0.8s ease-in-out infinite alternate; }
+      .bar-anim-5 { animation: eq-scale-anim 1.1s ease-in-out infinite; }
+      
+      /* Cyber particles drifting */
+      @keyframes drift-particle-anim {
+        0% { transform: translate(0, 0); opacity: 0; }
+        30% { opacity: 0.6; }
+        70% { opacity: 0.6; }
+        100% { transform: translate(40px, -60px); opacity: 0; }
+      }
+      .particle-1 { animation: drift-particle-anim 6s ease-in-out infinite; }
+      .particle-2 { animation: drift-particle-anim 8s ease-in-out infinite 2s; }
+      .particle-3 { animation: drift-particle-anim 10s ease-in-out infinite 4s; }
+      
       .blob-cyan { animation: pulse-cyan 12s ease-in-out infinite; transform-origin: 150px 100px; }
       .blob-pink { animation: pulse-pink 14s ease-in-out infinite; transform-origin: 650px 200px; }
       .blob-purple { animation: pulse-purple 16s ease-in-out infinite; transform-origin: 400px 150px; }
@@ -49,7 +105,12 @@ COMMON_DEFS = """
       .node-anim { animation: float-node 6s ease-in-out infinite alternate; }
       .node-anim-delay { animation: float-node 8s ease-in-out infinite alternate-reverse; }
       
-      /* Card scaling styling for embedding directly */
+      @keyframes float-node {
+        0% { transform: translateY(0px) translateX(0px); }
+        50% { transform: translateY(-8px) translateX(4px); }
+        100% { transform: translateY(0px) translateX(0px); }
+      }
+      
       .glass-card {
         transition: all 0.3s ease;
       }
@@ -63,22 +124,25 @@ COMMON_DEFS = """
     <filter id="blur-filter" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="55" />
     </filter>
+    <filter id="glow-filter-strong" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+    </filter>
     <filter id="shadow-filter" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity="0.6"/>
     </filter>
     
     <!-- Neon Text Glow Filters -->
     <filter id="text-glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#00f2fe" flood-opacity="0.9"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#00f2fe" flood-opacity="0.95"/>
     </filter>
     <filter id="text-glow-pink" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#ff007f" flood-opacity="0.9"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#ff007f" flood-opacity="0.95"/>
     </filter>
     <filter id="text-glow-purple" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#7f00ff" flood-opacity="0.9"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#7f00ff" flood-opacity="0.95"/>
     </filter>
     <filter id="text-glow-gold" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#fda085" flood-opacity="0.9"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#fda085" flood-opacity="0.95"/>
     </filter>
     
     <!-- Gradients -->
@@ -95,6 +159,12 @@ COMMON_DEFS = """
       <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.6" />
       <stop offset="50%" stop-color="#7f00ff" stop-opacity="0.3" />
       <stop offset="100%" stop-color="#ff007f" stop-opacity="0.6" />
+    </linearGradient>
+    
+    <linearGradient id="glare-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
     
     <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -114,11 +184,10 @@ COMMON_DEFS = """
       <stop offset="100%" stop-color="#fda085" />
     </linearGradient>
     
-    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.8" />
-      <stop offset="50%" stop-color="#7f00ff" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#ff007f" stop-opacity="0.8" />
-    </linearGradient>
+    <!-- ClipPath to constrain glare shimmer to card bounds -->
+    <clipPath id="card-clip">
+      <rect x="25" y="25" width="800" height="270" rx="20" />
+    </clipPath>
   </defs>
 """
 
@@ -138,8 +207,24 @@ def generate_hero_banner():
   <path d="M 0,40 L 850,40 M 0,80 L 850,80 M 0,120 L 850,120 M 0,160 L 850,160 M 0,200 L 850,200 M 0,240 L 850,240 M 0,280 L 850,280" stroke="#ffffff" stroke-opacity="0.015" stroke-width="1" />
   <path d="M 100,0 L 100,320 M 200,0 L 200,320 M 300,0 L 300,320 M 400,0 L 400,320 M 500,0 L 500,320 M 600,0 L 600,320 M 700,0 L 700,320 M 800,0 L 800,320" stroke="#ffffff" stroke-opacity="0.015" stroke-width="1" />
 
-  <!-- MAIN GLASS CARD -->
+  <!-- MAIN GLASS CARD BACKGROUND -->
   <rect x="25" y="25" width="800" height="270" rx="20" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.5" filter="url(#shadow-filter)" class="glass-card" />
+  
+  <!-- CONSTRAINED SHIMMER / GLARE SWEEP -->
+  <g clip-path="url(#card-clip)">
+    <rect x="-300" y="25" width="150" height="270" fill="url(#glare-grad)" opacity="0.8" class="glare-sweep" />
+  </g>
+  
+  <!-- FLOWING NEON STREAM ON BORDERS -->
+  <rect x="25" y="25" width="800" height="270" rx="20" stroke="url(#neon-cyan)" stroke-width="1.5" fill="none" pointer-events="none" class="border-flow" opacity="0.8" />
+  
+  <!-- DRIFTING CYBER PARTICLES (Floating details) -->
+  <g opacity="0.8">
+    <circle cx="80" cy="220" r="1.5" fill="#00f2fe" class="particle-1" />
+    <circle cx="280" cy="180" r="2" fill="#ff007f" class="particle-2" />
+    <circle cx="520" cy="260" r="1" fill="#ffffff" class="particle-3" />
+    <circle cx="210" cy="90" r="2" fill="#00f2fe" class="particle-1" />
+  </g>
   
   <!-- CYBER CORNER BRACKETS -->
   <path d="M 40,50 L 40,40 L 50,40" stroke="#00f2fe" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
@@ -147,19 +232,26 @@ def generate_hero_banner():
   <path d="M 40,270 L 40,280 L 50,280" stroke="#ff007f" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
   <path d="M 810,270 L 810,280 L 800,280" stroke="#ff007f" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
 
-  <!-- AI / GRAPH GRAPHICS (Right side) -->
-  <g opacity="0.65">
-    <!-- Links -->
-    <line x1="580" y1="120" x2="660" y2="90" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1.5" />
-    <line x1="660" y1="90" x2="740" y2="130" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1.5" />
-    <line x1="740" y1="130" x2="700" y2="210" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1.5" />
-    <line x1="700" y1="210" x2="610" y2="200" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1.5" />
-    <line x1="610" y1="200" x2="580" y2="120" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1.5" />
+  <!-- AI / NEURAL GRAPH GRAPHICS (Right side) -->
+  <g opacity="0.7">
+    <!-- Static Network Lines -->
+    <line x1="580" y1="120" x2="660" y2="90" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5" />
+    <line x1="660" y1="90" x2="740" y2="130" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5" />
+    <line x1="740" y1="130" x2="700" y2="210" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5" />
+    <line x1="700" y1="210" x2="610" y2="200" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5" />
+    <line x1="610" y1="200" x2="580" y2="120" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5" />
     
-    <line x1="660" y1="90" x2="680" y2="150" stroke="#00f2fe" stroke-opacity="0.3" stroke-width="2" />
-    <line x1="580" y1="120" x2="680" y2="150" stroke="#ff007f" stroke-opacity="0.3" stroke-width="2" />
-    <line x1="700" y1="210" x2="680" y2="150" stroke="#7f00ff" stroke-opacity="0.3" stroke-width="2" />
-    <line x1="740" y1="130" x2="680" y2="150" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1.5" />
+    <!-- Glowing Pulsing Data Streams -->
+    <line x1="580" y1="120" x2="660" y2="90" stroke="#00f2fe" stroke-opacity="0.4" stroke-width="2" class="signal-line" />
+    <line x1="660" y1="90" x2="740" y2="130" stroke="#ff007f" stroke-opacity="0.4" stroke-width="2" class="signal-line-reverse" />
+    <line x1="740" y1="130" x2="700" y2="210" stroke="#7f00ff" stroke-opacity="0.4" stroke-width="2" class="signal-line" />
+    <line x1="700" y1="210" x2="610" y2="200" stroke="#00f2fe" stroke-opacity="0.4" stroke-width="2" class="signal-line-reverse" />
+    <line x1="610" y1="200" x2="580" y2="120" stroke="#fda085" stroke-opacity="0.4" stroke-width="2" class="signal-line" />
+    
+    <line x1="660" y1="90" x2="680" y2="150" stroke="#00f2fe" stroke-opacity="0.3" stroke-width="1.5" />
+    <line x1="580" y1="120" x2="680" y2="150" stroke="#ff007f" stroke-opacity="0.3" stroke-width="1.5" />
+    <line x1="700" y1="210" x2="680" y2="150" stroke="#7f00ff" stroke-opacity="0.3" stroke-width="1.5" />
+    <line x1="740" y1="130" x2="680" y2="150" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1.5" />
     
     <!-- Nodes -->
     <circle cx="580" cy="120" r="6" fill="#00f2fe" filter="drop-shadow(0 0 6px #00f2fe)" class="node-anim" />
@@ -170,13 +262,24 @@ def generate_hero_banner():
     <circle cx="680" cy="150" r="9" fill="url(#neon-cyan)" filter="drop-shadow(0 0 10px #00f2fe)" class="node-anim" />
   </g>
   
+  <!-- LIVE COMPUTATION SIGNAL EQUALIZER (Visualizer) -->
+  <g transform="translate(660, 48)" opacity="0.8">
+    <rect x="0" y="10" width="3" height="15" rx="1.5" fill="#ff007f" style="transform-origin: 1.5px 25px;" class="bar-anim-1" />
+    <rect x="6" y="5" width="3" height="20" rx="1.5" fill="#00f2fe" style="transform-origin: 7.5px 25px;" class="bar-anim-2" />
+    <rect x="12" y="8" width="3" height="17" rx="1.5" fill="#7f00ff" style="transform-origin: 13.5px 25px;" class="bar-anim-3" />
+    <rect x="18" y="2" width="3" height="23" rx="1.5" fill="#fda085" style="transform-origin: 19.5px 25px;" class="bar-anim-4" />
+    <rect x="24" y="7" width="3" height="18" rx="1.5" fill="#00f2fe" style="transform-origin: 25.5px 25px;" class="bar-anim-5" />
+    <text x="32" y="19" fill="#00f2fe" fill-opacity="0.6" font-size="8" class="text-mono">LIVE_ML</text>
+  </g>
+  
   <!-- TEXT CONTENT -->
   <!-- Hello Tag -->
   <rect x="60" y="70" width="135" height="26" rx="13" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1" />
   <circle cx="73" cy="83" r="4" fill="#00f2fe" filter="drop-shadow(0 0 4px #00f2fe)"/>
   <text x="85" y="87" fill="#00f2fe" font-size="12" class="text-mono" font-weight="bold" letter-spacing="1">HELLO WORLD</text>
   
-  <!-- Title / Name with Neon Glow -->
+  <!-- Dual-Layer Volumetric Glowing Title -->
+  <text x="60" y="140" fill="none" stroke="#00f2fe" stroke-width="8" stroke-linejoin="round" opacity="0.35" filter="url(#glow-filter-strong)" class="text-title" font-weight="900" letter-spacing="-0.5">Ayush Prasad</text>
   <text x="60" y="140" fill="#ffffff" font-size="42" class="text-title" font-weight="900" letter-spacing="-0.5" filter="url(#text-glow-cyan)">Ayush Prasad</text>
   
   <!-- Subtitle -->
