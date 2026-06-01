@@ -883,8 +883,8 @@ def generate_leetcode_card(username="Ayush_1503"):
     <!-- LeetCode icon (simplified) -->
     <rect x="0" y="0" width="28" height="28" rx="6" fill="#FFA116" fill-opacity="0.15" stroke="#FFA116" stroke-width="1.2" />
     <text x="14" y="19" text-anchor="middle" fill="#FFA116" font-size="14" class="text-mono" font-weight="900">LC</text>
-    <text x="36" y="19" fill="#ffffff" font-size="14" class="text-title" font-weight="800">LeetCode Stats</text>
-    <text x="36" y="33" fill="#FFA116" font-size="10" class="text-mono" font-weight="bold" filter="url(#text-glow-orange)">@Ayush_1503</text>
+    <text x="36" y="17" fill="#ffffff" font-size="14" class="text-title" font-weight="800">LeetCode Stats</text>
+    <text x="36" y="29" fill="#FFA116" font-size="10" class="text-mono" font-weight="bold" filter="url(#text-glow-orange)">@Ayush_1503</text>
   </g>
 
   <!-- Flowing orange border accent -->
@@ -1074,8 +1074,8 @@ def generate_focus_card():
   <!-- Glass card -->
   <rect x="25" y="20" width="800" height="120" rx="20" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.5" filter="url(#shadow-filter)" class="glass-card" />
   
-  <!-- Grid Items (2 Columns, 3 Rows) -->
-  <g transform="translate(50, 45)">
+  <!-- Grid Items (2 Columns, 3 Rows) — vertically centred in 120px card -->
+  <g transform="translate(50, 33)">
     <!-- Column 1 (Left) -->
     <g transform="translate(0, 0)">
       <!-- Item 1: Multi-Agent Systems (Pink) -->

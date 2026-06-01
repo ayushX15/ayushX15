@@ -195,8 +195,8 @@
   <!-- Glass card -->
   <rect x="25" y="20" width="800" height="120" rx="20" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.5" filter="url(#shadow-filter)" class="glass-card" />
   
-  <!-- Grid Items (2 Columns, 3 Rows) -->
-  <g transform="translate(50, 45)">
+  <!-- Grid Items (2 Columns, 3 Rows) — vertically centred in 120px card -->
+  <g transform="translate(50, 33)">
     <!-- Column 1 (Left) -->
     <g transform="translate(0, 0)">
       <!-- Item 1: Multi-Agent Systems (Pink) -->
