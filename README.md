@@ -25,7 +25,7 @@
   <a href="https://github.com/ayushX15" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge" />
   </a>
-  <a href="https://leetcode.com/ayushX15" target="_blank">
+  <a href="https://leetcode.com/u/Ayush_1503/" target="_blank">
     <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Badge" />
   </a>
   <a href="https://www.kaggle.com/ayushX15" target="_blank">
@@ -230,8 +230,8 @@
 <table align="center" width="100%">
   <tr>
     <td width="60%" align="center">
-      <a href="https://leetcode.com/ayushX15" target="_blank">
-        <img src="https://leetcard.jacoblin.cool/ayushX15?theme=dark&font=Outfit&ext=activity" alt="LeetCode Card" width="100%" />
+      <a href="https://leetcode.com/u/Ayush_1503/" target="_blank">
+        <img src="assets/leetcode_card.svg" alt="LeetCode Stats Card" width="100%" />
       </a>
     </td>
     <td width="40%" align="center">

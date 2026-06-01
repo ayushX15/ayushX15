@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 190" width="500" height="190" fill="none">
+  
+  <defs>
+    <style>
+      .text-title {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+      }
+      .text-body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+      }
+      .text-mono {
+        font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+      }
+      
+      /* Animation keyframes */
+      @keyframes pulse-cyan {
+        0% { transform: scale(1) translate(0px, 0px); opacity: 0.35; }
+        50% { transform: scale(1.15) translate(25px, -15px); opacity: 0.55; }
+        100% { transform: scale(1) translate(0px, 0px); opacity: 0.35; }
+      }
+      @keyframes pulse-pink {
+        0% { transform: scale(1.1) translate(0px, 0px); opacity: 0.25; }
+        50% { transform: scale(0.9) translate(-35px, 25px); opacity: 0.45; }
+        100% { transform: scale(1.1) translate(0px, 0px); opacity: 0.25; }
+      }
+      @keyframes pulse-purple {
+        0% { transform: scale(1) translate(0px, 0px); opacity: 0.2; }
+        50% { transform: scale(1.2) translate(-20px, -20px); opacity: 0.4; }
+        100% { transform: scale(1) translate(0px, 0px); opacity: 0.2; }
+      }
+      @keyframes pulse-gold {
+        0% { transform: scale(1) translate(0px, 0px); opacity: 0.2; }
+        50% { transform: scale(1.15) translate(20px, 20px); opacity: 0.4; }
+        100% { transform: scale(1) translate(0px, 0px); opacity: 0.2; }
+      }
+      
+      /* Glare sweep animation across card */
+      @keyframes glare-sweep-anim {
+        0% { transform: translate(-350px, 0) skewX(-25deg); }
+        35% { transform: translate(950px, 0) skewX(-25deg); }
+        100% { transform: translate(950px, 0) skewX(-25deg); }
+      }
+      .glare-sweep {
+        animation: glare-sweep-anim 8s ease-in-out infinite;
+      }
+      
+      /* Flowing neon segment around the border */
+      @keyframes border-flow-anim {
+        0% { stroke-dashoffset: 2140; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .border-flow {
+        stroke-dasharray: 200, 870;
+        animation: border-flow-anim 9s linear infinite;
+      }
+      
+      /* Signals flowing along neural graph lines */
+      @keyframes signal-flow-anim {
+        to { stroke-dashoffset: -40; }
+      }
+      .signal-line {
+        stroke-dasharray: 6, 24;
+        animation: signal-flow-anim 2.5s linear infinite;
+      }
+      .signal-line-reverse {
+        stroke-dasharray: 6, 24;
+        animation: signal-flow-anim 3.5s linear infinite reverse;
+      }
+      
+      /* Live signal EQ Visualizer columns */
+      @keyframes eq-scale-anim {
+        0% { transform: scaleY(0.25); }
+        50% { transform: scaleY(1.15); }
+        100% { transform: scaleY(0.25); }
+      }
+      .bar-anim-1 { animation: eq-scale-anim 1s ease-in-out infinite; }
+      .bar-anim-2 { animation: eq-scale-anim 0.6s ease-in-out infinite alternate; }
+      .bar-anim-3 { animation: eq-scale-anim 1.3s ease-in-out infinite; }
+      .bar-anim-4 { animation: eq-scale-anim 0.8s ease-in-out infinite alternate; }
+      .bar-anim-5 { animation: eq-scale-anim 1.1s ease-in-out infinite; }
+      
+      /* Cyber particles drifting */
+      @keyframes drift-particle-anim {
+        0% { transform: translate(0, 0); opacity: 0; }
+        30% { opacity: 0.6; }
+        70% { opacity: 0.6; }
+        100% { transform: translate(40px, -60px); opacity: 0; }
+      }
+      .particle-1 { animation: drift-particle-anim 6s ease-in-out infinite; }
+      .particle-2 { animation: drift-particle-anim 8s ease-in-out infinite 2s; }
+      .particle-3 { animation: drift-particle-anim 10s ease-in-out infinite 4s; }
+      
+      .blob-cyan { animation: pulse-cyan 12s ease-in-out infinite; transform-origin: 150px 100px; }
+      .blob-pink { animation: pulse-pink 14s ease-in-out infinite; transform-origin: 650px 200px; }
+      .blob-purple { animation: pulse-purple 16s ease-in-out infinite; transform-origin: 400px 150px; }
+      .blob-gold { animation: pulse-gold 10s ease-in-out infinite; transform-origin: 300px 150px; }
+      
+      .node-anim { animation: float-node 6s ease-in-out infinite alternate; }
+      .node-anim-delay { animation: float-node 8s ease-in-out infinite alternate-reverse; }
+      
+      @keyframes float-node {
+        0% { transform: translateY(0px) translateX(0px); }
+        50% { transform: translateY(-8px) translateX(4px); }
+        100% { transform: translateY(0px) translateX(0px); }
+      }
+      
+      .glass-card {
+        transition: all 0.3s ease;
+      }
+      .glass-card:hover {
+        stroke: url(#card-border-hover);
+        filter: drop-shadow(0 12px 24px rgba(0, 242, 254, 0.15));
+      }
+    </style>
+
+    <!-- Filters -->
+    <filter id="blur-filter" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="55" />
+    </filter>
+    <filter id="glow-filter-strong" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+    </filter>
+    <filter id="shadow-filter" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+    
+    <!-- Neon Text Glow Filters -->
+    <filter id="text-glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#00f2fe" flood-opacity="0.95"/>
+    </filter>
+    <filter id="text-glow-pink" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#ff007f" flood-opacity="0.95"/>
+    </filter>
+    <filter id="text-glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#7f00ff" flood-opacity="0.95"/>
+    </filter>
+    <filter id="text-glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#fda085" flood-opacity="0.95"/>
+    </filter>
+    
+    <!-- Gradients -->
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c16" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#04050a" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="card-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18" />
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="card-border-hover" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#7f00ff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ff007f" stop-opacity="0.6" />
+    </linearGradient>
+    
+    <linearGradient id="glare-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+    <linearGradient id="neon-pink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff007f" />
+      <stop offset="100%" stop-color="#ffb199" />
+    </linearGradient>
+    <linearGradient id="neon-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b100ff" />
+      <stop offset="100%" stop-color="#00e1ff" />
+    </linearGradient>
+    <linearGradient id="neon-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f6d365" />
+      <stop offset="100%" stop-color="#fda085" />
+    </linearGradient>
+    
+    <!-- ClipPath to constrain glare shimmer to card bounds -->
+    <clipPath id="card-clip">
+      <rect x="25" y="25" width="800" height="270" rx="20" />
+    </clipPath>
+  </defs>
+
+  
+  <!-- BACKGROUND NEON GLOWS -->
+  <g filter="url(#blur-filter)">
+    <circle cx="100" cy="95" r="40" fill="#fda085" opacity="0.2" class="blob-gold" />
+    <circle cx="350" cy="95" r="40" fill="#7f00ff" opacity="0.15" class="blob-purple" />
+  </g>
+
+  <!-- Glass card -->
+  <rect x="10" y="10" width="480" height="170" rx="16" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" filter="url(#shadow-filter)" class="glass-card" />
+  
+  <!-- Left Column: Circular solved stats -->
+  <g>
+    <!-- Background Circle -->
+    <circle cx="100" cy="95" r="50" stroke="#ffffff" stroke-opacity="0.05" stroke-width="8" fill="none" />
+    <!-- Dynamic Progress -->
+    <circle cx="100" cy="95" r="50" stroke="url(#neon-gold)" stroke-width="8" stroke-dasharray="314.16" stroke-dashoffset="309.94" fill="none" stroke-linecap="round" transform="rotate(-90 100 95)" filter="url(#text-glow-gold)" />
+    <!-- Text Centered -->
+    <text x="100" y="93" text-anchor="middle" fill="#ffffff" font-size="28" class="text-title" font-weight="900" filter="url(#text-glow-gold)">53</text>
+    <text x="100" y="112" text-anchor="middle" fill="#ffffff" fill-opacity="0.5" font-size="10" class="text-mono" font-weight="bold">SOLVED</text>
+  </g>
+  
+  <!-- Right Column: Rank & Category bars -->
+  <!-- Global Rank -->
+  <g transform="translate(190, 32)">
+    <path d="M 0,0 L 12,0 L 12,6 C 12,10 9,13 6,13 C 3,13 0,10 0,6 Z" stroke="#fda085" stroke-width="1.2" fill="none" />
+    <path d="M 6,13 L 6,17 M 3,17 L 9,17" stroke="#fda085" stroke-width="1.2" stroke-linecap="round" />
+    <text x="22" y="11" fill="#ffffff" font-size="12" class="text-title" font-weight="800">Global Rank:</text>
+    <text x="110" y="11" fill="#fda085" font-size="12" class="text-mono" font-weight="bold" filter="url(#text-glow-gold)">2,417,067</text>
+  </g>
+  
+  <!-- Easy solved -->
+  <g transform="translate(190, 58)">
+    <text x="0" y="10" fill="#2db55d" font-size="11" class="text-title" font-weight="800">Easy</text>
+    <text x="270" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">10/947</text>
+    <rect x="0" y="18" width="270" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
+    <rect x="0" y="18" width="2.85" height="6" rx="3" fill="#2db55d" filter="drop-shadow(0 0 2px #2db55d)" />
+  </g>
+  
+  <!-- Medium solved -->
+  <g transform="translate(190, 93)">
+    <text x="0" y="10" fill="#ffb700" font-size="11" class="text-title" font-weight="800">Medium</text>
+    <text x="270" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">32/2063</text>
+    <rect x="0" y="18" width="270" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
+    <rect x="0" y="18" width="4.19" height="6" rx="3" fill="#ffb700" filter="drop-shadow(0 0 2px #ffb700)" />
+  </g>
+  
+  <!-- Hard solved -->
+  <g transform="translate(190, 128)">
+    <text x="0" y="10" fill="#ef4743" font-size="11" class="text-title" font-weight="800">Hard</text>
+    <text x="270" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">11/939</text>
+    <rect x="0" y="18" width="270" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
+    <rect x="0" y="18" width="3.16" height="6" rx="3" fill="#ef4743" filter="drop-shadow(0 0 2px #ef4743)" />
+  </g>
+</svg>

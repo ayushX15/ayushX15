@@ -1,0 +1,48 @@
+name: Update Dynamic Profile Assets
+
+on:
+  schedule:
+    # Run every 12 hours (at 00:00 and 12:00 UTC)
+    - cron: "0 0,12 * * *"
+  
+  # Allow manual execution in the Actions tab
+  workflow_dispatch:
+  
+  # Run on pushes to main that do not touch workflows (to avoid loops, though we use [skip ci])
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/workflows/**'
+
+jobs:
+  update-assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Generate updated SVG assets
+        run: python generate_assets.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/
+          # Commit only if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes in generated SVG assets."
+          else
+            git commit -m "build: update dynamic stats card [skip ci]"
+            git push origin main
+          fi

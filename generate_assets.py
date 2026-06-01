@@ -733,6 +733,181 @@ def generate_spacer():
     with open("assets/spacer.svg", "w", encoding="utf-8") as f:
         f.write(svg)
 
+# 9. Dynamic LeetCode Statistics Card
+def fetch_leetcode_stats(username):
+    url = "https://leetcode.com/graphql"
+    query = """
+    query userProblemsSolved($username: String!) {
+        allQuestionsCount {
+            difficulty
+            count
+        }
+        matchedUser(username: $username) {
+            profile {
+                ranking
+            }
+            submitStats {
+                acSubmissionNum {
+                    difficulty
+                    count
+                }
+            }
+        }
+    }
+    """
+    import urllib.request
+    import json
+    
+    req_data = json.dumps({
+        "query": query,
+        "variables": {"username": username}
+    }).encode("utf-8")
+    
+    headers = {
+        "Content-Type": "application/json",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    }
+    
+    req = urllib.request.Request(url, data=req_data, headers=headers, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=10) as response:
+            res_data = json.loads(response.read().decode("utf-8"))
+            if "errors" in res_data:
+                print("LeetCode API errors:", res_data["errors"])
+                return None
+            return res_data["data"]
+    except Exception as e:
+        print("Failed to fetch LeetCode stats:", e)
+        return None
+
+def generate_leetcode_card(username="Ayush_1503"):
+    print(f"Fetching LeetCode stats for {username}...")
+    api_data = fetch_leetcode_stats(username)
+    
+    # Default fallbacks
+    total_all = 3949
+    total_easy = 947
+    total_medium = 2063
+    total_hard = 939
+    
+    solved_all = 53
+    solved_easy = 10
+    solved_medium = 32
+    solved_hard = 11
+    
+    ranking = 2417067
+    
+    if api_data:
+        try:
+            # Parse totals
+            for q in api_data.get("allQuestionsCount", []):
+                diff = q.get("difficulty")
+                count = q.get("count", 0)
+                if diff == "All":
+                    total_all = count
+                elif diff == "Easy":
+                    total_easy = count
+                elif diff == "Medium":
+                    total_medium = count
+                elif diff == "Hard":
+                    total_hard = count
+            
+            # Parse solved
+            matched = api_data.get("matchedUser")
+            if matched:
+                profile = matched.get("profile")
+                if profile:
+                    ranking = profile.get("ranking", ranking)
+                
+                submit = matched.get("submitStats")
+                if submit:
+                    for s in submit.get("acSubmissionNum", []):
+                        diff = s.get("difficulty")
+                        count = s.get("count", 0)
+                        if diff == "All":
+                            solved_all = count
+                        elif diff == "Easy":
+                            solved_easy = count
+                        elif diff == "Medium":
+                            solved_medium = count
+                        elif diff == "Hard":
+                            solved_hard = count
+            print("Successfully updated LeetCode stats from live API!")
+        except Exception as e:
+            print("Error parsing LeetCode API response, using fallbacks:", e)
+    else:
+        print("Using cached/fallback LeetCode stats.")
+        
+    # Calculate widths & offsets
+    easy_width = (solved_easy / total_easy) * 270 if total_easy else 0
+    medium_width = (solved_medium / total_medium) * 270 if total_medium else 0
+    hard_width = (solved_hard / total_hard) * 270 if total_hard else 0
+    
+    # Circular progress ring offset: Circumference is 2 * pi * r = 2 * 3.14159265 * 50 = 314.16
+    circumference = 314.16
+    total_ratio = solved_all / total_all if total_all else 0
+    stroke_offset = circumference * (1 - total_ratio)
+    
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 190" width="500" height="190" fill="none">
+  {COMMON_DEFS}
+  
+  <!-- BACKGROUND NEON GLOWS -->
+  <g filter="url(#blur-filter)">
+    <circle cx="100" cy="95" r="40" fill="#fda085" opacity="0.2" class="blob-gold" />
+    <circle cx="350" cy="95" r="40" fill="#7f00ff" opacity="0.15" class="blob-purple" />
+  </g>
+
+  <!-- Glass card -->
+  <rect x="10" y="10" width="480" height="170" rx="16" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" filter="url(#shadow-filter)" class="glass-card" />
+  
+  <!-- Left Column: Circular solved stats -->
+  <g>
+    <!-- Background Circle -->
+    <circle cx="100" cy="95" r="50" stroke="#ffffff" stroke-opacity="0.05" stroke-width="8" fill="none" />
+    <!-- Dynamic Progress -->
+    <circle cx="100" cy="95" r="50" stroke="url(#neon-gold)" stroke-width="8" stroke-dasharray="314.16" stroke-dashoffset="{stroke_offset:.2f}" fill="none" stroke-linecap="round" transform="rotate(-90 100 95)" filter="url(#text-glow-gold)" />
+    <!-- Text Centered -->
+    <text x="100" y="93" text-anchor="middle" fill="#ffffff" font-size="28" class="text-title" font-weight="900" filter="url(#text-glow-gold)">{solved_all}</text>
+    <text x="100" y="112" text-anchor="middle" fill="#ffffff" fill-opacity="0.5" font-size="10" class="text-mono" font-weight="bold">SOLVED</text>
+  </g>
+  
+  <!-- Right Column: Rank & Category bars -->
+  <!-- Global Rank -->
+  <g transform="translate(190, 32)">
+    <path d="M 0,0 L 12,0 L 12,6 C 12,10 9,13 6,13 C 3,13 0,10 0,6 Z" stroke="#fda085" stroke-width="1.2" fill="none" />
+    <path d="M 6,13 L 6,17 M 3,17 L 9,17" stroke="#fda085" stroke-width="1.2" stroke-linecap="round" />
+    <text x="22" y="11" fill="#ffffff" font-size="12" class="text-title" font-weight="800">Global Rank:</text>
+    <text x="110" y="11" fill="#fda085" font-size="12" class="text-mono" font-weight="bold" filter="url(#text-glow-gold)">{ranking:,}</text>
+  </g>
+  
+  <!-- Easy solved -->
+  <g transform="translate(190, 58)">
+    <text x="0" y="10" fill="#2db55d" font-size="11" class="text-title" font-weight="800">Easy</text>
+    <text x="270" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">{solved_easy}/{total_easy}</text>
+    <rect x="0" y="18" width="270" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
+    <rect x="0" y="18" width="{easy_width:.2f}" height="6" rx="3" fill="#2db55d" filter="drop-shadow(0 0 2px #2db55d)" />
+  </g>
+  
+  <!-- Medium solved -->
+  <g transform="translate(190, 93)">
+    <text x="0" y="10" fill="#ffb700" font-size="11" class="text-title" font-weight="800">Medium</text>
+    <text x="270" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">{solved_medium}/{total_medium}</text>
+    <rect x="0" y="18" width="270" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
+    <rect x="0" y="18" width="{medium_width:.2f}" height="6" rx="3" fill="#ffb700" filter="drop-shadow(0 0 2px #ffb700)" />
+  </g>
+  
+  <!-- Hard solved -->
+  <g transform="translate(190, 128)">
+    <text x="0" y="10" fill="#ef4743" font-size="11" class="text-title" font-weight="800">Hard</text>
+    <text x="270" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">{solved_hard}/{total_hard}</text>
+    <rect x="0" y="18" width="270" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
+    <rect x="0" y="18" width="{hard_width:.2f}" height="6" rx="3" fill="#ef4743" filter="drop-shadow(0 0 2px #ef4743)" />
+  </g>
+</svg>
+"""
+    with open("assets/leetcode_card.svg", "w", encoding="utf-8") as f:
+        f.write(svg)
+
 if __name__ == "__main__":
     print("Generating custom glassmorphic SVG assets...")
     generate_hero_banner()
@@ -743,5 +918,7 @@ if __name__ == "__main__":
     generate_footer_banner()
     generate_activity_graph()
     generate_spacer()
+    generate_leetcode_card("Ayush_1503")
     print("All assets generated successfully in assets/ directory!")
+
 
