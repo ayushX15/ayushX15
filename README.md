@@ -28,8 +28,8 @@
   <a href="https://leetcode.com/u/Ayush_1503/" target="_blank">
     <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Badge" />
   </a>
-  <a href="https://www.kaggle.com/ayushX15" target="_blank">
-    <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle Badge" />
+  <a href="https://www.instagram.com/ayush.15__" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram Badge" />
   </a>
   <a href="mailto:ayush.sonuu@gmail.com">
     <img src="https://img.shields.io/badge/Email-ayush.sonuu%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge" />
@@ -217,18 +217,18 @@
 
 <table align="center" width="100%">
   <tr>
-    <td width="60%" align="center">
+    <td width="70%" align="center">
       <a href="https://leetcode.com/u/Ayush_1503/" target="_blank">
         <img src="assets/leetcode_card.svg" alt="LeetCode Stats Card" width="100%" />
       </a>
     </td>
-    <td width="40%" align="center">
-      <p align="center"><b>Codeforces &amp; Kaggle Badges</b></p>
+    <td width="30%" align="center">
+      <p align="center"><b>Coding Profiles</b></p>
       <a href="https://codeforces.com/profile/ayushX15" target="_blank">
         <img src="https://img.shields.io/badge/Codeforces-Rating-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="CF Rating Badge" /><br /><br />
       </a>
-      <a href="https://www.kaggle.com/ayushX15" target="_blank">
-        <img src="https://img.shields.io/badge/Kaggle-Expert-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle Rank Badge" />
+      <a href="https://www.instagram.com/ayush.15__" target="_blank">
+        <img src="https://img.shields.io/badge/Instagram-ayush.15__-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram Badge" />
       </a>
     </td>
   </tr>

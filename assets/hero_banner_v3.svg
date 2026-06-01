@@ -264,7 +264,7 @@
   <text x="60" y="140" fill="#ffffff" font-size="42" class="text-title" font-weight="900" letter-spacing="-0.5" filter="url(#text-glow-cyan)">Ayush Prasad</text>
   
   <!-- Subtitle -->
-  <text x="60" y="180" fill="url(#neon-cyan)" font-size="20" class="text-title" font-weight="700">AI/ML Engineer | Backend Developer</text>
+  <text x="60" y="180" fill="url(#neon-cyan)" font-size="20" class="text-title" font-weight="700">AI/ML Engineer | Software Developer</text>
   
   <!-- Tagline -->
   <text x="60" y="212" fill="#ffffff" fill-opacity="0.6" font-size="14" class="text-body">Building Intelligent Systems &amp; Scalable Products</text>
@@ -275,12 +275,12 @@
     <rect x="0" y="0" width="105" height="24" rx="12" fill="url(#neon-cyan)" fill-opacity="0.05" stroke="#00f2fe" stroke-opacity="0.4" stroke-width="1.2" />
     <text x="52.5" y="16" text-anchor="middle" fill="#00f2fe" font-size="11" class="text-mono" font-weight="bold" filter="url(#text-glow-cyan)"># CSE-AIML</text>
     
-    <!-- MLOps -->
-    <rect x="115" y="0" width="85" height="24" rx="12" fill="url(#neon-purple)" fill-opacity="0.05" stroke="#b100ff" stroke-opacity="0.4" stroke-width="1.2" />
-    <text x="157.5" y="16" text-anchor="middle" fill="#b100ff" font-size="11" class="text-mono" font-weight="bold" filter="url(#text-glow-purple)"># MLOps</text>
+    <!-- Agentic AI -->
+    <rect x="115" y="0" width="105" height="24" rx="12" fill="url(#neon-purple)" fill-opacity="0.05" stroke="#b100ff" stroke-opacity="0.4" stroke-width="1.2" />
+    <text x="167.5" y="16" text-anchor="middle" fill="#b100ff" font-size="11" class="text-mono" font-weight="bold" filter="url(#text-glow-purple)"># Agentic AI</text>
     
-    <!-- LLM Stack -->
-    <rect x="210" y="0" width="115" height="24" rx="12" fill="url(#neon-pink)" fill-opacity="0.05" stroke="#ff007f" stroke-opacity="0.4" stroke-width="1.2" />
-    <text x="267.5" y="16" text-anchor="middle" fill="#ff007f" font-size="11" class="text-mono" font-weight="bold" filter="url(#text-glow-pink)"># LLM-Engg</text>
+    <!-- Gen AI -->
+    <rect x="230" y="0" width="90" height="24" rx="12" fill="url(#neon-pink)" fill-opacity="0.05" stroke="#ff007f" stroke-opacity="0.4" stroke-width="1.2" />
+    <text x="275" y="16" text-anchor="middle" fill="#ff007f" font-size="11" class="text-mono" font-weight="bold" filter="url(#text-glow-pink)"># Gen AI</text>
   </g>
 </svg>

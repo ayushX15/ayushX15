@@ -274,7 +274,7 @@ def generate_hero_banner():
   <text x="60" y="140" fill="#ffffff" font-size="42" class="text-title" font-weight="900" letter-spacing="-0.5" filter="url(#text-glow-cyan)">Ayush Prasad</text>
   
   <!-- Subtitle -->
-  <text x="60" y="180" fill="url(#neon-cyan)" font-size="20" class="text-title" font-weight="700">AI/ML Engineer | Backend Developer</text>
+  <text x="60" y="180" fill="url(#neon-cyan)" font-size="20" class="text-title" font-weight="700">AI/ML Engineer | Software Developer</text>
   
   <!-- Tagline -->
   <text x="60" y="212" fill="#ffffff" fill-opacity="0.6" font-size="14" class="text-body">Building Intelligent Systems &amp; Scalable Products</text>
@@ -285,13 +285,13 @@ def generate_hero_banner():
     <rect x="0" y="0" width="105" height="24" rx="12" fill="url(#neon-cyan)" fill-opacity="0.05" stroke="#00f2fe" stroke-opacity="0.4" stroke-width="1.2" />
     <text x="52.5" y="16" text-anchor="middle" fill="#00f2fe" font-size="11" class="text-mono" font-weight="bold" filter="url(#text-glow-cyan)"># CSE-AIML</text>
     
-    <!-- MLOps -->
-    <rect x="115" y="0" width="85" height="24" rx="12" fill="url(#neon-purple)" fill-opacity="0.05" stroke="#b100ff" stroke-opacity="0.4" stroke-width="1.2" />
-    <text x="157.5" y="16" text-anchor="middle" fill="#b100ff" font-size="11" class="text-mono" font-weight="bold" filter="url(#text-glow-purple)"># MLOps</text>
+    <!-- Agentic AI -->
+    <rect x="115" y="0" width="105" height="24" rx="12" fill="url(#neon-purple)" fill-opacity="0.05" stroke="#b100ff" stroke-opacity="0.4" stroke-width="1.2" />
+    <text x="167.5" y="16" text-anchor="middle" fill="#b100ff" font-size="11" class="text-mono" font-weight="bold" filter="url(#text-glow-purple)"># Agentic AI</text>
     
-    <!-- LLM Stack -->
-    <rect x="210" y="0" width="115" height="24" rx="12" fill="url(#neon-pink)" fill-opacity="0.05" stroke="#ff007f" stroke-opacity="0.4" stroke-width="1.2" />
-    <text x="267.5" y="16" text-anchor="middle" fill="#ff007f" font-size="11" class="text-mono" font-weight="bold" filter="url(#text-glow-pink)"># LLM-Engg</text>
+    <!-- Gen AI -->
+    <rect x="230" y="0" width="90" height="24" rx="12" fill="url(#neon-pink)" fill-opacity="0.05" stroke="#ff007f" stroke-opacity="0.4" stroke-width="1.2" />
+    <text x="275" y="16" text-anchor="middle" fill="#ff007f" font-size="11" class="text-mono" font-weight="bold" filter="url(#text-glow-pink)"># Gen AI</text>
   </g>
 </svg>
 """
@@ -838,79 +838,107 @@ def generate_leetcode_card(username="Ayush_1503"):
             print("Error parsing LeetCode API response, using fallbacks:", e)
     else:
         print("Using cached/fallback LeetCode stats.")
-    easy_width = (solved_easy / total_easy) * 260 if total_easy else 0
-    medium_width = (solved_medium / total_medium) * 260 if total_medium else 0
-    hard_width = (solved_hard / total_hard) * 260 if total_hard else 0
+        
+    # Calculate widths & offsets
+    easy_width = (solved_easy / total_easy) * 270 if total_easy else 0
+    medium_width = (solved_medium / total_medium) * 270 if total_medium else 0
+    hard_width = (solved_hard / total_hard) * 270 if total_hard else 0
     
-    # Circular progress ring offset: Circumference is 2 * pi * r = 2 * 3.14159265 * 58 = 364.42
-    circumference = 364.42
+    # Circular progress ring offset: Circumference is 2 * pi * r = 2 * 3.14159265 * 50 = 314.16
+    circumference = 314.16
     total_ratio = solved_all / total_all if total_all else 0
     stroke_offset = circumference * (1 - total_ratio)
     
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" width="520" height="200" fill="none">
+    # Recalculate widths for the wider card
+    easy_bar_w = (solved_easy / total_easy) * 330 if total_easy else 0
+    medium_bar_w = (solved_medium / total_medium) * 330 if total_medium else 0
+    hard_bar_w = (solved_hard / total_hard) * 330 if total_hard else 0
+
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 230" width="650" height="230" fill="none">
   {COMMON_DEFS}
-  
+  <!-- Extra LeetCode orange gradient -->
   <defs>
-    <linearGradient id="leetcode-orange" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffa116" />
-      <stop offset="100%" stop-color="#ff5a00" />
+    <linearGradient id="lc-orange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFA116" />
+      <stop offset="100%" stop-color="#FF6B00" />
     </linearGradient>
     <filter id="text-glow-orange" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="4.5" flood-color="#ffa116" flood-opacity="0.95"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#FFA116" flood-opacity="0.9"/>
     </filter>
   </defs>
   
-  <!-- BACKGROUND NEON GLOWS -->
+  <!-- BACKGROUND NEON GLOWS (LeetCode orange/amber theme) -->
   <g filter="url(#blur-filter)">
-    <circle cx="110" cy="100" r="40" fill="#ffa116" opacity="0.2" class="blob-gold" />
-    <circle cx="370" cy="100" r="40" fill="#7f00ff" opacity="0.15" class="blob-purple" />
+    <circle cx="120" cy="115" r="60" fill="#FFA116" opacity="0.18" class="blob-gold" />
+    <circle cx="500" cy="115" r="55" fill="#FF6B00" opacity="0.12" class="blob-pink" />
+    <circle cx="320" cy="60" r="40" fill="#7f00ff" opacity="0.10" class="blob-purple" />
   </g>
 
-  <!-- Glass card -->
-  <rect x="10" y="10" width="500" height="180" rx="16" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" filter="url(#shadow-filter)" class="glass-card" />
+  <!-- Glass card with orange accent border -->
+  <rect x="10" y="10" width="630" height="210" rx="20" fill="url(#card-bg)" stroke="url(#lc-orange)" stroke-width="1.5" filter="url(#shadow-filter)" class="glass-card" />
   
-  <!-- Left Column: Circular solved stats -->
-  <g>
-    <!-- Background Circle -->
-    <circle cx="110" cy="100" r="58" stroke="#ffffff" stroke-opacity="0.05" stroke-width="8" fill="none" />
-    <!-- Dynamic Progress -->
-    <circle cx="110" cy="100" r="58" stroke="url(#leetcode-orange)" stroke-width="8" stroke-dasharray="364.42" stroke-dashoffset="{stroke_offset:.2f}" fill="none" stroke-linecap="round" transform="rotate(-90 110 100)" filter="url(#text-glow-orange)" />
-    <!-- Text Centered -->
-    <text x="110" y="98" text-anchor="middle" fill="#ffffff" font-size="30" class="text-title" font-weight="900" filter="url(#text-glow-orange)">{solved_all}</text>
-    <text x="110" y="118" text-anchor="middle" fill="#ffffff" fill-opacity="0.5" font-size="10.5" class="text-mono" font-weight="bold">SOLVED</text>
+  <!-- LeetCode logo + label top-left -->
+  <g transform="translate(28, 24)">
+    <!-- LeetCode icon (simplified) -->
+    <rect x="0" y="0" width="28" height="28" rx="6" fill="#FFA116" fill-opacity="0.15" stroke="#FFA116" stroke-width="1.2" />
+    <text x="14" y="19" text-anchor="middle" fill="#FFA116" font-size="14" class="text-mono" font-weight="900">LC</text>
+    <text x="36" y="19" fill="#ffffff" font-size="14" class="text-title" font-weight="800">LeetCode Stats</text>
+    <text x="36" y="33" fill="#FFA116" font-size="10" class="text-mono" font-weight="bold" filter="url(#text-glow-orange)">@Ayush_1503</text>
+  </g>
+
+  <!-- Flowing orange border accent -->
+  <rect x="10" y="10" width="630" height="210" rx="20" stroke="#FFA116" stroke-width="1.2" fill="none" pointer-events="none" class="border-flow" opacity="0.5" />
+  
+  <!-- Left Column: Circular solved progress ring -->
+  <g transform="translate(130, 125)">
+    <!-- Outer track -->
+    <circle cx="0" cy="0" r="65" stroke="#ffffff" stroke-opacity="0.05" stroke-width="10" fill="none" />
+    <!-- Orange progress arc -->
+    <circle cx="0" cy="0" r="65" stroke="url(#lc-orange)" stroke-width="10"
+      stroke-dasharray="408.41"
+      stroke-dashoffset="{408.41 * (1 - total_ratio):.2f}"
+      fill="none" stroke-linecap="round"
+      transform="rotate(-90 0 0)"
+      filter="url(#text-glow-orange)" />
+    <!-- Solved count -->
+    <text x="0" y="-8" text-anchor="middle" fill="#FFA116" font-size="36" class="text-title" font-weight="900" filter="url(#text-glow-orange)">{solved_all}</text>
+    <text x="0" y="14" text-anchor="middle" fill="#ffffff" fill-opacity="0.55" font-size="11" class="text-mono" font-weight="bold">SOLVED</text>
+    <text x="0" y="32" text-anchor="middle" fill="#ffffff" fill-opacity="0.35" font-size="10" class="text-mono">/ {total_all}</text>
   </g>
   
+  <!-- Vertical divider -->
+  <line x1="240" y1="55" x2="240" y2="205" stroke="#FFA116" stroke-opacity="0.15" stroke-width="1.5" />
+
   <!-- Right Column: Rank & Category bars -->
   <!-- Global Rank -->
-  <g transform="translate(210, 35)">
-    <path d="M 0,0 L 12,0 L 12,6 C 12,10 9,13 6,13 C 3,13 0,10 0,6 Z" stroke="#ffa116" stroke-width="1.2" fill="none" filter="url(#text-glow-orange)" />
-    <path d="M 6,13 L 6,17 M 3,17 L 9,17" stroke="#ffa116" stroke-width="1.2" stroke-linecap="round" filter="url(#text-glow-orange)" />
-    <text x="22" y="11" fill="#ffffff" font-size="12.5" class="text-title" font-weight="800">Global Rank:</text>
-    <text x="115" y="11" fill="#ffa116" font-size="12.5" class="text-mono" font-weight="bold" filter="url(#text-glow-orange)">{ranking:,}</text>
+  <g transform="translate(262, 38)">
+    <rect x="0" y="0" width="360" height="30" rx="8" fill="#FFA116" fill-opacity="0.08" stroke="#FFA116" stroke-opacity="0.2" stroke-width="1" />
+    <text x="12" y="20" fill="#ffffff" font-size="12" class="text-title" font-weight="800">🏆  Global Rank:</text>
+    <text x="370" y="20" text-anchor="end" fill="#FFA116" font-size="13" class="text-mono" font-weight="900" filter="url(#text-glow-orange)">#{ranking:,}</text>
   </g>
   
   <!-- Easy solved -->
-  <g transform="translate(210, 62)">
-    <text x="0" y="10" fill="#2db55d" font-size="11" class="text-title" font-weight="800">Easy</text>
-    <text x="260" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">{solved_easy}/{total_easy}</text>
-    <rect x="0" y="18" width="260" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
-    <rect x="0" y="18" width="{easy_width:.2f}" height="6" rx="3" fill="#2db55d" filter="drop-shadow(0 0 2px #2db55d)" />
+  <g transform="translate(262, 85)">
+    <text x="0" y="10" fill="#2db55d" font-size="12" class="text-title" font-weight="800">Easy</text>
+    <text x="360" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono">{solved_easy} / {total_easy}</text>
+    <rect x="0" y="18" width="360" height="8" rx="4" fill="#ffffff" fill-opacity="0.05" />
+    <rect x="0" y="18" width="{easy_bar_w:.2f}" height="8" rx="4" fill="#2db55d" filter="drop-shadow(0 0 3px #2db55d)" />
   </g>
   
   <!-- Medium solved -->
-  <g transform="translate(210, 97)">
-    <text x="0" y="10" fill="#ffb700" font-size="11" class="text-title" font-weight="800">Medium</text>
-    <text x="260" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">{solved_medium}/{total_medium}</text>
-    <rect x="0" y="18" width="260" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
-    <rect x="0" y="18" width="{medium_width:.2f}" height="6" rx="3" fill="#ffb700" filter="drop-shadow(0 0 2px #ffb700)" />
+  <g transform="translate(262, 126)">
+    <text x="0" y="10" fill="#FFA116" font-size="12" class="text-title" font-weight="800">Medium</text>
+    <text x="360" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono">{solved_medium} / {total_medium}</text>
+    <rect x="0" y="18" width="360" height="8" rx="4" fill="#ffffff" fill-opacity="0.05" />
+    <rect x="0" y="18" width="{medium_bar_w:.2f}" height="8" rx="4" fill="#FFA116" filter="drop-shadow(0 0 3px #FFA116)" />
   </g>
   
   <!-- Hard solved -->
-  <g transform="translate(210, 132)">
-    <text x="0" y="10" fill="#ef4743" font-size="11" class="text-title" font-weight="800">Hard</text>
-    <text x="260" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">{solved_hard}/{total_hard}</text>
-    <rect x="0" y="18" width="260" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
-    <rect x="0" y="18" width="{hard_width:.2f}" height="6" rx="3" fill="#ef4743" filter="drop-shadow(0 0 2px #ef4743)" />
+  <g transform="translate(262, 167)">
+    <text x="0" y="10" fill="#ef4743" font-size="12" class="text-title" font-weight="800">Hard</text>
+    <text x="360" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono">{solved_hard} / {total_hard}</text>
+    <rect x="0" y="18" width="360" height="8" rx="4" fill="#ffffff" fill-opacity="0.05" />
+    <rect x="0" y="18" width="{hard_bar_w:.2f}" height="8" rx="4" fill="#ef4743" filter="drop-shadow(0 0 3px #ef4743)" />
   </g>
 </svg>
 """
@@ -987,7 +1015,7 @@ def generate_about_card():
     
     <!-- Exploring grid -->
     <g transform="translate(0, 56)">
-      <rect x="0" y="0" width="150" height="20" rx="10" fill="#fda085" fill-opacity="0.1" stroke="url(#neon-gold)" stroke-width="1" />
+      <rect x="0" y="0" width="135" height="20" rx="10" fill="#fda085" fill-opacity="0.1" stroke="url(#neon-gold)" stroke-width="1" />
       <text x="12" y="13" fill="#fda085" font-size="10" class="text-mono" font-weight="bold" letter-spacing="0.5">CURRENTLY EXPLORING</text>
       
       <!-- Grid Items (2 Columns) -->
