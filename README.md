@@ -79,60 +79,76 @@
 
 <table align="center" width="100%">
   <tr>
-    <td width="20%"><b>💻 Languages</b></td>
+    <td width="28%" nowrap><b>💻 Languages</b></td>
     <td>
       <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white" alt="SQL" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JS" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/HTML5/CSS3-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML/CSS" />
     </td>
   </tr>
   <tr>
-    <td><b>🧠 AI &amp; Machine Learning</b></td>
+    <td width="28%" nowrap><b>🧠 AI &amp; Machine Learning</b></td>
     <td>
       <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/Matplotlib-ffffff?style=flat-square&logo=matplotlib&logoColor=black" alt="Matplotlib" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" alt="OpenCV" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face" />
     </td>
   </tr>
   <tr>
-    <td><b>⛓️ LLM Stack</b></td>
+    <td width="28%" nowrap><b>⛓️ LLM Stack</b></td>
     <td>
       <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=chainlink&logoColor=white" alt="LangGraph" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/Gemini_API-8E75C2?style=flat-square&logo=googlegemini&logoColor=white" alt="Gemini API" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/Ollama_API-FFFFFF?style=flat-square&logo=ollama&logoColor=black" alt="Ollama API" />
     </td>
   </tr>
   <tr>
-    <td><b>⚡ Backend &amp; APIs</b></td>
+    <td width="28%" nowrap><b>⚡ Backend &amp; APIs</b></td>
     <td>
       <img src="https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" alt="Flask" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/REST_APIs-00f2fe?style=flat-square&logo=postman&logoColor=black" alt="REST" />
     </td>
   </tr>
   <tr>
-    <td><b>🌐 Frontend</b></td>
+    <td width="28%" nowrap><b>🌐 Frontend</b></td>
     <td>
       <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
     </td>
   </tr>
   <tr>
-    <td><b>🗄️ Databases</b></td>
+    <td width="28%" nowrap><b>🗄️ Databases</b></td>
     <td>
       <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
     </td>
   </tr>
   <tr>
-    <td><b>🛠️ Tools &amp; DevOps</b></td>
+    <td width="28%" nowrap><b>🛠️ Tools &amp; DevOps</b></td>
     <td>
       <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white" alt="Playwright" />
+      <img src="assets/spacer.svg" width="30" height="1" />
       <img src="https://img.shields.io/badge/Docker_(Learning)-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
     </td>
   </tr>

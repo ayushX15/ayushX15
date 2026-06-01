@@ -727,6 +727,12 @@ def generate_activity_graph():
     with open("assets/activity_graph.svg", "w", encoding="utf-8") as f:
         f.write(svg)
 
+# 8. Spacer SVG for markdown table alignment
+def generate_spacer():
+    svg = '<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1" fill="none"></svg>'
+    with open("assets/spacer.svg", "w", encoding="utf-8") as f:
+        f.write(svg)
+
 if __name__ == "__main__":
     print("Generating custom glassmorphic SVG assets...")
     generate_hero_banner()
@@ -736,4 +742,6 @@ if __name__ == "__main__":
     generate_stats_card()
     generate_footer_banner()
     generate_activity_graph()
+    generate_spacer()
     print("All assets generated successfully in assets/ directory!")
+
