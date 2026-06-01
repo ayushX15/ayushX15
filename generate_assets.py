@@ -233,43 +233,34 @@ def generate_hero_banner():
   <path d="M 810,270 L 810,280 L 800,280" stroke="#ff007f" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
 
   <!-- AI / NEURAL GRAPH GRAPHICS (Right side) -->
-  <g opacity="0.7">
+  <g opacity="0.85">
     <!-- Static Network Lines -->
-    <line x1="580" y1="120" x2="660" y2="90" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5" />
-    <line x1="660" y1="90" x2="740" y2="130" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5" />
-    <line x1="740" y1="130" x2="700" y2="210" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5" />
-    <line x1="700" y1="210" x2="610" y2="200" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5" />
-    <line x1="610" y1="200" x2="580" y2="120" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5" />
+    <line x1="555" y1="113" x2="655" y2="75" stroke="#ffffff" stroke-opacity="0.12" stroke-width="3" />
+    <line x1="655" y1="75" x2="755" y2="125" stroke="#ffffff" stroke-opacity="0.12" stroke-width="3" />
+    <line x1="755" y1="125" x2="705" y2="225" stroke="#ffffff" stroke-opacity="0.12" stroke-width="3" />
+    <line x1="705" y1="225" x2="593" y2="213" stroke="#ffffff" stroke-opacity="0.12" stroke-width="3" />
+    <line x1="593" y1="213" x2="555" y2="113" stroke="#ffffff" stroke-opacity="0.12" stroke-width="3" />
     
     <!-- Glowing Pulsing Data Streams -->
-    <line x1="580" y1="120" x2="660" y2="90" stroke="#00f2fe" stroke-opacity="0.4" stroke-width="2" class="signal-line" />
-    <line x1="660" y1="90" x2="740" y2="130" stroke="#ff007f" stroke-opacity="0.4" stroke-width="2" class="signal-line-reverse" />
-    <line x1="740" y1="130" x2="700" y2="210" stroke="#7f00ff" stroke-opacity="0.4" stroke-width="2" class="signal-line" />
-    <line x1="700" y1="210" x2="610" y2="200" stroke="#00f2fe" stroke-opacity="0.4" stroke-width="2" class="signal-line-reverse" />
-    <line x1="610" y1="200" x2="580" y2="120" stroke="#fda085" stroke-opacity="0.4" stroke-width="2" class="signal-line" />
+    <line x1="555" y1="113" x2="655" y2="75" stroke="#00f2fe" stroke-opacity="0.5" stroke-width="4" class="signal-line" />
+    <line x1="655" y1="75" x2="755" y2="125" stroke="#ff007f" stroke-opacity="0.5" stroke-width="4" class="signal-line-reverse" />
+    <line x1="755" y1="125" x2="705" y2="225" stroke="#7f00ff" stroke-opacity="0.5" stroke-width="4" class="signal-line" />
+    <line x1="705" y1="225" x2="593" y2="213" stroke="#00f2fe" stroke-opacity="0.5" stroke-width="4" class="signal-line-reverse" />
+    <line x1="593" y1="213" x2="555" y2="113" stroke="#fda085" stroke-opacity="0.5" stroke-width="4" class="signal-line" />
     
-    <line x1="660" y1="90" x2="680" y2="150" stroke="#00f2fe" stroke-opacity="0.3" stroke-width="1.5" />
-    <line x1="580" y1="120" x2="680" y2="150" stroke="#ff007f" stroke-opacity="0.3" stroke-width="1.5" />
-    <line x1="700" y1="210" x2="680" y2="150" stroke="#7f00ff" stroke-opacity="0.3" stroke-width="1.5" />
-    <line x1="740" y1="130" x2="680" y2="150" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1.5" />
+    <!-- Center Connections -->
+    <line x1="655" y1="75" x2="680" y2="150" stroke="#00f2fe" stroke-opacity="0.4" stroke-width="2.5" />
+    <line x1="555" y1="113" x2="680" y2="150" stroke="#ff007f" stroke-opacity="0.4" stroke-width="2.5" />
+    <line x1="705" y1="225" x2="680" y2="150" stroke="#7f00ff" stroke-opacity="0.4" stroke-width="2.5" />
+    <line x1="755" y1="125" x2="680" y2="150" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2.5" />
     
     <!-- Nodes -->
-    <circle cx="580" cy="120" r="6" fill="#00f2fe" filter="drop-shadow(0 0 6px #00f2fe)" class="node-anim" />
-    <circle cx="660" cy="90" r="5" fill="#ffffff" filter="drop-shadow(0 0 4px #fff)" class="node-anim-delay" />
-    <circle cx="740" cy="130" r="7" fill="#ff007f" filter="drop-shadow(0 0 6px #ff007f)" class="node-anim" />
-    <circle cx="700" cy="210" r="5" fill="#7f00ff" filter="drop-shadow(0 0 5px #7f00ff)" class="node-anim-delay" />
-    <circle cx="610" cy="200" r="6" fill="#00f2fe" filter="drop-shadow(0 0 6px #00f2fe)" class="node-anim" />
-    <circle cx="680" cy="150" r="9" fill="url(#neon-cyan)" filter="drop-shadow(0 0 10px #00f2fe)" class="node-anim" />
-  </g>
-  
-  <!-- LIVE COMPUTATION SIGNAL EQUALIZER (Visualizer) -->
-  <g transform="translate(660, 48)" opacity="0.8">
-    <rect x="0" y="10" width="3" height="15" rx="1.5" fill="#ff007f" style="transform-origin: 1.5px 25px;" class="bar-anim-1" />
-    <rect x="6" y="5" width="3" height="20" rx="1.5" fill="#00f2fe" style="transform-origin: 7.5px 25px;" class="bar-anim-2" />
-    <rect x="12" y="8" width="3" height="17" rx="1.5" fill="#7f00ff" style="transform-origin: 13.5px 25px;" class="bar-anim-3" />
-    <rect x="18" y="2" width="3" height="23" rx="1.5" fill="#fda085" style="transform-origin: 19.5px 25px;" class="bar-anim-4" />
-    <rect x="24" y="7" width="3" height="18" rx="1.5" fill="#00f2fe" style="transform-origin: 25.5px 25px;" class="bar-anim-5" />
-    <text x="32" y="19" fill="#00f2fe" fill-opacity="0.6" font-size="8" class="text-mono">LIVE_ML</text>
+    <circle cx="555" cy="113" r="9" fill="#00f2fe" filter="drop-shadow(0 0 10px #00f2fe)" class="node-anim" />
+    <circle cx="655" cy="75" r="8" fill="#ffffff" filter="drop-shadow(0 0 8px #fff)" class="node-anim-delay" />
+    <circle cx="755" cy="125" r="11" fill="#ff007f" filter="drop-shadow(0 0 12px #ff007f)" class="node-anim" />
+    <circle cx="705" cy="225" r="8" fill="#7f00ff" filter="drop-shadow(0 0 8px #7f00ff)" class="node-anim-delay" />
+    <circle cx="593" cy="213" r="9" fill="#00f2fe" filter="drop-shadow(0 0 10px #00f2fe)" class="node-anim" />
+    <circle cx="680" cy="150" r="14" fill="url(#neon-cyan)" filter="drop-shadow(0 0 15px #00f2fe)" class="node-anim" />
   </g>
   
   <!-- TEXT CONTENT -->
@@ -291,16 +282,16 @@ def generate_hero_banner():
   <!-- Badges / Tech Capsules -->
   <g transform="translate(60, 235)">
     <!-- CSE AIML -->
-    <rect x="0" y="0" width="105" height="24" rx="12" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08" />
-    <text x="12" y="16" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono"># CSE-AIML</text>
+    <rect x="0" y="0" width="105" height="24" rx="12" fill="url(#neon-cyan)" fill-opacity="0.05" stroke="#00f2fe" stroke-opacity="0.4" stroke-width="1.2" />
+    <text x="52.5" y="16" text-anchor="middle" fill="#00f2fe" font-size="11" class="text-mono" font-weight="bold" filter="url(#text-glow-cyan)"># CSE-AIML</text>
     
     <!-- MLOps -->
-    <rect x="115" y="0" width="85" height="24" rx="12" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08" />
-    <text x="127" y="16" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono"># MLOps</text>
+    <rect x="115" y="0" width="85" height="24" rx="12" fill="url(#neon-purple)" fill-opacity="0.05" stroke="#b100ff" stroke-opacity="0.4" stroke-width="1.2" />
+    <text x="157.5" y="16" text-anchor="middle" fill="#b100ff" font-size="11" class="text-mono" font-weight="bold" filter="url(#text-glow-purple)"># MLOps</text>
     
     <!-- LLM Stack -->
-    <rect x="210" y="0" width="115" height="24" rx="12" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08" />
-    <text x="222" y="16" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono"># LLM-Engg</text>
+    <rect x="210" y="0" width="115" height="24" rx="12" fill="url(#neon-pink)" fill-opacity="0.05" stroke="#ff007f" stroke-opacity="0.4" stroke-width="1.2" />
+    <text x="267.5" y="16" text-anchor="middle" fill="#ff007f" font-size="11" class="text-mono" font-weight="bold" filter="url(#text-glow-pink)"># LLM-Engg</text>
   </g>
 </svg>
 """
