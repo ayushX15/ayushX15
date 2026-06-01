@@ -1,6 +1,6 @@
 <!-- HERO BANNER -->
 <p align="center">
-  <img src="assets/hero_banner.svg" alt="Ayush Prasad Hero Banner" width="100%" />
+  <img src="assets/hero_banner_v2.svg" alt="Ayush Prasad Hero Banner" width="100%" />
 </p>
 
 <!-- TYPING ANIMATION -->

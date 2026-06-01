@@ -295,7 +295,7 @@ def generate_hero_banner():
   </g>
 </svg>
 """
-    with open("assets/hero_banner.svg", "w", encoding="utf-8") as f:
+    with open("assets/hero_banner_v2.svg", "w", encoding="utf-8") as f:
         f.write(svg)
 
 # 2. Section Headers (Widened to 550px and text centered)
