@@ -206,10 +206,10 @@
 
 <br />
 
-<!-- CONTRIBUTION SNAKE ANIMATION -->
-<h3 align="center">🐍 Contribution Snake</h3>
+<!-- CONTRIBUTION SPACE SHOOTER -->
+<h3 align="center">🛸 Contribution Space Shooter</h3>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayushX15/ayushX15/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Game" width="100%" />
+  <img src="https://raw.githubusercontent.com/ayushX15/ayushX15/output/github-contribution-space-shooter.gif" alt="Contribution Space Shooter" width="100%" />
 </p>
 
 <br />

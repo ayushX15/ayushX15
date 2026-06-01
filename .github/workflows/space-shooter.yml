@@ -1,0 +1,36 @@
+name: Generate Space Shooter Game
+
+on:
+  schedule:
+    # Run once every 24 hours
+    - cron: "0 0 * * *"
+  
+  # Allow manual execution in the Actions tab
+  workflow_dispatch:
+  
+  # Run on every push to the main branch
+  push:
+    branches:
+    - main
+
+jobs:
+  generate:
+    permissions: 
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      # Checkout the output branch so we commit the generated game asset there directly
+      - name: Checkout output branch
+        uses: actions/checkout@v3
+        with:
+          ref: output
+          fetch-depth: 2
+          
+      - name: Generate github-contribution-space-shooter.gif
+        uses: czl9707/gh-space-shooter@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          output-path: 'github-contribution-space-shooter.gif'
+          strategy: 'random'
