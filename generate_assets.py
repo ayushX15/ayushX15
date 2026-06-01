@@ -838,70 +838,78 @@ def generate_leetcode_card(username="Ayush_1503"):
             print("Error parsing LeetCode API response, using fallbacks:", e)
     else:
         print("Using cached/fallback LeetCode stats.")
-        
-    # Calculate widths & offsets
-    easy_width = (solved_easy / total_easy) * 270 if total_easy else 0
-    medium_width = (solved_medium / total_medium) * 270 if total_medium else 0
-    hard_width = (solved_hard / total_hard) * 270 if total_hard else 0
+    easy_width = (solved_easy / total_easy) * 260 if total_easy else 0
+    medium_width = (solved_medium / total_medium) * 260 if total_medium else 0
+    hard_width = (solved_hard / total_hard) * 260 if total_hard else 0
     
-    # Circular progress ring offset: Circumference is 2 * pi * r = 2 * 3.14159265 * 50 = 314.16
-    circumference = 314.16
+    # Circular progress ring offset: Circumference is 2 * pi * r = 2 * 3.14159265 * 58 = 364.42
+    circumference = 364.42
     total_ratio = solved_all / total_all if total_all else 0
     stroke_offset = circumference * (1 - total_ratio)
     
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 190" width="500" height="190" fill="none">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" width="520" height="200" fill="none">
   {COMMON_DEFS}
+  
+  <defs>
+    <linearGradient id="leetcode-orange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffa116" />
+      <stop offset="100%" stop-color="#ff5a00" />
+    </linearGradient>
+    <filter id="text-glow-orange" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4.5" flood-color="#ffa116" flood-opacity="0.95"/>
+    </filter>
+  </defs>
   
   <!-- BACKGROUND NEON GLOWS -->
   <g filter="url(#blur-filter)">
-    <circle cx="100" cy="95" r="40" fill="#fda085" opacity="0.2" class="blob-gold" />
-    <circle cx="350" cy="95" r="40" fill="#7f00ff" opacity="0.15" class="blob-purple" />
+    <circle cx="110" cy="100" r="40" fill="#ffa116" opacity="0.2" class="blob-gold" />
+    <circle cx="370" cy="100" r="40" fill="#7f00ff" opacity="0.15" class="blob-purple" />
   </g>
 
   <!-- Glass card -->
-  <rect x="10" y="10" width="480" height="170" rx="16" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" filter="url(#shadow-filter)" class="glass-card" />
+  <rect x="10" y="10" width="500" height="180" rx="16" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" filter="url(#shadow-filter)" class="glass-card" />
   
   <!-- Left Column: Circular solved stats -->
   <g>
     <!-- Background Circle -->
-    <circle cx="100" cy="95" r="50" stroke="#ffffff" stroke-opacity="0.05" stroke-width="8" fill="none" />
+    <circle cx="110" cy="100" r="58" stroke="#ffffff" stroke-opacity="0.05" stroke-width="8" fill="none" />
     <!-- Dynamic Progress -->
-    <circle cx="100" cy="95" r="50" stroke="url(#neon-gold)" stroke-width="8" stroke-dasharray="314.16" stroke-dashoffset="{stroke_offset:.2f}" fill="none" stroke-linecap="round" transform="rotate(-90 100 95)" filter="url(#text-glow-gold)" />
+    <circle cx="110" cy="100" r="58" stroke="url(#leetcode-orange)" stroke-width="8" stroke-dasharray="364.42" stroke-dashoffset="{stroke_offset:.2f}" fill="none" stroke-linecap="round" transform="rotate(-90 110 100)" filter="url(#text-glow-orange)" />
     <!-- Text Centered -->
-    <text x="100" y="93" text-anchor="middle" fill="#ffffff" font-size="28" class="text-title" font-weight="900" filter="url(#text-glow-gold)">{solved_all}</text>
-    <text x="100" y="112" text-anchor="middle" fill="#ffffff" fill-opacity="0.5" font-size="10" class="text-mono" font-weight="bold">SOLVED</text>
+    <text x="110" y="98" text-anchor="middle" fill="#ffffff" font-size="30" class="text-title" font-weight="900" filter="url(#text-glow-orange)">{solved_all}</text>
+    <text x="110" y="118" text-anchor="middle" fill="#ffffff" fill-opacity="0.5" font-size="10.5" class="text-mono" font-weight="bold">SOLVED</text>
   </g>
   
   <!-- Right Column: Rank & Category bars -->
   <!-- Global Rank -->
-  <g transform="translate(190, 32)">
-    <path d="M 0,0 L 12,0 L 12,6 C 12,10 9,13 6,13 C 3,13 0,10 0,6 Z" stroke="#fda085" stroke-width="1.2" fill="none" />
-    <path d="M 6,13 L 6,17 M 3,17 L 9,17" stroke="#fda085" stroke-width="1.2" stroke-linecap="round" />
-    <text x="22" y="11" fill="#ffffff" font-size="12" class="text-title" font-weight="800">Global Rank:</text>
-    <text x="110" y="11" fill="#fda085" font-size="12" class="text-mono" font-weight="bold" filter="url(#text-glow-gold)">{ranking:,}</text>
+  <g transform="translate(210, 35)">
+    <path d="M 0,0 L 12,0 L 12,6 C 12,10 9,13 6,13 C 3,13 0,10 0,6 Z" stroke="#ffa116" stroke-width="1.2" fill="none" filter="url(#text-glow-orange)" />
+    <path d="M 6,13 L 6,17 M 3,17 L 9,17" stroke="#ffa116" stroke-width="1.2" stroke-linecap="round" filter="url(#text-glow-orange)" />
+    <text x="22" y="11" fill="#ffffff" font-size="12.5" class="text-title" font-weight="800">Global Rank:</text>
+    <text x="115" y="11" fill="#ffa116" font-size="12.5" class="text-mono" font-weight="bold" filter="url(#text-glow-orange)">{ranking:,}</text>
   </g>
   
   <!-- Easy solved -->
-  <g transform="translate(190, 58)">
+  <g transform="translate(210, 62)">
     <text x="0" y="10" fill="#2db55d" font-size="11" class="text-title" font-weight="800">Easy</text>
-    <text x="270" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">{solved_easy}/{total_easy}</text>
-    <rect x="0" y="18" width="270" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
+    <text x="260" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">{solved_easy}/{total_easy}</text>
+    <rect x="0" y="18" width="260" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
     <rect x="0" y="18" width="{easy_width:.2f}" height="6" rx="3" fill="#2db55d" filter="drop-shadow(0 0 2px #2db55d)" />
   </g>
   
   <!-- Medium solved -->
-  <g transform="translate(190, 93)">
+  <g transform="translate(210, 97)">
     <text x="0" y="10" fill="#ffb700" font-size="11" class="text-title" font-weight="800">Medium</text>
-    <text x="270" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">{solved_medium}/{total_medium}</text>
-    <rect x="0" y="18" width="270" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
+    <text x="260" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">{solved_medium}/{total_medium}</text>
+    <rect x="0" y="18" width="260" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
     <rect x="0" y="18" width="{medium_width:.2f}" height="6" rx="3" fill="#ffb700" filter="drop-shadow(0 0 2px #ffb700)" />
   </g>
   
   <!-- Hard solved -->
-  <g transform="translate(190, 128)">
+  <g transform="translate(210, 132)">
     <text x="0" y="10" fill="#ef4743" font-size="11" class="text-title" font-weight="800">Hard</text>
-    <text x="270" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">{solved_hard}/{total_hard}</text>
-    <rect x="0" y="18" width="270" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
+    <text x="260" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="10.5" class="text-mono">{solved_hard}/{total_hard}</text>
+    <rect x="0" y="18" width="260" height="6" rx="3" fill="#ffffff" fill-opacity="0.05" />
     <rect x="0" y="18" width="{hard_width:.2f}" height="6" rx="3" fill="#ef4743" filter="drop-shadow(0 0 2px #ef4743)" />
   </g>
 </svg>
@@ -979,7 +987,7 @@ def generate_about_card():
     
     <!-- Exploring grid -->
     <g transform="translate(0, 56)">
-      <rect x="0" y="0" width="135" height="20" rx="10" fill="#fda085" fill-opacity="0.1" stroke="url(#neon-gold)" stroke-width="1" />
+      <rect x="0" y="0" width="150" height="20" rx="10" fill="#fda085" fill-opacity="0.1" stroke="url(#neon-gold)" stroke-width="1" />
       <text x="12" y="13" fill="#fda085" font-size="10" class="text-mono" font-weight="bold" letter-spacing="0.5">CURRENTLY EXPLORING</text>
       
       <!-- Grid Items (2 Columns) -->
