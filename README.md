@@ -1,6 +1,6 @@
 <!-- HERO BANNER -->
 <p align="center">
-  <img src="./assets/hero_banner.svg" alt="Ayush Sharma Hero Banner" width="100%" />
+  <img src="assets/hero_banner.svg" alt="Ayush Prasad Hero Banner" width="100%" />
 </p>
 
 <!-- TYPING ANIMATION -->
@@ -12,14 +12,14 @@
 
 <!-- VISITOR COUNTER -->
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=ayushX15&label=PROFILE+VIEWS&color=00f2fe&style=flat-square" alt="Ayush Sharma Views" />
+  <img src="https://komarev.com/ghpvc/?username=ayushX15&label=PROFILE+VIEWS&color=00f2fe&style=flat-square" alt="Ayush Prasad Views" />
 </p>
 
 ---
 
 <!-- SOCIAL LINKS & CONTACT BADGES -->
 <p align="center">
-  <a href="https://www.linkedin.com/in/ayushsharma-aiml" target="_blank">
+  <a href="https://www.linkedin.com/in/ayushprasad-aiml" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
   </a>
   <a href="https://ayushX15.github.io" target="_blank">
@@ -34,8 +34,8 @@
   <a href="https://www.kaggle.com/ayushX15" target="_blank">
     <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle Badge" />
   </a>
-  <a href="mailto:ayushsharma.aiml@gmail.com">
-    <img src="https://img.shields.io/badge/Email-ayushsharma.aiml%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge" />
+  <a href="mailto:ayushprasad.aiml@gmail.com">
+    <img src="https://img.shields.io/badge/Email-ayushprasad.aiml%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge" />
   </a>
 </p>
 
@@ -43,7 +43,7 @@
 
 <!-- ABOUT ME -->
 <p align="center">
-  <img src="./assets/section_about.svg" alt="About Me Header" width="450" />
+  <img src="assets/section_about.svg" alt="About Me Header" width="450" />
 </p>
 
 <table align="center" width="100%">
@@ -76,7 +76,7 @@
 
 <!-- TECH ARSENAL -->
 <p align="center">
-  <img src="./assets/section_skills.svg" alt="Tech Stack Header" width="450" />
+  <img src="assets/section_skills.svg" alt="Tech Stack Header" width="450" />
 </p>
 
 <table align="center" width="100%">
@@ -150,31 +150,31 @@
 
 <!-- FEATURED PROJECTS SHOWCASE -->
 <p align="center">
-  <img src="./assets/section_projects.svg" alt="Featured Projects Header" width="450" />
+  <img src="assets/section_projects.svg" alt="Featured Projects Header" width="450" />
 </p>
 
 <table align="center" width="100%">
   <tr>
     <td width="50%" align="center">
       <a href="https://github.com/ayushX15/face-liveness-detection">
-        <img src="./assets/project_liveness.svg" alt="Face Liveness Detection Card" width="100%" />
+        <img src="assets/project_liveness.svg" alt="Face Liveness Detection Card" width="100%" />
       </a>
     </td>
     <td width="50%" align="center">
       <a href="https://github.com/ayushX15/ai-interview-assistant">
-        <img src="./assets/project_interview.svg" alt="AI Interview Assistant Card" width="100%" />
+        <img src="assets/project_interview.svg" alt="AI Interview Assistant Card" width="100%" />
       </a>
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
       <a href="https://github.com/ayushX15/rag-chatbot">
-        <img src="./assets/project_rag.svg" alt="RAG Chatbot Card" width="100%" />
+        <img src="assets/project_rag.svg" alt="RAG Chatbot Card" width="100%" />
       </a>
     </td>
     <td width="50%" align="center">
       <a href="https://github.com/ayushX15/dsa-tracker">
-        <img src="./assets/project_dsa.svg" alt="DSA Tracker Card" width="100%" />
+        <img src="assets/project_dsa.svg" alt="DSA Tracker Card" width="100%" />
       </a>
     </td>
   </tr>
@@ -184,7 +184,7 @@
 
 <!-- GITHUB ANALYTICS DASHBOARD -->
 <p align="center">
-  <img src="./assets/section_stats.svg" alt="GitHub Analytics Header" width="450" />
+  <img src="assets/section_stats.svg" alt="GitHub Analytics Header" width="450" />
 </p>
 
 <table align="center" width="100%">
@@ -218,7 +218,7 @@
 
 <!-- CODING PROFILES DASHBOARD -->
 <p align="center">
-  <img src="./assets/section_profiles.svg" alt="Coding Dashboard Header" width="450" />
+  <img src="assets/section_profiles.svg" alt="Coding Dashboard Header" width="450" />
 </p>
 
 <table align="center" width="100%">
@@ -257,7 +257,7 @@
 
 <!-- MILESTONES, CERTIFICATIONS & TROPHIES -->
 <p align="center">
-  <img src="./assets/section_achievements.svg" alt="Achievements Header" width="450" />
+  <img src="assets/section_achievements.svg" alt="Achievements Header" width="450" />
 </p>
 
 <!-- GitHub Trophies -->
@@ -322,5 +322,5 @@
 
 <!-- FOOTER BANNER -->
 <p align="center">
-  <img src="./assets/footer_banner.svg" alt="Footer Banner" width="100%" />
+  <img src="assets/footer_banner.svg" alt="Footer Banner" width="100%" />
 </p>
