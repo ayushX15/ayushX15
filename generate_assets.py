@@ -270,7 +270,7 @@ def generate_hero_banner():
   <text x="85" y="87" fill="#00f2fe" font-size="12" class="text-mono" font-weight="bold" letter-spacing="1">HELLO WORLD</text>
   
   <!-- Dual-Layer Volumetric Glowing Title -->
-  <text x="60" y="140" fill="none" stroke="#00f2fe" stroke-width="8" stroke-linejoin="round" opacity="0.35" filter="url(#glow-filter-strong)" class="text-title" font-weight="900" letter-spacing="-0.5">Ayush Prasad</text>
+  <text x="60" y="140" fill="none" stroke="#00f2fe" stroke-width="8" font-size="42" stroke-linejoin="round" opacity="0.35" filter="url(#glow-filter-strong)" class="text-title" font-weight="900" letter-spacing="-0.5">Ayush Prasad</text>
   <text x="60" y="140" fill="#ffffff" font-size="42" class="text-title" font-weight="900" letter-spacing="-0.5" filter="url(#text-glow-cyan)">Ayush Prasad</text>
   
   <!-- Subtitle -->
@@ -295,7 +295,7 @@ def generate_hero_banner():
   </g>
 </svg>
 """
-    with open("assets/hero_banner_v2.svg", "w", encoding="utf-8") as f:
+    with open("assets/hero_banner_v3.svg", "w", encoding="utf-8") as f:
         f.write(svg)
 
 # 2. Section Headers (Widened to 550px and text centered)
