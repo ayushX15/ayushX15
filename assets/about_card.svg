@@ -200,7 +200,11 @@
     <!-- Point 1: Education -->
     <g transform="translate(0, 0)">
       <circle cx="20" cy="20" r="18" fill="#00f2fe" fill-opacity="0.1" stroke="url(#neon-cyan)" stroke-width="1.2" />
-      <text x="20" y="25" text-anchor="middle" font-size="14">🎓</text>
+      <g transform="translate(10, 10)" stroke="#00f2fe" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 2,9 L 10,5 L 18,9 L 10,13 Z" />
+        <path d="M 6,11 L 6,15 C 6,17 14,17 14,15 L 14,11" />
+        <path d="M 18,9 L 18,15" />
+      </g>
       <text x="50" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="800">B.Tech in Computer Science</text>
       <text x="50" y="32" fill="#00f2fe" font-size="11.5" class="text-mono" font-weight="bold" filter="url(#text-glow-cyan)">AI &amp; ML Specialization @ Sharda University</text>
     </g>
@@ -208,7 +212,11 @@
     <!-- Point 2: Internship -->
     <g transform="translate(0, 55)">
       <circle cx="20" cy="20" r="18" fill="#b100ff" fill-opacity="0.1" stroke="url(#neon-purple)" stroke-width="1.2" />
-      <text x="20" y="25" text-anchor="middle" font-size="14">💼</text>
+      <g transform="translate(10, 10)" stroke="#b100ff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="7" width="14" height="10" rx="2" />
+        <path d="M 8,7 L 8,4 C 8,3.5 8.5,3 9,3 L 11,3 C 11.5,3 12,3.5 12,4 L 12,7" />
+        <path d="M 3,11 L 17,11" />
+      </g>
       <text x="50" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="800">Generative AI Developer Intern</text>
       <text x="50" y="32" fill="#b100ff" font-size="11.5" class="text-mono" font-weight="bold" filter="url(#text-glow-purple)">Al Zoned (Apr 2026 – Present)</text>
     </g>
@@ -216,17 +224,21 @@
     <!-- Point 3: Core Focus -->
     <g transform="translate(0, 110)">
       <circle cx="20" cy="20" r="18" fill="#ff007f" fill-opacity="0.1" stroke="url(#neon-pink)" stroke-width="1.2" />
-      <text x="20" y="25" text-anchor="middle" font-size="14">🧠</text>
+      <g transform="translate(10, 10)" stroke="#ff007f" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="4" width="12" height="12" rx="2" />
+        <path d="M 10,4 L 10,16 M 4,10 L 16,10" />
+        <circle cx="10" cy="10" r="3" fill="#ff007f" fill-opacity="0.3" />
+      </g>
       <text x="50" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="800">Core Focus Area</text>
-      <text x="50" y="32" fill="#ffffff" fill-opacity="0.75" font-size="11.5" class="text-body" font-weight="500">GenAI, LLM Engg, RAG, APIs &amp; Cloud AI</text>
+      <text x="50" y="32" fill="#ff007f" font-size="11.5" class="text-mono" font-weight="bold" filter="url(#text-glow-pink)">GenAI, LLM Engg, RAG, APIs &amp; Cloud AI</text>
     </g>
   </g>
   
   <!-- Glowing Neon Vertical Divider -->
-  <line x1="435" y1="45" x2="435" y2="195" stroke="url(#neon-purple)" stroke-width="1.5" stroke-linecap="round" opacity="0.3" filter="drop-shadow(0 0 4px #7f00ff)" />
+  <line x1="385" y1="45" x2="385" y2="195" stroke="url(#neon-purple)" stroke-width="1.5" stroke-linecap="round" opacity="0.3" filter="drop-shadow(0 0 4px #7f00ff)" />
   
   <!-- Right Side: Philosophical Quote & Exploring Grid -->
-  <g transform="translate(465, 45)">
+  <g transform="translate(415, 45)">
     <!-- Quote -->
     <g transform="translate(0, 0)">
       <text x="0" y="20" fill="url(#neon-pink)" font-size="28" font-family="Georgia, serif" font-weight="bold" opacity="0.5">“</text>
@@ -260,8 +272,8 @@
           </g>
         </g>
         
-        <!-- Col 2 -->
-        <g transform="translate(180, 0)">
+        <!-- Col 2 (Shifted to 215 to prevent text overlap) -->
+        <g transform="translate(215, 0)">
           <g transform="translate(0, 0)">
             <circle cx="5" cy="5" r="2.5" fill="#ff007f" filter="drop-shadow(0 0 2px #ff007f)" />
             <text x="15" y="9" fill="#ffffff" fill-opacity="0.9" font-size="11.5" class="text-title" font-weight="700">FastAPI Backend Engineering</text>

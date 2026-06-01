@@ -928,7 +928,11 @@ def generate_about_card():
     <!-- Point 1: Education -->
     <g transform="translate(0, 0)">
       <circle cx="20" cy="20" r="18" fill="#00f2fe" fill-opacity="0.1" stroke="url(#neon-cyan)" stroke-width="1.2" />
-      <text x="20" y="25" text-anchor="middle" font-size="14">🎓</text>
+      <g transform="translate(10, 10)" stroke="#00f2fe" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 2,9 L 10,5 L 18,9 L 10,13 Z" />
+        <path d="M 6,11 L 6,15 C 6,17 14,17 14,15 L 14,11" />
+        <path d="M 18,9 L 18,15" />
+      </g>
       <text x="50" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="800">B.Tech in Computer Science</text>
       <text x="50" y="32" fill="#00f2fe" font-size="11.5" class="text-mono" font-weight="bold" filter="url(#text-glow-cyan)">AI &amp; ML Specialization @ Sharda University</text>
     </g>
@@ -936,7 +940,11 @@ def generate_about_card():
     <!-- Point 2: Internship -->
     <g transform="translate(0, 55)">
       <circle cx="20" cy="20" r="18" fill="#b100ff" fill-opacity="0.1" stroke="url(#neon-purple)" stroke-width="1.2" />
-      <text x="20" y="25" text-anchor="middle" font-size="14">💼</text>
+      <g transform="translate(10, 10)" stroke="#b100ff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="7" width="14" height="10" rx="2" />
+        <path d="M 8,7 L 8,4 C 8,3.5 8.5,3 9,3 L 11,3 C 11.5,3 12,3.5 12,4 L 12,7" />
+        <path d="M 3,11 L 17,11" />
+      </g>
       <text x="50" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="800">Generative AI Developer Intern</text>
       <text x="50" y="32" fill="#b100ff" font-size="11.5" class="text-mono" font-weight="bold" filter="url(#text-glow-purple)">Al Zoned (Apr 2026 – Present)</text>
     </g>
@@ -944,17 +952,21 @@ def generate_about_card():
     <!-- Point 3: Core Focus -->
     <g transform="translate(0, 110)">
       <circle cx="20" cy="20" r="18" fill="#ff007f" fill-opacity="0.1" stroke="url(#neon-pink)" stroke-width="1.2" />
-      <text x="20" y="25" text-anchor="middle" font-size="14">🧠</text>
+      <g transform="translate(10, 10)" stroke="#ff007f" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="4" width="12" height="12" rx="2" />
+        <path d="M 10,4 L 10,16 M 4,10 L 16,10" />
+        <circle cx="10" cy="10" r="3" fill="#ff007f" fill-opacity="0.3" />
+      </g>
       <text x="50" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="800">Core Focus Area</text>
-      <text x="50" y="32" fill="#ffffff" fill-opacity="0.75" font-size="11.5" class="text-body" font-weight="500">GenAI, LLM Engg, RAG, APIs &amp; Cloud AI</text>
+      <text x="50" y="32" fill="#ff007f" font-size="11.5" class="text-mono" font-weight="bold" filter="url(#text-glow-pink)">GenAI, LLM Engg, RAG, APIs &amp; Cloud AI</text>
     </g>
   </g>
   
   <!-- Glowing Neon Vertical Divider -->
-  <line x1="435" y1="45" x2="435" y2="195" stroke="url(#neon-purple)" stroke-width="1.5" stroke-linecap="round" opacity="0.3" filter="drop-shadow(0 0 4px #7f00ff)" />
+  <line x1="385" y1="45" x2="385" y2="195" stroke="url(#neon-purple)" stroke-width="1.5" stroke-linecap="round" opacity="0.3" filter="drop-shadow(0 0 4px #7f00ff)" />
   
   <!-- Right Side: Philosophical Quote & Exploring Grid -->
-  <g transform="translate(465, 45)">
+  <g transform="translate(415, 45)">
     <!-- Quote -->
     <g transform="translate(0, 0)">
       <text x="0" y="20" fill="url(#neon-pink)" font-size="28" font-family="Georgia, serif" font-weight="bold" opacity="0.5">“</text>
@@ -988,8 +1000,8 @@ def generate_about_card():
           </g>
         </g>
         
-        <!-- Col 2 -->
-        <g transform="translate(180, 0)">
+        <!-- Col 2 (Shifted to 215 to prevent text overlap) -->
+        <g transform="translate(215, 0)">
           <g transform="translate(0, 0)">
             <circle cx="5" cy="5" r="2.5" fill="#ff007f" filter="drop-shadow(0 0 2px #ff007f)" />
             <text x="15" y="9" fill="#ffffff" fill-opacity="0.9" font-size="11.5" class="text-title" font-weight="700">FastAPI Backend Engineering</text>
@@ -1011,7 +1023,7 @@ def generate_about_card():
     with open("assets/about_card.svg", "w", encoding="utf-8") as f:
         f.write(svg)
 
-# 11. Premium Custom What I'm Working On Card
+# 11. Premium Custom What I'm Working On Card (Aligned to projects & tools)
 def generate_focus_card():
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 160" width="850" height="160" fill="none">
   {COMMON_DEFS}
@@ -1029,39 +1041,76 @@ def generate_focus_card():
   <g transform="translate(50, 45)">
     <!-- Column 1 (Left) -->
     <g transform="translate(0, 0)">
+      <!-- Item 1: Multi-Agent Systems (Pink) -->
       <g transform="translate(0, 0)">
-        <circle cx="15" cy="12" r="10" fill="#ff007f" fill-opacity="0.15" />
-        <text x="15" y="16" text-anchor="middle" font-size="10">🔥</text>
-        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Production-ready Generative AI applications</text>
+        <circle cx="15" cy="12" r="10" fill="#ff007f" fill-opacity="0.15" stroke="url(#neon-pink)" stroke-width="1" />
+        <g transform="translate(8, 5)" stroke="#ff007f" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="7" cy="3" r="1.5" fill="#ff007f" />
+          <circle cx="3" cy="11" r="1.5" fill="#ff007f" />
+          <circle cx="11" cy="11" r="1.5" fill="#ff007f" />
+          <line x1="7" y1="4.5" x2="3.5" y2="9.5" />
+          <line x1="7" y1="4.5" x2="10.5" y2="9.5" />
+          <line x1="4.5" y1="11" x2="9.5" y2="11" />
+        </g>
+        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Multi-Agent Workflows &amp; LangGraph Systems</text>
       </g>
+      
+      <!-- Item 2: GenAI & LLMs (Cyan) -->
       <g transform="translate(0, 35)">
-        <circle cx="15" cy="12" r="10" fill="#00f2fe" fill-opacity="0.15" />
-        <text x="15" y="16" text-anchor="middle" font-size="10">📚</text>
-        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Advanced DSA &amp; problem solving</text>
+        <circle cx="15" cy="12" r="10" fill="#00f2fe" fill-opacity="0.15" stroke="url(#neon-cyan)" stroke-width="1" />
+        <g transform="translate(8, 5)" stroke="#00f2fe" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 2,2 H 12 V 10 H 6 L 3,12 V 10 H 2 Z" />
+          <path d="M 5,5 H 9 M 5,7 H 7" />
+        </g>
+        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Generative AI &amp; LLM Integration (Gemini &amp; Ollama)</text>
       </g>
+      
+      <!-- Item 3: OpenCV CV (Purple) -->
       <g transform="translate(0, 70)">
-        <circle cx="15" cy="12" r="10" fill="#b100ff" fill-opacity="0.15" />
-        <text x="15" y="16" text-anchor="middle" font-size="10">🧠</text>
-        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">AI-powered academic &amp; productivity systems</text>
+        <circle cx="15" cy="12" r="10" fill="#b100ff" fill-opacity="0.15" stroke="url(#neon-purple)" stroke-width="1" />
+        <g transform="translate(8, 5)" stroke="#b100ff" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 1,7 C 3,3 11,3 13,7 C 11,11 3,11 1,7 Z" />
+          <circle cx="7" cy="7" r="2.5" />
+        </g>
+        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Real-Time Computer Vision &amp; OpenCV Pipelines</text>
       </g>
     </g>
     
     <!-- Column 2 (Right) -->
-    <g transform="translate(400, 0)">
+    <g transform="translate(420, 0)">
+      <!-- Item 4: Scalable APIs (Gold) -->
       <g transform="translate(0, 0)">
-        <circle cx="15" cy="12" r="10" fill="#fda085" fill-opacity="0.15" />
-        <text x="15" y="16" text-anchor="middle" font-size="10">☁️</text>
-        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Cloud-native backend infrastructure</text>
+        <circle cx="15" cy="12" r="10" fill="#fda085" fill-opacity="0.15" stroke="url(#neon-gold)" stroke-width="1" />
+        <g transform="translate(8, 5)" stroke="#fda085" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="10" height="3" rx="0.5" />
+          <rect x="2" y="6" width="10" height="3" rx="0.5" />
+          <rect x="2" y="10" width="10" height="3" rx="0.5" />
+          <circle cx="4" cy="3.5" r="0.5" fill="#fda085" />
+          <circle cx="4" cy="7.5" r="0.5" fill="#fda085" />
+          <circle cx="4" cy="11.5" r="0.5" fill="#fda085" />
+        </g>
+        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Scalable Backend APIs &amp; Microservices (FastAPI)</text>
       </g>
+      
+      <!-- Item 5: Next.js & React (Cyan) -->
       <g transform="translate(0, 35)">
-        <circle cx="15" cy="12" r="10" fill="#00f2fe" fill-opacity="0.15" />
-        <text x="15" y="16" text-anchor="middle" font-size="10">🎙️</text>
-        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Conversational AI &amp; voice systems</text>
+        <circle cx="15" cy="12" r="10" fill="#00f2fe" fill-opacity="0.15" stroke="url(#neon-cyan)" stroke-width="1" />
+        <g transform="translate(8, 5)" stroke="#00f2fe" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="10" height="10" rx="1.5" />
+          <line x1="2" y1="5" x2="12" y2="5" />
+          <circle cx="4" cy="3.5" r="0.5" fill="#00f2fe" />
+          <circle cx="6" cy="3.5" r="0.5" fill="#00f2fe" />
+        </g>
+        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Responsive Full-Stack AI Products (Next.js &amp; React)</text>
       </g>
+      
+      <!-- Item 6: Automation & DB (Pink) -->
       <g transform="translate(0, 70)">
-        <circle cx="15" cy="12" r="10" fill="#ff007f" fill-opacity="0.15" />
-        <text x="15" y="16" text-anchor="middle" font-size="10">🏗️</text>
-        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">End-to-end full stack AI products</text>
+        <circle cx="15" cy="12" r="10" fill="#ff007f" fill-opacity="0.15" stroke="url(#neon-pink)" stroke-width="1" />
+        <g transform="translate(8, 5)" stroke="#ff007f" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 8,1 L 3,7 H 7 L 6,13 L 11,7 H 7 Z" />
+        </g>
+        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Workflow Automation &amp; Real-Time Data Surfacing</text>
       </g>
     </g>
   </g>

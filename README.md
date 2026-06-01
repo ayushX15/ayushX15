@@ -55,7 +55,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/focus_card.svg" alt="What I'm Working On: Production-ready Generative AI applications | Advanced DSA &amp; problem solving | AI-powered academic &amp; productivity systems | Cloud-native backend infrastructure | Conversational AI &amp; voice systems | End-to-end full stack AI products" width="100%" />
+  <img src="assets/focus_card.svg" alt="What I'm Working On: Multi-Agent Workflows &amp; LangGraph Systems | Generative AI &amp; LLM Integration (Gemini &amp; Ollama) | Real-Time Computer Vision &amp; OpenCV Pipelines | Scalable Backend APIs &amp; Microservices (FastAPI) | Responsive Full-Stack AI Products (Next.js &amp; React) | Workflow Automation &amp; Real-Time Data Surfacing" width="100%" />
 </p>
 
 <br />
