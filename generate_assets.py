@@ -354,44 +354,43 @@ def wrap_text(text, max_chars=48):
         lines.append(" ".join(current_line))
     return lines
 
-# 3. Project Cards
 def generate_project_cards():
     projects = [
         {
             "filename": "project_liveness.svg",
-            "title": "Face Liveness Detection",
-            "desc": "Binary CNN classifier model detecting anti-spoofing attacks (photo, video replay). Deployed via ONNX runtime for low-latency edge inference.",
-            "tags": ["PyTorch", "ONNX", "OpenCV", "FastAPI"],
+            "title": "Autonomous WebGen Engine",
+            "desc": "Built a 4-node LangGraph pipeline that autonomously generates Next.js websites from user requirements. Uses a Gemini Vision feedback loop to compare designs, achieving 0.98 visual similarity. Caching cut setup from ~90s to ~5s, with progress shown via FastAPI.",
+            "tags": ["LangGraph", "Gemini API", "Playwright", "FastAPI"],
             "grad": "neon-pink",
             "blob_color": "#ff007f",
-            "stat": "Accuracy: 98.7%"
+            "stat": "Visual Sim: 0.98"
         },
         {
             "filename": "project_interview.svg",
-            "title": "AI Interview Assistant",
-            "desc": "Generative agent parsing resumes, conducting voice/text mock technical interviews, scoring responses, and providing semantic improvements.",
-            "tags": ["OpenAI", "LangChain", "FastAPI", "Python"],
+            "title": "Cortex Chat (LLaMA 3)",
+            "desc": "Developed a real-time AI chatbot powered by LLaMA 3 via Ollama API with streaming response support. Built a Flask backend with caching and optimized API handling. Designed a responsive frontend enabling smooth, local context-aware multi-turn conversations.",
+            "tags": ["LLaMA 3", "Ollama API", "Flask", "JavaScript"],
             "grad": "neon-purple",
             "blob_color": "#7f00ff",
-            "stat": "Latency: &lt;1.2s"
+            "stat": "Ollama / LLaMA 3"
         },
         {
             "filename": "project_rag.svg",
-            "title": "Enterprise RAG Chatbot",
-            "desc": "Production-grade Q&amp;A pipeline using semantic search, hybrid vector index retrieval (dense/sparse), query rewriting, and LLM generation.",
-            "tags": ["LlamaIndex", "VectorDB", "FastAPI", "Docker"],
+            "title": "Real-Time Object Detection",
+            "desc": "Implemented real-time object detection using MobileNet SSD with live webcam input and 21 detection classes. Leveraged the OpenCV DNN module for low-latency, high-FPS inference. Applied confidence filtering for precise predictions, optimized without GPU dependency.",
+            "tags": ["OpenCV DNN", "MobileNet SSD", "Python"],
             "grad": "neon-cyan",
             "blob_color": "#00f2fe",
-            "stat": "MRR Score: 0.92"
+            "stat": "Classes: 21"
         },
         {
             "filename": "project_dsa.svg",
-            "title": "DSA Tracker &amp; Library",
-            "desc": "Optimized C++ library housing advanced algorithms &amp; custom data structure templates (segment trees, graphs) designed to solve complex DSA problems.",
-            "tags": ["C++", "STL", "Algorithms", "Optimization"],
+            "title": "Plotera Lead Automation",
+            "desc": "Built a backend automation system for real estate leads, assigning salespersons and sending automated SMS reminders via Twilio. Includes daily cron scripts, MySQL database integration, structured logging, REST API endpoints, and secure .env configuration.",
+            "tags": ["Flask", "MySQL", "Twilio API", "Cron Jobs"],
             "grad": "neon-gold",
             "blob_color": "#fda085",
-            "stat": "Solved: 500+"
+            "stat": "Twilio &amp; Cron"
         }
     ]
     
@@ -399,24 +398,24 @@ def generate_project_cards():
         glow_id = proj["grad"].replace("neon-", "text-glow-")
         
         # Wrap the description text safely
-        wrapped_lines = wrap_text(proj["desc"], max_chars=48)
+        wrapped_lines = wrap_text(proj["desc"], max_chars=54)
         desc_xml = ""
-        for idx, line in enumerate(wrapped_lines[:3]):  # Max 3 lines
-            dy = 0 if idx == 0 else 18
+        for idx, line in enumerate(wrapped_lines[:5]):  # Max 5 lines
+            dy = 0 if idx == 0 else 15
             desc_xml += f'<tspan x="24" dy="{dy}">{line}</tspan>'
             
-        # Construct tags XML (positioned safely at y=142)
+        # Construct tags XML (positioned safely at y=172)
         tags_xml = ""
         x_offset = 24
         for tag in proj["tags"]:
-            w = len(tag) * 8 + 16
+            w = len(tag) * 7.5 + 16
             tags_xml += f"""
-    <rect x="{x_offset}" y="142" width="{w}" height="22" rx="11" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08" />
-    <text x="{x_offset + w/2}" y="156" text-anchor="middle" fill="#ffffff" fill-opacity="0.7" font-size="10" class="text-mono">{tag}</text>
+    <rect x="{x_offset}" y="172" width="{w}" height="20" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08" />
+    <text x="{x_offset + w/2}" y="185" text-anchor="middle" fill="#ffffff" fill-opacity="0.7" font-size="9.5" class="text-mono">{tag}</text>
 """
             x_offset += w + 8
             
-        svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 190" width="390" height="190" fill="none">
+        svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 220" width="390" height="220" fill="none">
   {COMMON_DEFS}
   
   <!-- Glowing blob in background -->
@@ -425,7 +424,7 @@ def generate_project_cards():
   </g>
   
   <!-- Main Card Rect -->
-  <rect x="10" y="10" width="370" height="170" rx="16" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" filter="url(#shadow-filter)" class="glass-card" />
+  <rect x="10" y="10" width="370" height="200" rx="16" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" filter="url(#shadow-filter)" class="glass-card" />
   
   <!-- Decorative top gradient bar -->
   <path d="M 22,10 L 80,10" stroke="url(#{proj["grad"]})" stroke-width="2" stroke-linecap="round" />
@@ -440,7 +439,7 @@ def generate_project_cards():
   </g>
   
   <!-- Project Description (Wrapped cleanly) -->
-  <text x="24" y="74" fill="#ffffff" fill-opacity="0.6" font-size="11.5" class="text-body" font-weight="400">
+  <text x="24" y="70" fill="#ffffff" fill-opacity="0.6" font-size="11" class="text-body" font-weight="400">
     {desc_xml}
   </text>
   

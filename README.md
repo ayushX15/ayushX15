@@ -6,7 +6,7 @@
 <!-- TYPING ANIMATION -->
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=22&duration=3000&pause=1000&color=00F2FE&center=true&vCenter=true&width=800&height=50&lines=AI%2FML+Engineer;Backend+Developer;CSE-AIML+Specialist;Building+Intelligent+Systems+%26+Scalable+Products" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=22&duration=3000&pause=1000&color=00F2FE&center=true&vCenter=true&width=800&height=50&lines=AI%2FML+Engineer+in+the+Making;Building+Agentic+AI+Systems;LangGraph+%C2%B7+Gemini+API+%C2%B7+FastAPI;CSE-AIML+%40+Sharda+University;GenAI+Intern+%40+Al+Zoned" alt="Typing SVG" />
   </a>
 </p>
 
@@ -19,23 +19,20 @@
 
 <!-- SOCIAL LINKS & CONTACT BADGES -->
 <p align="center">
-  <a href="https://www.linkedin.com/in/ayushprasad-aiml" target="_blank">
+  <a href="https://www.linkedin.com/in/ayush1503/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
   </a>
-  <a href="https://ayushX15.github.io" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-00F2FE?style=for-the-badge&logo=google-chrome&logoColor=black" alt="Portfolio Badge" />
+  <a href="https://github.com/ayushX15" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge" />
   </a>
   <a href="https://leetcode.com/ayushX15" target="_blank">
     <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Badge" />
   </a>
-  <a href="https://codeforces.com/profile/ayushX15" target="_blank">
-    <img src="https://img.shields.io/badge/Codeforces-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces Badge" />
-  </a>
   <a href="https://www.kaggle.com/ayushX15" target="_blank">
     <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle Badge" />
   </a>
-  <a href="mailto:ayushprasad.aiml@gmail.com">
-    <img src="https://img.shields.io/badge/Email-ayushprasad.aiml%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge" />
+  <a href="mailto:ayush.sonuu@gmail.com">
+    <img src="https://img.shields.io/badge/Email-ayush.sonuu%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge" />
   </a>
 </p>
 
@@ -49,10 +46,11 @@
 <table align="center" width="100%">
   <tr>
     <td>
-      <p>🔭 <b>Current Role:</b> Computer Science Student specializing in <b>Artificial Intelligence & Machine Learning</b>. Designing & engineering robust AI workflows and scalable backend systems.</p>
-      <p>🌱 <b>Learning Focus:</b> MLOps frameworks, high-throughput model serving pipelines, and distributed system design.</p>
-      <p>💡 <b>Core Interests:</b> Deep Learning, Computer Vision, Large Language Models (LLMs), RAG architectures, and microservice backends.</p>
-      <p>⚡ <b>Career Goal:</b> Dedicated AI Engineer & Software Development Engineer (SDE) building next-generation products that solve complex real-world challenges.</p>
+      <p>🔭 <b>Current Role:</b> GenAI Expert Intern @ Al Zoned (Apr 2026 – Present) | B.Tech CSE (AI &amp; ML) @ Sharda University, Greater Noida</p>
+      <p>🌱 <b>Learning Focus:</b> Agentic AI workflows, LangGraph pipelines, FastAPI microservices, and scalable backend architecture.</p>
+      <p>💡 <b>Core Interests:</b> Large Language Models (LLMs), Agentic AI Systems, Computer Vision, Backend Engineering, and Generative AI applications.</p>
+      <p>🛠️ <b>What I Build:</b> LLM-powered automation pipelines, real-time AI chatbots, object detection systems, and backend APIs with Flask &amp; FastAPI.</p>
+      <p>⚡ <b>Career Goal:</b> AI/ML Engineer &amp; SDE building production-grade intelligent systems that solve real-world problems.</p>
     </td>
   </tr>
 </table>
@@ -64,11 +62,11 @@
   <summary><b>🎯 Current Focus Areas (Click to collapse/expand)</b></summary>
   <br />
   <ul>
-    <li><b>Face Liveness Detection:</b> Developing anti-spoofing classifiers using Deep CNNs to mitigate print and replay attacks.</li>
-    <li><b>RAG Systems:</b> Structuring optimized pipelines using Vector Databases and hybrid dense-sparse retrieval techniques.</li>
-    <li><b>LLM Engineering:</b> Developing agentic workflows with LangChain and LlamaIndex to automate backend logical reasoning.</li>
-    <li><b>FastAPI Microservices:</b> Designing async RESTful APIs with strict performance optimizations, caching, and rate-limiting.</li>
-    <li><b>System Design:</b> Mastering architectural patterns, database indexing strategies, and event-driven architectures.</li>
+    <li><b>Agentic AI Pipelines:</b> Building and optimizing multi-node LangGraph workflows for autonomous code and content generation.</li>
+    <li><b>LLM Integration &amp; Prompt Engineering:</b> Developing LLM-powered backends using Gemini API and Ollama with structured prompt strategies.</li>
+    <li><b>Backend API Development:</b> Designing async RESTful APIs with FastAPI — including polling endpoints, caching, and real-time data surfacing.</li>
+    <li><b>Computer Vision Systems:</b> Implementing object detection using MobileNet SSD + OpenCV DNN for real-time, low-latency inference.</li>
+    <li><b>AI Automation at Scale:</b> Building end-to-end AI-assisted automation pipelines including web scraping, visual feedback loops, and deployment workflows.</li>
   </ul>
 </details>
 
@@ -83,65 +81,59 @@
   <tr>
     <td width="30%"><b>💻 Languages</b></td>
     <td>
-      <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++" />
       <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+      <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++" />
       <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white" alt="SQL" />
       <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JS" />
+      <img src="https://img.shields.io/badge/HTML5/CSS3-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML/CSS" />
     </td>
   </tr>
   <tr>
-    <td><b>🧠 AI & Machine Learning</b></td>
+    <td><b>🧠 AI &amp; Machine Learning</b></td>
     <td>
-      <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
-      <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow" />
-      <img src="https://img.shields.io/badge/Scikit_Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" alt="Sklearn" />
-      <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" alt="OpenCV" />
       <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" />
       <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas" />
+      <img src="https://img.shields.io/badge/Matplotlib-ffffff?style=flat-square&logo=matplotlib&logoColor=black" alt="Matplotlib" />
+      <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" alt="OpenCV" />
+      <img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face" />
     </td>
   </tr>
   <tr>
     <td><b>⛓️ LLM Stack</b></td>
     <td>
-      <img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI" />
-      <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=chainlink&logoColor=white" alt="LangChain" />
-      <img src="https://img.shields.io/badge/LlamaIndex-000000?style=flat-square&logo=llama&logoColor=white" alt="LlamaIndex" />
-      <img src="https://img.shields.io/badge/Ollama-FFFFFF?style=flat-square&logo=ollama&logoColor=black" alt="Ollama" />
-      <img src="https://img.shields.io/badge/Groq-F55C23?style=flat-square&logo=groq&logoColor=white" alt="Groq" />
+      <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=chainlink&logoColor=white" alt="LangGraph" />
+      <img src="https://img.shields.io/badge/Gemini_API-8E75C2?style=flat-square&logo=googlegemini&logoColor=white" alt="Gemini API" />
+      <img src="https://img.shields.io/badge/Ollama_API-FFFFFF?style=flat-square&logo=ollama&logoColor=black" alt="Ollama API" />
     </td>
   </tr>
   <tr>
-    <td><b>⚡ Backend & APIs</b></td>
+    <td><b>⚡ Backend &amp; APIs</b></td>
     <td>
       <img src="https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
       <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" alt="Flask" />
-      <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node" />
       <img src="https://img.shields.io/badge/REST_APIs-00f2fe?style=flat-square&logo=postman&logoColor=black" alt="REST" />
+    </td>
+  </tr>
+  <tr>
+    <td><b>🌐 Frontend</b></td>
+    <td>
+      <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React" />
+      <img src="https://img.shields.io/badge/Next.js_14-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
     </td>
   </tr>
   <tr>
     <td><b>🗄️ Databases</b></td>
     <td>
-      <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="Postgres" />
       <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
-      <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="Mongo" />
-      <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis" />
     </td>
   </tr>
   <tr>
-    <td><b>🛠️ DevOps & Linux</b></td>
+    <td><b>🛠️ Tools &amp; DevOps</b></td>
     <td>
-      <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
-      <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white" alt="Actions" />
-      <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux" />
-      <img src="https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white" alt="Nginx" />
-    </td>
-  </tr>
-  <tr>
-    <td><b>☁️ Cloud Services</b></td>
-    <td>
-      <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white" alt="AWS" />
-      <img src="https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=google-cloud&logoColor=white" alt="GCP" />
+      <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
+      <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+      <img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white" alt="Playwright" />
+      <img src="https://img.shields.io/badge/Docker_(Learning)-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
     </td>
   </tr>
 </table>
@@ -156,25 +148,25 @@
 <table align="center" width="100%">
   <tr>
     <td width="50%" align="center">
-      <a href="https://github.com/ayushX15/face-liveness-detection">
-        <img src="assets/project_liveness.svg" alt="Face Liveness Detection Card" width="100%" />
+      <a href="https://github.com/ayushX15/autonomous-webgen-engine">
+        <img src="assets/project_liveness.svg" alt="Autonomous WebGen Engine Card" width="100%" />
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://github.com/ayushX15/ai-interview-assistant">
-        <img src="assets/project_interview.svg" alt="AI Interview Assistant Card" width="100%" />
+      <a href="https://github.com/ayushX15/cortex_chat">
+        <img src="assets/project_interview.svg" alt="Cortex Chat Card" width="100%" />
       </a>
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
-      <a href="https://github.com/ayushX15/rag-chatbot">
-        <img src="assets/project_rag.svg" alt="RAG Chatbot Card" width="100%" />
+      <a href="https://github.com/ayushX15">
+        <img src="assets/project_rag.svg" alt="Object Detection Card" width="100%" />
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://github.com/ayushX15/dsa-tracker">
-        <img src="assets/project_dsa.svg" alt="DSA Tracker Card" width="100%" />
+      <a href="https://github.com/ayushX15/plotera-lead-automation">
+        <img src="assets/project_dsa.svg" alt="Plotera Lead Automation Card" width="100%" />
       </a>
     </td>
   </tr>
@@ -265,21 +257,21 @@
 
 <table align="center" width="100%">
   <tr>
-    <td width="50%">
+    <td width="55%">
       <h4>🎓 Certifications</h4>
       <ul>
-        <li><b>Deep Learning Specialization</b> (DeepLearning.AI)</li>
-        <li><b>AWS Certified Developer / Cloud Practitioner</b></li>
-        <li><b>Google Machine Learning Specialization</b></li>
+        <li><b>Introduction to Generative AI &amp; ML</b> (2025) — Fundamental concepts of AI, ML, and generative models</li>
+        <li><b>Ethics in Engineering Practice — NPTEL</b> (2025) — 8-week IIT Kharagpur certified course</li>
+        <li><b>Web Development Training — Internshala</b> (2024) — HTML, CSS, Bootstrap, DBMS, PHP, JavaScript, React</li>
       </ul>
     </td>
-    <td width="50%">
+    <td width="45%">
       <h4>🏆 Key Milestones</h4>
       <ul>
-        <li><b>500+</b> Problems Solved on LeetCode &amp; Codeforces</li>
-        <li><b>15+</b> AI/ML Projects Developed from Research to Deploy</li>
-        <li><b>10+</b> Scalable Backend APIs &amp; CLI utilities</li>
-        <li>Active Open Source Contributor</li>
+        <li><b>4+</b> AI/ML &amp; backend projects shipped end-to-end from design to deployment</li>
+        <li>Achieved <b>0.98/1.0</b> visual similarity score in autonomous website generation project</li>
+        <li><b>GenAI Expert Intern</b> building LLM-powered automation pipelines @ Al Zoned (2026)</li>
+        <li>Reduced setup time from <b>~90s to ~5s</b> via caching in WebGen Engine</li>
       </ul>
     </td>
   </tr>
@@ -292,9 +284,11 @@
   <summary><b>🗺️ Current Learning Roadmap (Click to collapse/expand)</b></summary>
   <br />
   <ul>
-    <li><b>MLOps:</b> Kubernetes (K8s) deployment, MLflow tracking, and model monitoring dashboards.</li>
-    <li><b>Distributed Systems:</b> Database replication, message brokers (Kafka/RabbitMQ), and load balancing.</li>
-    <li><b>Advanced LLM serving:</b> Learning optimization libraries like TensorRT-LLM and vLLM to minimize token latency.</li>
+    <li><b>Advanced LangGraph Patterns:</b> Multi-agent collaboration, memory nodes, and conditional branching in agentic pipelines.</li>
+    <li><b>FastAPI at Scale:</b> Background tasks, dependency injection, async patterns, and structured API versioning.</li>
+    <li><b>Docker &amp; Containerization:</b> Containerizing Flask/FastAPI applications for reproducible deployments.</li>
+    <li><b>Computer Vision Depth:</b> Exploring YOLO architectures and real-time tracking beyond MobileNet SSD.</li>
+    <li><b>System Design Fundamentals:</b> Database indexing, REST API design principles, and scalable service architecture.</li>
   </ul>
 </details>
 
@@ -310,9 +304,10 @@
   <summary><b>⚡ Fun Facts (Click to expand)</b></summary>
   <br />
   <ul>
-    <li>I implemented simple Feed-Forward Neural Networks from scratch in pure C++ using standard library arrays to understand gradient descent and backpropagation details.</li>
-    <li>I enjoy reading complex system design case studies and technical blogs from Netflix, Uber, and Discord.</li>
-    <li>I solve coding puzzles and competitive programming problems to keep my analytical skills sharp.</li>
+    <li>I built an autonomous website generator that runs a Gemini Vision feedback loop — it compares screenshots pixel-by-pixel and revises its own output until it hits a 0.98 visual match.</li>
+    <li>I run LLaMA 3 locally via Ollama — no cloud, no API cost, full control. Cortex Chat was built entirely on my own machine.</li>
+    <li>I automated real estate lead management with Python cron jobs + Twilio SMS before writing a single line of frontend code — backend-first thinking.</li>
+    <li>I care more about architecture than aesthetics: every project I build has a structured folder layout, modular code, and a README before it has a UI.</li>
   </ul>
 </details>
 
