@@ -79,7 +79,7 @@
 
 <table align="center" width="100%">
   <tr>
-    <td width="30%"><b>💻 Languages</b></td>
+    <td width="20%"><b>💻 Languages</b></td>
     <td>
       <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
       <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++" />
@@ -118,7 +118,7 @@
     <td><b>🌐 Frontend</b></td>
     <td>
       <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React" />
-      <img src="https://img.shields.io/badge/Next.js_14-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
+      <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
     </td>
   </tr>
   <tr>
@@ -257,16 +257,16 @@
 
 <table align="center" width="100%">
   <tr>
-    <td width="55%">
-      <h4>🎓 Certifications</h4>
+    <td width="50%" valign="top">
+      <h4 align="center">🎓 Certifications</h4>
       <ul>
         <li><b>Introduction to Generative AI &amp; ML</b> (2025) — Fundamental concepts of AI, ML, and generative models</li>
         <li><b>Ethics in Engineering Practice — NPTEL</b> (2025) — 8-week IIT Kharagpur certified course</li>
         <li><b>Web Development Training — Internshala</b> (2024) — HTML, CSS, Bootstrap, DBMS, PHP, JavaScript, React</li>
       </ul>
     </td>
-    <td width="45%">
-      <h4>🏆 Key Milestones</h4>
+    <td width="50%" valign="top">
+      <h4 align="center">🏆 Key Milestones</h4>
       <ul>
         <li><b>4+</b> AI/ML &amp; backend projects shipped end-to-end from design to deployment</li>
         <li>Achieved <b>0.98/1.0</b> visual similarity score in autonomous website generation project</li>

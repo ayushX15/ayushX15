@@ -359,7 +359,7 @@ def generate_project_cards():
         {
             "filename": "project_liveness.svg",
             "title": "Autonomous WebGen Engine",
-            "desc": "Built a 4-node LangGraph pipeline that autonomously generates Next.js websites from user requirements. Uses a Gemini Vision feedback loop to compare designs, achieving 0.98 visual similarity. Caching cut setup from ~90s to ~5s, with progress shown via FastAPI.",
+            "desc": "Built a LangGraph pipeline generating Next.js websites from user requirements. Uses a Gemini Vision feedback loop to match designs with 0.98 similarity and FastAPI for real-time progress.",
             "tags": ["LangGraph", "Gemini API", "Playwright", "FastAPI"],
             "grad": "neon-pink",
             "blob_color": "#ff007f",
@@ -368,7 +368,7 @@ def generate_project_cards():
         {
             "filename": "project_interview.svg",
             "title": "Cortex Chat (LLaMA 3)",
-            "desc": "Developed a real-time AI chatbot powered by LLaMA 3 via Ollama API with streaming response support. Built a Flask backend with caching and optimized API handling. Designed a responsive frontend enabling smooth, local context-aware multi-turn conversations.",
+            "desc": "Developed a local AI chatbot powered by LLaMA 3 via Ollama. Built an optimized Flask backend with response streaming and caching, and a responsive frontend for smooth multi-turn conversations.",
             "tags": ["LLaMA 3", "Ollama API", "Flask", "JavaScript"],
             "grad": "neon-purple",
             "blob_color": "#7f00ff",
@@ -377,7 +377,7 @@ def generate_project_cards():
         {
             "filename": "project_rag.svg",
             "title": "Real-Time Object Detection",
-            "desc": "Implemented real-time object detection using MobileNet SSD with live webcam input and 21 detection classes. Leveraged the OpenCV DNN module for low-latency, high-FPS inference. Applied confidence filtering for precise predictions, optimized without GPU dependency.",
+            "desc": "Implemented real-time object detection using MobileNet SSD and OpenCV DNN for low-latency, high-FPS webcam inference across 21 classes. Optimized with confidence filtering without GPU.",
             "tags": ["OpenCV DNN", "MobileNet SSD", "Python"],
             "grad": "neon-cyan",
             "blob_color": "#00f2fe",
@@ -386,7 +386,7 @@ def generate_project_cards():
         {
             "filename": "project_dsa.svg",
             "title": "Plotera Lead Automation",
-            "desc": "Built a backend automation system for real estate leads, assigning salespersons and sending automated SMS reminders via Twilio. Includes daily cron scripts, MySQL database integration, structured logging, REST API endpoints, and secure .env configuration.",
+            "desc": "Built a Flask backend automation system for real estate lead management. Automates assignments and Twilio SMS reminders, with MySQL database integration and cron-scheduled update scripts.",
             "tags": ["Flask", "MySQL", "Twilio API", "Cron Jobs"],
             "grad": "neon-gold",
             "blob_color": "#fda085",
@@ -400,22 +400,22 @@ def generate_project_cards():
         # Wrap the description text safely
         wrapped_lines = wrap_text(proj["desc"], max_chars=54)
         desc_xml = ""
-        for idx, line in enumerate(wrapped_lines[:5]):  # Max 5 lines
+        for idx, line in enumerate(wrapped_lines[:4]):  # Max 4 lines
             dy = 0 if idx == 0 else 15
             desc_xml += f'<tspan x="24" dy="{dy}">{line}</tspan>'
             
-        # Construct tags XML (positioned safely at y=172)
+        # Construct tags XML (positioned safely at y=148)
         tags_xml = ""
         x_offset = 24
         for tag in proj["tags"]:
             w = len(tag) * 7.5 + 16
             tags_xml += f"""
-    <rect x="{x_offset}" y="172" width="{w}" height="20" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08" />
-    <text x="{x_offset + w/2}" y="185" text-anchor="middle" fill="#ffffff" fill-opacity="0.7" font-size="9.5" class="text-mono">{tag}</text>
+    <rect x="{x_offset}" y="148" width="{w}" height="20" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08" />
+    <text x="{x_offset + w/2}" y="161" text-anchor="middle" fill="#ffffff" fill-opacity="0.7" font-size="9.5" class="text-mono">{tag}</text>
 """
             x_offset += w + 8
             
-        svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 220" width="390" height="220" fill="none">
+        svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 200" width="390" height="200" fill="none">
   {COMMON_DEFS}
   
   <!-- Glowing blob in background -->
@@ -424,18 +424,18 @@ def generate_project_cards():
   </g>
   
   <!-- Main Card Rect -->
-  <rect x="10" y="10" width="370" height="200" rx="16" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" filter="url(#shadow-filter)" class="glass-card" />
+  <rect x="10" y="10" width="370" height="180" rx="16" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" filter="url(#shadow-filter)" class="glass-card" />
   
   <!-- Decorative top gradient bar -->
   <path d="M 22,10 L 80,10" stroke="url(#{proj["grad"]})" stroke-width="2" stroke-linecap="round" />
   
-  <!-- Project Title with neon text glow filter -->
-  <text x="24" y="44" fill="#ffffff" font-size="17" class="text-title" font-weight="800" filter="url(#{glow_id})">{proj["title"]}</text>
+  <!-- Project Title with neon text glow filter (Font size 14 to prevent overlap) -->
+  <text x="24" y="44" fill="#ffffff" font-size="14" class="text-title" font-weight="800" filter="url(#{glow_id})">{proj["title"]}</text>
   
-  <!-- Floating Stat Pill Badge (Top Right) -->
+  <!-- Floating Stat Pill Badge (Top Right, moved up and shrunk) -->
   <g>
-    <rect x="252" y="25" width="112" height="24" rx="12" fill="#0c0e18" fill-opacity="0.7" stroke="url(#{proj["grad"]})" stroke-width="1.2" />
-    <text x="308" y="41" text-anchor="middle" fill="url(#{proj["grad"]})" font-size="9.5" class="text-mono" font-weight="bold">{proj["stat"]}</text>
+    <rect x="270" y="22" width="100" height="20" rx="10" fill="#0c0e18" fill-opacity="0.7" stroke="url(#{proj["grad"]})" stroke-width="1.2" />
+    <text x="320" y="35" text-anchor="middle" fill="url(#{proj["grad"]})" font-size="9" class="text-mono" font-weight="bold">{proj["stat"]}</text>
   </g>
   
   <!-- Project Description (Wrapped cleanly) -->
