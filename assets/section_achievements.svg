@@ -194,7 +194,7 @@
   
   <!-- Centered Emoji and Title Text (x=275, middle text-anchor) -->
   <text x="275" y="37" text-anchor="middle" fill="#ffffff" font-size="18" class="text-title" font-weight="800" filter="url(#text-glow-purple)" letter-spacing="1.5">
-    <tspan>🎓  MILESTONES &amp; CERTIFICATIONS</tspan>
+    <tspan>🎓  CERTIFICATIONS</tspan>
   </text>
   
   <!-- Right Side Tech Details decoration (Repositioned to the right edge) -->

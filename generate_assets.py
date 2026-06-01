@@ -306,7 +306,7 @@ def generate_section_headers():
         "projects": ("FEATURED PROJECTS", "🚀", "neon-pink"),
         "stats": ("GITHUB ANALYTICS", "📊", "neon-cyan"),
         "profiles": ("CODING DASHBOARD", "🏆", "neon-gold"),
-        "achievements": ("MILESTONES &amp; CERTIFICATIONS", "🎓", "neon-purple")
+        "achievements": ("CERTIFICATIONS", "🎓", "neon-purple")
     }
     
     for filename, (title, emoji, grad) in headers.items():

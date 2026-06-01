@@ -245,33 +245,22 @@
 
 <br />
 
-<!-- MILESTONES, CERTIFICATIONS & TROPHIES -->
+<!-- CERTIFICATIONS -->
 <p align="center">
-  <img src="assets/section_achievements.svg" alt="Achievements Header" width="550" />
-</p>
-
-<!-- Achievements Card -->
-<p align="center">
-  <img src="assets/achievements_card.svg" alt="Achievements Card" width="100%" />
+  <img src="assets/section_achievements.svg" alt="Certifications Header" width="550" />
 </p>
 
 <table align="center" width="100%">
   <tr>
-    <td width="50%" valign="top">
-      <h4 align="center">🎓 Certifications</h4>
+    <td>
       <ul>
-        <li><b>Introduction to Generative AI &amp; ML</b> (2025) — Fundamental concepts of AI, ML, and generative models</li>
-        <li><b>Ethics in Engineering Practice — NPTEL</b> (2025) — 8-week IIT Kharagpur certified course</li>
-        <li><b>Web Development Training — Internshala</b> (2024) — HTML, CSS, Bootstrap, DBMS, PHP, JavaScript, React</li>
-      </ul>
-    </td>
-    <td width="50%" valign="top">
-      <h4 align="center">🏆 Key Milestones</h4>
-      <ul>
-        <li><b>4+</b> AI/ML &amp; backend projects shipped end-to-end from design to deployment</li>
-        <li>Achieved <b>0.98/1.0</b> visual similarity score in autonomous website generation project</li>
-        <li><b>GenAI Expert Intern</b> building LLM-powered automation pipelines @ Al Zoned (2026)</li>
-        <li>Reduced setup time from <b>~90s to ~5s</b> via caching in WebGen Engine</li>
+        <li>🎓 <b>Education for Sustainable Development</b> — NPTEL, IIT Kharagpur (2026) — Sustainable development, SDGs, environmental and social sustainability</li>
+        <li>🎓 <b>Ethics in Engineering Practice</b> — NPTEL, IIT Kharagpur (2025) — Engineering ethics, professional responsibility, ethical decision-making</li>
+        <li>🎓 <b>Introduction to Generative AI, AI &amp; ML</b> (2025) — AI fundamentals, machine learning, deep learning, LLMs, and generative AI</li>
+        <li>🎓 <b>Data Analytics Job Simulation</b> — Deloitte Forage (2025) — Data analysis, forensic technology, business analytics, problem-solving</li>
+        <li>🎓 <b>Java Fundamentals</b> — Oracle Academy (2025) — Core Java, OOP, classes, methods, arrays, and programming fundamentals</li>
+        <li>🎓 <b>Web Development Training</b> — Internshala (2024) — HTML, CSS, Bootstrap, JavaScript, React, PHP, DBMS, full-stack development</li>
+        <li>🎓 <b>WordPress Web Development for Absolute Beginner Zero to Hero</b> — Udemy (2025) — WordPress, themes, plugins, website customization, deployment</li>
       </ul>
     </td>
   </tr>
@@ -279,37 +268,10 @@
 
 <br />
 
-<!-- LEARNING ROADMAP -->
-<details open>
-  <summary><b>🗺️ Current Learning Roadmap (Click to collapse/expand)</b></summary>
-  <br />
-  <ul>
-    <li><b>Advanced LangGraph Patterns:</b> Multi-agent collaboration, memory nodes, and conditional branching in agentic pipelines.</li>
-    <li><b>FastAPI at Scale:</b> Background tasks, dependency injection, async patterns, and structured API versioning.</li>
-    <li><b>Docker &amp; Containerization:</b> Containerizing Flask/FastAPI applications for reproducible deployments.</li>
-    <li><b>Computer Vision Depth:</b> Exploring YOLO architectures and real-time tracking beyond MobileNet SSD.</li>
-    <li><b>System Design Fundamentals:</b> Database indexing, REST API design principles, and scalable service architecture.</li>
-  </ul>
-</details>
-
-<br />
-
 <!-- DEVELOPER PHILOSOPHY / QUOTE -->
 <p align="center">
   <i>"Code is cheap, architecture is key. Build systems that are robust, modular, and scale gracefully."</i>
 </p>
-
-<!-- FUN FACTS -->
-<details>
-  <summary><b>⚡ Fun Facts (Click to expand)</b></summary>
-  <br />
-  <ul>
-    <li>I built an autonomous website generator that runs a Gemini Vision feedback loop — it compares screenshots pixel-by-pixel and revises its own output until it hits a 0.98 visual match.</li>
-    <li>I run LLaMA 3 locally via Ollama — no cloud, no API cost, full control. Cortex Chat was built entirely on my own machine.</li>
-    <li>I automated real estate lead management with Python cron jobs + Twilio SMS before writing a single line of frontend code — backend-first thinking.</li>
-    <li>I care more about architecture than aesthetics: every project I build has a structured folder layout, modular code, and a README before it has a UI.</li>
-  </ul>
-</details>
 
 <br />
 
