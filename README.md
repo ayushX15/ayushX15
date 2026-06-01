@@ -43,32 +43,20 @@
   <img src="assets/section_about.svg" alt="About Me Header" width="550" />
 </p>
 
-<table align="center" width="100%">
-  <tr>
-    <td>
-      <p>🔭 <b>Current Role:</b> GenAI Expert Intern @ Al Zoned (Apr 2026 – Present) | B.Tech CSE (AI &amp; ML) @ Sharda University, Greater Noida</p>
-      <p>🌱 <b>Learning Focus:</b> Agentic AI workflows, LangGraph pipelines, FastAPI microservices, and scalable backend architecture.</p>
-      <p>💡 <b>Core Interests:</b> Large Language Models (LLMs), Agentic AI Systems, Computer Vision, Backend Engineering, and Generative AI applications.</p>
-      <p>🛠️ <b>What I Build:</b> LLM-powered automation pipelines, real-time AI chatbots, object detection systems, and backend APIs with Flask &amp; FastAPI.</p>
-      <p>⚡ <b>Career Goal:</b> AI/ML Engineer &amp; SDE building production-grade intelligent systems that solve real-world problems.</p>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="assets/about_card.svg" alt="About Me: B.Tech in CS (AI &amp; ML) at Sharda University | Generative AI Developer Intern at AI Zoned | Focus: GenAI, LLM Engg, RAG, APIs &amp; Cloud AI. Quote: I enjoy building scalable AI systems that solve real-world problems instead of isolated demo projects. Exploring: LLMs, RAG, AI Agents, FastAPI, Cloud Deployments, DSA &amp; System Design" width="100%" />
+</p>
 
 <br />
 
-<!-- CURRENT FOCUS -->
-<details open>
-  <summary><b>🎯 Current Focus Areas (Click to collapse/expand)</b></summary>
-  <br />
-  <ul>
-    <li><b>Agentic AI Pipelines:</b> Building and optimizing multi-node LangGraph workflows for autonomous code and content generation.</li>
-    <li><b>LLM Integration &amp; Prompt Engineering:</b> Developing LLM-powered backends using Gemini API and Ollama with structured prompt strategies.</li>
-    <li><b>Backend API Development:</b> Designing async RESTful APIs with FastAPI — including polling endpoints, caching, and real-time data surfacing.</li>
-    <li><b>Computer Vision Systems:</b> Implementing object detection using MobileNet SSD + OpenCV DNN for real-time, low-latency inference.</li>
-    <li><b>AI Automation at Scale:</b> Building end-to-end AI-assisted automation pipelines including web scraping, visual feedback loops, and deployment workflows.</li>
-  </ul>
-</details>
+<!-- CURRENT FOCUS / WHAT I'M WORKING ON -->
+<p align="center">
+  <img src="assets/section_focus.svg" alt="What I'm Working On Header" width="550" />
+</p>
+
+<p align="center">
+  <img src="assets/focus_card.svg" alt="What I'm Working On: Production-ready Generative AI applications | Advanced DSA &amp; problem solving | AI-powered academic &amp; productivity systems | Cloud-native backend infrastructure | Conversational AI &amp; voice systems | End-to-end full stack AI products" width="100%" />
+</p>
 
 <br />
 

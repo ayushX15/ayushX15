@@ -306,7 +306,8 @@ def generate_section_headers():
         "projects": ("FEATURED PROJECTS", "🚀", "neon-pink"),
         "stats": ("GITHUB ANALYTICS", "📊", "neon-cyan"),
         "profiles": ("CODING DASHBOARD", "🏆", "neon-gold"),
-        "achievements": ("CERTIFICATIONS", "🎓", "neon-purple")
+        "achievements": ("CERTIFICATIONS", "🎓", "neon-purple"),
+        "focus": ("WHAT I'M WORKING ON", "⚡", "neon-pink")
     }
     
     for filename, (title, emoji, grad) in headers.items():
@@ -908,6 +909,167 @@ def generate_leetcode_card(username="Ayush_1503"):
     with open("assets/leetcode_card.svg", "w", encoding="utf-8") as f:
         f.write(svg)
 
+# 10. Premium Custom About Me Card
+def generate_about_card():
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 240" width="850" height="240" fill="none">
+  {COMMON_DEFS}
+  
+  <!-- BACKGROUND NEON GLOWS -->
+  <g filter="url(#blur-filter)">
+    <circle cx="150" cy="120" r="50" fill="#00f2fe" opacity="0.2" class="blob-cyan" />
+    <circle cx="650" cy="120" r="50" fill="#ff007f" opacity="0.15" class="blob-pink" />
+  </g>
+
+  <!-- Glass card -->
+  <rect x="25" y="20" width="800" height="200" rx="20" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.5" filter="url(#shadow-filter)" class="glass-card" />
+  
+  <!-- Left Side: Profile Summary -->
+  <g transform="translate(50, 45)">
+    <!-- Point 1: Education -->
+    <g transform="translate(0, 0)">
+      <circle cx="20" cy="20" r="18" fill="#00f2fe" fill-opacity="0.1" stroke="url(#neon-cyan)" stroke-width="1.2" />
+      <text x="20" y="25" text-anchor="middle" font-size="14">🎓</text>
+      <text x="50" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="800">B.Tech in Computer Science</text>
+      <text x="50" y="32" fill="#00f2fe" font-size="11.5" class="text-mono" font-weight="bold" filter="url(#text-glow-cyan)">AI &amp; ML Specialization @ Sharda University</text>
+    </g>
+    
+    <!-- Point 2: Internship -->
+    <g transform="translate(0, 55)">
+      <circle cx="20" cy="20" r="18" fill="#b100ff" fill-opacity="0.1" stroke="url(#neon-purple)" stroke-width="1.2" />
+      <text x="20" y="25" text-anchor="middle" font-size="14">💼</text>
+      <text x="50" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="800">Generative AI Developer Intern</text>
+      <text x="50" y="32" fill="#b100ff" font-size="11.5" class="text-mono" font-weight="bold" filter="url(#text-glow-purple)">Al Zoned (Apr 2026 – Present)</text>
+    </g>
+    
+    <!-- Point 3: Core Focus -->
+    <g transform="translate(0, 110)">
+      <circle cx="20" cy="20" r="18" fill="#ff007f" fill-opacity="0.1" stroke="url(#neon-pink)" stroke-width="1.2" />
+      <text x="20" y="25" text-anchor="middle" font-size="14">🧠</text>
+      <text x="50" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="800">Core Focus Area</text>
+      <text x="50" y="32" fill="#ffffff" fill-opacity="0.75" font-size="11.5" class="text-body" font-weight="500">GenAI, LLM Engg, RAG, APIs &amp; Cloud AI</text>
+    </g>
+  </g>
+  
+  <!-- Glowing Neon Vertical Divider -->
+  <line x1="435" y1="45" x2="435" y2="195" stroke="url(#neon-purple)" stroke-width="1.5" stroke-linecap="round" opacity="0.3" filter="drop-shadow(0 0 4px #7f00ff)" />
+  
+  <!-- Right Side: Philosophical Quote & Exploring Grid -->
+  <g transform="translate(465, 45)">
+    <!-- Quote -->
+    <g transform="translate(0, 0)">
+      <text x="0" y="20" fill="url(#neon-pink)" font-size="28" font-family="Georgia, serif" font-weight="bold" opacity="0.5">“</text>
+      <text x="18" y="14" fill="#ffffff" fill-opacity="0.85" font-size="12" class="text-body" font-style="italic" font-weight="500">
+        <tspan x="18" dy="0">I enjoy building scalable AI systems that solve real-world</tspan>
+        <tspan x="18" dy="16">problems instead of isolated demo projects.</tspan>
+      </text>
+      <text x="325" y="44" fill="url(#neon-pink)" font-size="28" font-family="Georgia, serif" font-weight="bold" opacity="0.5">”</text>
+    </g>
+    
+    <!-- Exploring grid -->
+    <g transform="translate(0, 56)">
+      <rect x="0" y="0" width="135" height="20" rx="10" fill="#fda085" fill-opacity="0.1" stroke="url(#neon-gold)" stroke-width="1" />
+      <text x="12" y="13" fill="#fda085" font-size="10" class="text-mono" font-weight="bold" letter-spacing="0.5">CURRENTLY EXPLORING</text>
+      
+      <!-- Grid Items (2 Columns) -->
+      <g transform="translate(0, 30)">
+        <!-- Col 1 -->
+        <g transform="translate(0, 0)">
+          <g transform="translate(0, 0)">
+            <circle cx="5" cy="5" r="2.5" fill="#00f2fe" filter="drop-shadow(0 0 2px #00f2fe)" />
+            <text x="15" y="9" fill="#ffffff" fill-opacity="0.9" font-size="11.5" class="text-title" font-weight="700">Large Language Models (LLMs)</text>
+          </g>
+          <g transform="translate(0, 20)">
+            <circle cx="5" cy="5" r="2.5" fill="#00f2fe" filter="drop-shadow(0 0 2px #00f2fe)" />
+            <text x="15" y="9" fill="#ffffff" fill-opacity="0.9" font-size="11.5" class="text-title" font-weight="700">Retrieval-Augmented Gen (RAG)</text>
+          </g>
+          <g transform="translate(0, 40)">
+            <circle cx="5" cy="5" r="2.5" fill="#00f2fe" filter="drop-shadow(0 0 2px #00f2fe)" />
+            <text x="15" y="9" fill="#ffffff" fill-opacity="0.9" font-size="11.5" class="text-title" font-weight="700">AI Agents &amp; Workflows</text>
+          </g>
+        </g>
+        
+        <!-- Col 2 -->
+        <g transform="translate(180, 0)">
+          <g transform="translate(0, 0)">
+            <circle cx="5" cy="5" r="2.5" fill="#ff007f" filter="drop-shadow(0 0 2px #ff007f)" />
+            <text x="15" y="9" fill="#ffffff" fill-opacity="0.9" font-size="11.5" class="text-title" font-weight="700">FastAPI Backend Engineering</text>
+          </g>
+          <g transform="translate(0, 20)">
+            <circle cx="5" cy="5" r="2.5" fill="#ff007f" filter="drop-shadow(0 0 2px #ff007f)" />
+            <text x="15" y="9" fill="#ffffff" fill-opacity="0.9" font-size="11.5" class="text-title" font-weight="700">Cloud Deployment Arch</text>
+          </g>
+          <g transform="translate(0, 40)">
+            <circle cx="5" cy="5" r="2.5" fill="#ff007f" filter="drop-shadow(0 0 2px #ff007f)" />
+            <text x="15" y="9" fill="#ffffff" fill-opacity="0.9" font-size="11.5" class="text-title" font-weight="700">DSA &amp; System Design</text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
+"""
+    with open("assets/about_card.svg", "w", encoding="utf-8") as f:
+        f.write(svg)
+
+# 11. Premium Custom What I'm Working On Card
+def generate_focus_card():
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 160" width="850" height="160" fill="none">
+  {COMMON_DEFS}
+  
+  <!-- BACKGROUND NEON GLOWS -->
+  <g filter="url(#blur-filter)">
+    <circle cx="200" cy="80" r="40" fill="#7f00ff" opacity="0.15" class="blob-purple" />
+    <circle cx="600" cy="80" r="40" fill="#fda085" opacity="0.15" class="blob-gold" />
+  </g>
+
+  <!-- Glass card -->
+  <rect x="25" y="20" width="800" height="120" rx="20" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.5" filter="url(#shadow-filter)" class="glass-card" />
+  
+  <!-- Grid Items (2 Columns, 3 Rows) -->
+  <g transform="translate(50, 45)">
+    <!-- Column 1 (Left) -->
+    <g transform="translate(0, 0)">
+      <g transform="translate(0, 0)">
+        <circle cx="15" cy="12" r="10" fill="#ff007f" fill-opacity="0.15" />
+        <text x="15" y="16" text-anchor="middle" font-size="10">🔥</text>
+        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Production-ready Generative AI applications</text>
+      </g>
+      <g transform="translate(0, 35)">
+        <circle cx="15" cy="12" r="10" fill="#00f2fe" fill-opacity="0.15" />
+        <text x="15" y="16" text-anchor="middle" font-size="10">📚</text>
+        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Advanced DSA &amp; problem solving</text>
+      </g>
+      <g transform="translate(0, 70)">
+        <circle cx="15" cy="12" r="10" fill="#b100ff" fill-opacity="0.15" />
+        <text x="15" y="16" text-anchor="middle" font-size="10">🧠</text>
+        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">AI-powered academic &amp; productivity systems</text>
+      </g>
+    </g>
+    
+    <!-- Column 2 (Right) -->
+    <g transform="translate(400, 0)">
+      <g transform="translate(0, 0)">
+        <circle cx="15" cy="12" r="10" fill="#fda085" fill-opacity="0.15" />
+        <text x="15" y="16" text-anchor="middle" font-size="10">☁️</text>
+        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Cloud-native backend infrastructure</text>
+      </g>
+      <g transform="translate(0, 35)">
+        <circle cx="15" cy="12" r="10" fill="#00f2fe" fill-opacity="0.15" />
+        <text x="15" y="16" text-anchor="middle" font-size="10">🎙️</text>
+        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">Conversational AI &amp; voice systems</text>
+      </g>
+      <g transform="translate(0, 70)">
+        <circle cx="15" cy="12" r="10" fill="#ff007f" fill-opacity="0.15" />
+        <text x="15" y="16" text-anchor="middle" font-size="10">🏗️</text>
+        <text x="35" y="16" fill="#ffffff" font-size="13" class="text-title" font-weight="700">End-to-end full stack AI products</text>
+      </g>
+    </g>
+  </g>
+</svg>
+"""
+    with open("assets/focus_card.svg", "w", encoding="utf-8") as f:
+        f.write(svg)
+
 if __name__ == "__main__":
     print("Generating custom glassmorphic SVG assets...")
     generate_hero_banner()
@@ -919,6 +1081,8 @@ if __name__ == "__main__":
     generate_activity_graph()
     generate_spacer()
     generate_leetcode_card("Ayush_1503")
+    generate_about_card()
+    generate_focus_card()
     print("All assets generated successfully in assets/ directory!")
 
 
