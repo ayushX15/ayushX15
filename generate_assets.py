@@ -204,7 +204,7 @@ def generate_hero_banner():
     with open("assets/hero_banner.svg", "w", encoding="utf-8") as f:
         f.write(svg)
 
-# 2. Section Headers
+# 2. Section Headers (Widened to 550px and text centered)
 def generate_section_headers():
     headers = {
         "about": ("ABOUT ME", "🔭", "neon-cyan"),
@@ -217,24 +217,24 @@ def generate_section_headers():
     
     for filename, (title, emoji, grad) in headers.items():
         glow_id = grad.replace("neon-", "text-glow-")
-        svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 65" width="450" height="65" fill="none">
+        svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 65" width="550" height="65" fill="none">
   {COMMON_DEFS}
   
-  <!-- Outer Glow Capsule -->
-  <rect x="5" y="5" width="440" height="50" rx="25" fill="#0c0e18" fill-opacity="0.8" stroke="url(#card-border)" stroke-width="1.2" />
+  <!-- Outer Glow Capsule (Wider boundary: 540px) -->
+  <rect x="5" y="5" width="540" height="50" rx="25" fill="#0c0e18" fill-opacity="0.8" stroke="url(#card-border)" stroke-width="1.2" />
   
-  <!-- Side highlight pill -->
+  <!-- Left Side highlight pill -->
   <rect x="15" y="15" width="6" height="30" rx="3" fill="url(#{grad})" />
   
-  <!-- Emoji and Title Text with neon glow filter -->
-  <text x="35" y="37" fill="#ffffff" font-size="19" class="text-title" font-weight="800" filter="url(#{glow_id})" letter-spacing="1.5">
+  <!-- Centered Emoji and Title Text (x=275, middle text-anchor) -->
+  <text x="275" y="37" text-anchor="middle" fill="#ffffff" font-size="18" class="text-title" font-weight="800" filter="url(#{glow_id})" letter-spacing="1.5">
     <tspan>{emoji}  {title}</tspan>
   </text>
   
-  <!-- Tech Details decoration -->
-  <circle cx="410" cy="30" r="3" fill="url(#{grad})" />
-  <circle cx="420" cy="30" r="3" fill="#ffffff" fill-opacity="0.2" />
-  <circle cx="430" cy="30" r="3" fill="#ffffff" fill-opacity="0.1" />
+  <!-- Right Side Tech Details decoration (Repositioned to the right edge) -->
+  <circle cx="510" cy="30" r="3" fill="url(#{grad})" />
+  <circle cx="520" cy="30" r="3" fill="#ffffff" fill-opacity="0.2" />
+  <circle cx="530" cy="30" r="3" fill="#ffffff" fill-opacity="0.1" />
 </svg>
 """
         with open(f"assets/section_{filename}.svg", "w", encoding="utf-8") as f:
@@ -357,7 +357,75 @@ def generate_project_cards():
         with open(f"assets/{proj['filename']}", "w", encoding="utf-8") as f:
             f.write(svg)
 
-# 4. Footer Banner
+# 4. Custom Achievements Dashboard Card (Replaces the external trophies widget)
+def generate_achievements_card():
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 140" width="850" height="140" fill="none">
+  {COMMON_DEFS}
+  
+  <!-- BACKGROUND NEON GLOWS -->
+  <g filter="url(#blur-filter)">
+    <circle cx="150" cy="70" r="40" fill="#fda085" opacity="0.2" class="blob-gold" />
+    <circle cx="350" cy="70" r="40" fill="#7f00ff" opacity="0.15" class="blob-purple" />
+    <circle cx="550" cy="70" r="40" fill="#00f2fe" opacity="0.15" class="blob-cyan" />
+    <circle cx="750" cy="70" r="40" fill="#ff007f" opacity="0.2" class="blob-pink" />
+  </g>
+
+  <!-- Glass card -->
+  <rect x="25" y="20" width="800" height="100" rx="20" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.5" filter="url(#shadow-filter)" class="glass-card" />
+  
+  <!-- ITEM 1: LeetCode -->
+  <g>
+    <circle cx="100" cy="70" r="18" fill="#fda085" fill-opacity="0.1" stroke="url(#neon-gold)" stroke-width="1.5" />
+    <!-- Trophy Icon Path -->
+    <path d="M 94,62 L 106,62 L 106,68 C 106,72 103,75 100,75 C 97,75 94,72 94,68 Z" stroke="#fda085" stroke-width="1.5" fill="none" />
+    <path d="M 100,75 L 100,80 M 96,80 L 104,80" stroke="#fda085" stroke-width="1.5" stroke-linecap="round" />
+    <text x="130" y="66" fill="#ffffff" font-size="16" class="text-title" font-weight="800" filter="url(#text-glow-gold)">500+</text>
+    <text x="130" y="82" fill="#ffffff" fill-opacity="0.6" font-size="11" class="text-body" font-weight="500">DSA Solved</text>
+  </g>
+  
+  <!-- ITEM 2: AI Projects -->
+  <g transform="translate(195, 0)">
+    <circle cx="100" cy="70" r="18" fill="#7f00ff" fill-opacity="0.1" stroke="url(#neon-purple)" stroke-width="1.5" />
+    <!-- Neural Net Icon -->
+    <circle cx="95" cy="66" r="2.5" fill="#7f00ff" />
+    <circle cx="105" cy="66" r="2.5" fill="#7f00ff" />
+    <circle cx="100" cy="75" r="3" fill="#7f00ff" />
+    <line x1="95" y1="66" x2="100" y2="75" stroke="#7f00ff" stroke-width="1" />
+    <line x1="105" y1="66" x2="100" y2="75" stroke="#7f00ff" stroke-width="1" />
+    <text x="130" y="66" fill="#ffffff" font-size="16" class="text-title" font-weight="800" filter="url(#text-glow-purple)">15+ AI/ML</text>
+    <text x="130" y="82" fill="#ffffff" fill-opacity="0.6" font-size="11" class="text-body" font-weight="500">Projects Built</text>
+  </g>
+  
+  <!-- ITEM 3: Backend APIs -->
+  <g transform="translate(390, 0)">
+    <circle cx="100" cy="70" r="18" fill="#00f2fe" fill-opacity="0.1" stroke="url(#neon-cyan)" stroke-width="1.5" />
+    <!-- Server Icon -->
+    <rect x="94" y="63" width="12" height="5" rx="1" stroke="#00f2fe" stroke-width="1.2" fill="none" />
+    <rect x="94" y="71" width="12" height="5" rx="1" stroke="#00f2fe" stroke-width="1.2" fill="none" />
+    <circle cx="97" cy="65.5" r="1" fill="#00f2fe" />
+    <circle cx="97" cy="73.5" r="1" fill="#00f2fe" />
+    <text x="130" y="66" fill="#ffffff" font-size="16" class="text-title" font-weight="800" filter="url(#text-glow-cyan)">10+ APIs</text>
+    <text x="130" y="82" fill="#ffffff" fill-opacity="0.6" font-size="11" class="text-body" font-weight="500">Backend Services</text>
+  </g>
+  
+  <!-- ITEM 4: Open Source -->
+  <g transform="translate(585, 0)">
+    <circle cx="100" cy="70" r="18" fill="#ff007f" fill-opacity="0.1" stroke="url(#neon-pink)" stroke-width="1.5" />
+    <!-- PR Icon -->
+    <circle cx="96" cy="66" r="2.5" stroke="#ff007f" stroke-width="1.2" fill="none" />
+    <circle cx="96" cy="74" r="2.5" stroke="#ff007f" stroke-width="1.2" fill="none" />
+    <circle cx="104" cy="70" r="2.5" stroke="#ff007f" stroke-width="1.2" fill="none" />
+    <line x1="96" y1="68.5" x2="96" y2="71.5" stroke="#ff007f" stroke-width="1.2" />
+    <path d="M 104,70 L 100,70 L 96,74" stroke="#ff007f" stroke-width="1.2" fill="none" stroke-linejoin="round" />
+    <text x="130" y="66" fill="#ffffff" font-size="16" class="text-title" font-weight="800" filter="url(#text-glow-pink)">Active OS</text>
+    <text x="130" y="82" fill="#ffffff" fill-opacity="0.6" font-size="11" class="text-body" font-weight="500">Contributor</text>
+  </g>
+</svg>
+"""
+    with open("assets/achievements_card.svg", "w", encoding="utf-8") as f:
+        f.write(svg)
+
+# 5. Footer Banner
 def generate_footer_banner():
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 70" width="850" height="70" fill="none">
   {COMMON_DEFS}
@@ -395,5 +463,6 @@ if __name__ == "__main__":
     generate_hero_banner()
     generate_section_headers()
     generate_project_cards()
+    generate_achievements_card()
     generate_footer_banner()
     print("All assets generated successfully in assets/ directory!")

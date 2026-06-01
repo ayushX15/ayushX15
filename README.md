@@ -12,7 +12,7 @@
 
 <!-- VISITOR COUNTER -->
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=ayushX15&amp;label=PROFILE+VIEWS&amp;color=00f2fe&amp;style=flat-square" alt="Ayush Prasad Views" />
+  <img src="https://komarev.com/ghpvc/?username=ayushX15&label=PROFILE+VIEWS&color=00f2fe&style=flat-square" alt="Ayush Prasad Views" />
 </p>
 
 ---
@@ -43,7 +43,7 @@
 
 <!-- ABOUT ME -->
 <p align="center">
-  <img src="assets/section_about.svg" alt="About Me Header" width="450" />
+  <img src="assets/section_about.svg" alt="About Me Header" width="550" />
 </p>
 
 <table align="center" width="100%">
@@ -76,7 +76,7 @@
 
 <!-- TECH ARSENAL -->
 <p align="center">
-  <img src="assets/section_skills.svg" alt="Tech Stack Header" width="450" />
+  <img src="assets/section_skills.svg" alt="Tech Stack Header" width="550" />
 </p>
 
 <table align="center" width="100%">
@@ -150,7 +150,7 @@
 
 <!-- FEATURED PROJECTS SHOWCASE -->
 <p align="center">
-  <img src="assets/section_projects.svg" alt="Featured Projects Header" width="450" />
+  <img src="assets/section_projects.svg" alt="Featured Projects Header" width="550" />
 </p>
 
 <table align="center" width="100%">
@@ -184,24 +184,24 @@
 
 <!-- GITHUB ANALYTICS DASHBOARD -->
 <p align="center">
-  <img src="assets/section_stats.svg" alt="GitHub Analytics Header" width="450" />
+  <img src="assets/section_stats.svg" alt="GitHub Analytics Header" width="550" />
 </p>
 
 <table align="center" width="100%">
   <tr>
     <td width="50%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api?username=ayushX15&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true&amp;bg_color=0a0c16&amp;title_color=00f2fe&amp;icon_color=ff007f&amp;text_color=ffffff" alt="GitHub Stats" width="100%" />
+      <img src="https://github-readme-stats.vercel.app/api?username=ayushX15&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0a0c16&title_color=00f2fe&icon_color=ff007f&text_color=ffffff" alt="GitHub Stats" width="100%" />
     </td>
     <td width="50%" align="center">
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=ayushX15&amp;theme=tokyonight&amp;hide_border=true&amp;background=0a0c16&amp;ring=00f2fe&amp;fire=ff007f&amp;currStreakLabel=ffffff&amp;sideNums=ffffff&amp;sideLabels=ffffff" alt="Streak Stats" width="100%" />
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=ayushX15&theme=tokyonight&hide_border=true&background=0a0c16&ring=00f2fe&fire=ff007f&currStreakLabel=ffffff&sideNums=ffffff&sideLabels=ffffff" alt="Streak Stats" width="100%" />
     </td>
   </tr>
   <tr>
     <td width="40%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ayushX15&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true&amp;bg_color=0a0c16&amp;title_color=7f00ff&amp;text_color=ffffff" alt="Top Languages" width="100%" />
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ayushX15&layout=compact&theme=tokyonight&hide_border=true&bg_color=0a0c16&title_color=7f00ff&text_color=ffffff" alt="Top Languages" width="100%" />
     </td>
     <td width="60%" align="center">
-      <img src="https://github-readme-activity-graph.vercel.app/graph?username=ayushX15&amp;theme=tokyonight&amp;bg_color=0a0c16&amp;color=00f2fe&amp;line=ff007f&amp;point=ffffff&amp;area=true&amp;hide_border=true" alt="Contribution Graph" width="100%" />
+      <img src="https://github-readme-activity-graph.vercel.app/graph?username=ayushX15&theme=tokyonight&bg_color=0a0c16&color=00f2fe&line=ff007f&point=ffffff&area=true&hide_border=true" alt="Contribution Graph" width="100%" />
     </td>
   </tr>
 </table>
@@ -218,14 +218,14 @@
 
 <!-- CODING PROFILES DASHBOARD -->
 <p align="center">
-  <img src="assets/section_profiles.svg" alt="Coding Dashboard Header" width="450" />
+  <img src="assets/section_profiles.svg" alt="Coding Dashboard Header" width="550" />
 </p>
 
 <table align="center" width="100%">
   <tr>
     <td width="60%" align="center">
       <a href="https://leetcode.com/ayushX15" target="_blank">
-        <img src="https://leetcard.jacoblin.cool/ayushX15?theme=dark&amp;font=Outfit&amp;ext=activity" alt="LeetCode Card" width="100%" />
+        <img src="https://leetcard.jacoblin.cool/ayushX15?theme=dark&font=Outfit&ext=activity" alt="LeetCode Card" width="100%" />
       </a>
     </td>
     <td width="40%" align="center">
@@ -257,12 +257,12 @@
 
 <!-- MILESTONES, CERTIFICATIONS & TROPHIES -->
 <p align="center">
-  <img src="assets/section_achievements.svg" alt="Achievements Header" width="450" />
+  <img src="assets/section_achievements.svg" alt="Achievements Header" width="550" />
 </p>
 
-<!-- GitHub Trophies -->
+<!-- Achievements Card -->
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=ayushX15&amp;theme=tokyonight&amp;margin-w=10&amp;margin-h=10&amp;no-bg=true" alt="GitHub Trophies" />
+  <img src="assets/achievements_card.svg" alt="Achievements Card" width="100%" />
 </p>
 
 <table align="center" width="100%">
