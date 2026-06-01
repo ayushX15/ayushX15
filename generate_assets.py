@@ -644,6 +644,90 @@ def generate_footer_banner():
     with open("assets/footer_banner.svg", "w", encoding="utf-8") as f:
         f.write(svg)
 
+# 7. Custom Contribution Activity Graph (Replaces vercel line graph widget)
+def generate_activity_graph():
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 190" width="390" height="190" fill="none">
+  {COMMON_DEFS}
+  
+  <!-- BACKGROUND NEON GLOWS -->
+  <g filter="url(#blur-filter)">
+    <circle cx="80" cy="80" r="45" fill="#00f2fe" opacity="0.18" class="blob-cyan" />
+    <circle cx="310" cy="90" r="45" fill="#ff007f" opacity="0.15" class="blob-pink" />
+  </g>
+  
+  <!-- Main glass card -->
+  <rect x="10" y="10" width="370" height="170" rx="16" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" filter="url(#shadow-filter)" class="glass-card" />
+  
+  <!-- TOP TELEMETRY INFO -->
+  <!-- Left Side: Monthly Commits -->
+  <g>
+    <!-- Cyan 4-Point Star Sparkle -->
+    <path d="M 30,20 Q 30,25 35,25 Q 30,25 30,30 Q 30,25 25,25 Q 30,25 30,20" fill="#00f2fe" filter="url(#text-glow-cyan)" />
+    <text x="42" y="28" fill="#ffffff" fill-opacity="0.5" font-size="9" class="text-mono" font-weight="bold">MONTHLY</text>
+    <text x="28" y="47" fill="#ffffff" font-size="16" class="text-title" font-weight="900" filter="url(#text-glow-cyan)">142 Commits</text>
+    <text x="28" y="59" fill="#00f2fe" font-size="9" class="text-mono" font-weight="bold">↑ 18.5% this month</text>
+  </g>
+  
+  <!-- Right Side: Yearly Total -->
+  <g transform="translate(180, 0)">
+    <!-- Gold 4-Point Star Sparkle -->
+    <path d="M 30,20 Q 30,25 35,25 Q 30,25 30,30 Q 30,25 25,25 Q 30,25 30,20" fill="#fda085" filter="url(#text-glow-gold)" />
+    <text x="42" y="28" fill="#ffffff" fill-opacity="0.5" font-size="9" class="text-mono" font-weight="bold">YEARLY</text>
+    <text x="28" y="47" fill="#ffffff" font-size="16" class="text-title" font-weight="900" filter="url(#text-glow-gold)">1,240 Total</text>
+    <text x="28" y="59" fill="#fda085" font-size="9" class="text-mono" font-weight="bold">↑ 12.4% this year</text>
+  </g>
+  
+  <!-- BAR CHART GRAPHICS -->
+  <!-- Horizontal Grid lines -->
+  <line x1="25" y1="85" x2="365" y2="85" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1" />
+  <line x1="25" y1="120" x2="365" y2="120" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1" />
+  <line x1="25" y1="155" x2="365" y2="155" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1.2" />
+  
+  <!-- Bars Group -->
+  <g>
+"""
+    # 9 pairs of bars
+    bar_data = [
+        {"val": "01", "h1": 40, "h2": 25, "grad": "neon-cyan", "glow": "text-glow-cyan"},
+        {"val": "02", "h1": 55, "h2": 35, "grad": "neon-cyan", "glow": "text-glow-cyan"},
+        {"val": "03", "h1": 65, "h2": 45, "grad": "neon-cyan", "glow": "text-glow-cyan"},
+        {"val": "04", "h1": 50, "h2": 32, "grad": "neon-purple", "glow": "text-glow-purple"},
+        {"val": "05", "h1": 30, "h2": 20, "grad": "neon-purple", "glow": "text-glow-purple"},
+        {"val": "06", "h1": 15, "h2": 10, "grad": "neon-purple", "glow": "text-glow-purple"},
+        {"val": "07", "h1": 58, "h2": 40, "grad": "neon-pink", "glow": "text-glow-pink"},
+        {"val": "08", "h1": 45, "h2": 30, "grad": "neon-pink", "glow": "text-glow-pink"},
+        {"val": "09", "h1": 62, "h2": 48, "grad": "neon-pink", "glow": "text-glow-pink"}
+    ]
+    
+    for idx, item in enumerate(bar_data):
+        x_center = 30 + idx * 37.5 + 18.75
+        # Bright bar (left)
+        x1 = x_center - 7
+        h1 = item["h1"]
+        y1 = 155 - h1
+        # Faded bar (right)
+        x2 = x_center + 1
+        h2 = item["h2"]
+        y2 = 155 - h2
+        
+        svg += f"""
+    <!-- Pair {item["val"]} -->
+    <!-- Faded Bar (Right) -->
+    <rect x="{x2}" y="{y2}" width="6" height="{h2}" rx="3" fill="url(#{item["grad"]})" fill-opacity="0.15" />
+    
+    <!-- Glowing Bright Bar (Left) -->
+    <rect x="{x1}" y="{y1}" width="6" height="{h1}" rx="3" fill="url(#{item["grad"]})" fill-opacity="0.9" filter="url(#{item["glow"]})" />
+    
+    <!-- X-Axis Label -->
+    <text x="{x_center}" y="168" text-anchor="middle" fill="#ffffff" fill-opacity="0.4" font-size="8" class="text-mono" font-weight="bold">{item["val"]}</text>
+"""
+        
+    svg += """  </g>
+</svg>
+"""
+    with open("assets/activity_graph.svg", "w", encoding="utf-8") as f:
+        f.write(svg)
+
 if __name__ == "__main__":
     print("Generating custom glassmorphic SVG assets...")
     generate_hero_banner()
@@ -652,4 +736,5 @@ if __name__ == "__main__":
     generate_achievements_card()
     generate_stats_card()
     generate_footer_banner()
+    generate_activity_graph()
     print("All assets generated successfully in assets/ directory!")

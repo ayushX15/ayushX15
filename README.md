@@ -199,7 +199,7 @@
       <img src="https://github-readme-streak-stats.herokuapp.com/?user=ayushX15&theme=tokyonight&hide_border=true&background=0a0c16&ring=00f2fe&fire=ff007f&currStreakLabel=ffffff&sideNums=ffffff&sideLabels=ffffff" alt="Streak Stats" width="100%" />
     </td>
     <td width="50%" align="center">
-      <img src="https://github-readme-activity-graph.vercel.app/graph?username=ayushX15&theme=tokyonight&bg_color=0a0c16&color=00f2fe&line=ff007f&point=ffffff&area=true&hide_border=true" alt="Contribution Graph" width="100%" />
+      <img src="assets/activity_graph.svg" alt="Contribution Graph" width="100%" />
     </td>
   </tr>
 </table>

@@ -1,0 +1,316 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 190" width="390" height="190" fill="none">
+  
+  <defs>
+    <style>
+      .text-title {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+      }
+      .text-body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+      }
+      .text-mono {
+        font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+      }
+      
+      /* Animation keyframes */
+      @keyframes pulse-cyan {
+        0% { transform: scale(1) translate(0px, 0px); opacity: 0.35; }
+        50% { transform: scale(1.15) translate(25px, -15px); opacity: 0.55; }
+        100% { transform: scale(1) translate(0px, 0px); opacity: 0.35; }
+      }
+      @keyframes pulse-pink {
+        0% { transform: scale(1.1) translate(0px, 0px); opacity: 0.25; }
+        50% { transform: scale(0.9) translate(-35px, 25px); opacity: 0.45; }
+        100% { transform: scale(1.1) translate(0px, 0px); opacity: 0.25; }
+      }
+      @keyframes pulse-purple {
+        0% { transform: scale(1) translate(0px, 0px); opacity: 0.2; }
+        50% { transform: scale(1.2) translate(-20px, -20px); opacity: 0.4; }
+        100% { transform: scale(1) translate(0px, 0px); opacity: 0.2; }
+      }
+      @keyframes pulse-gold {
+        0% { transform: scale(1) translate(0px, 0px); opacity: 0.2; }
+        50% { transform: scale(1.15) translate(20px, 20px); opacity: 0.4; }
+        100% { transform: scale(1) translate(0px, 0px); opacity: 0.2; }
+      }
+      
+      /* Glare sweep animation across card */
+      @keyframes glare-sweep-anim {
+        0% { transform: translate(-350px, 0) skewX(-25deg); }
+        35% { transform: translate(950px, 0) skewX(-25deg); }
+        100% { transform: translate(950px, 0) skewX(-25deg); }
+      }
+      .glare-sweep {
+        animation: glare-sweep-anim 8s ease-in-out infinite;
+      }
+      
+      /* Flowing neon segment around the border */
+      @keyframes border-flow-anim {
+        0% { stroke-dashoffset: 2140; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .border-flow {
+        stroke-dasharray: 200, 870;
+        animation: border-flow-anim 9s linear infinite;
+      }
+      
+      /* Signals flowing along neural graph lines */
+      @keyframes signal-flow-anim {
+        to { stroke-dashoffset: -40; }
+      }
+      .signal-line {
+        stroke-dasharray: 6, 24;
+        animation: signal-flow-anim 2.5s linear infinite;
+      }
+      .signal-line-reverse {
+        stroke-dasharray: 6, 24;
+        animation: signal-flow-anim 3.5s linear infinite reverse;
+      }
+      
+      /* Live signal EQ Visualizer columns */
+      @keyframes eq-scale-anim {
+        0% { transform: scaleY(0.25); }
+        50% { transform: scaleY(1.15); }
+        100% { transform: scaleY(0.25); }
+      }
+      .bar-anim-1 { animation: eq-scale-anim 1s ease-in-out infinite; }
+      .bar-anim-2 { animation: eq-scale-anim 0.6s ease-in-out infinite alternate; }
+      .bar-anim-3 { animation: eq-scale-anim 1.3s ease-in-out infinite; }
+      .bar-anim-4 { animation: eq-scale-anim 0.8s ease-in-out infinite alternate; }
+      .bar-anim-5 { animation: eq-scale-anim 1.1s ease-in-out infinite; }
+      
+      /* Cyber particles drifting */
+      @keyframes drift-particle-anim {
+        0% { transform: translate(0, 0); opacity: 0; }
+        30% { opacity: 0.6; }
+        70% { opacity: 0.6; }
+        100% { transform: translate(40px, -60px); opacity: 0; }
+      }
+      .particle-1 { animation: drift-particle-anim 6s ease-in-out infinite; }
+      .particle-2 { animation: drift-particle-anim 8s ease-in-out infinite 2s; }
+      .particle-3 { animation: drift-particle-anim 10s ease-in-out infinite 4s; }
+      
+      .blob-cyan { animation: pulse-cyan 12s ease-in-out infinite; transform-origin: 150px 100px; }
+      .blob-pink { animation: pulse-pink 14s ease-in-out infinite; transform-origin: 650px 200px; }
+      .blob-purple { animation: pulse-purple 16s ease-in-out infinite; transform-origin: 400px 150px; }
+      .blob-gold { animation: pulse-gold 10s ease-in-out infinite; transform-origin: 300px 150px; }
+      
+      .node-anim { animation: float-node 6s ease-in-out infinite alternate; }
+      .node-anim-delay { animation: float-node 8s ease-in-out infinite alternate-reverse; }
+      
+      @keyframes float-node {
+        0% { transform: translateY(0px) translateX(0px); }
+        50% { transform: translateY(-8px) translateX(4px); }
+        100% { transform: translateY(0px) translateX(0px); }
+      }
+      
+      .glass-card {
+        transition: all 0.3s ease;
+      }
+      .glass-card:hover {
+        stroke: url(#card-border-hover);
+        filter: drop-shadow(0 12px 24px rgba(0, 242, 254, 0.15));
+      }
+    </style>
+
+    <!-- Filters -->
+    <filter id="blur-filter" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="55" />
+    </filter>
+    <filter id="glow-filter-strong" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+    </filter>
+    <filter id="shadow-filter" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+    
+    <!-- Neon Text Glow Filters -->
+    <filter id="text-glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#00f2fe" flood-opacity="0.95"/>
+    </filter>
+    <filter id="text-glow-pink" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#ff007f" flood-opacity="0.95"/>
+    </filter>
+    <filter id="text-glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#7f00ff" flood-opacity="0.95"/>
+    </filter>
+    <filter id="text-glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#fda085" flood-opacity="0.95"/>
+    </filter>
+    
+    <!-- Gradients -->
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c16" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#04050a" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="card-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18" />
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="card-border-hover" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#7f00ff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ff007f" stop-opacity="0.6" />
+    </linearGradient>
+    
+    <linearGradient id="glare-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+    <linearGradient id="neon-pink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff007f" />
+      <stop offset="100%" stop-color="#ffb199" />
+    </linearGradient>
+    <linearGradient id="neon-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b100ff" />
+      <stop offset="100%" stop-color="#00e1ff" />
+    </linearGradient>
+    <linearGradient id="neon-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f6d365" />
+      <stop offset="100%" stop-color="#fda085" />
+    </linearGradient>
+    
+    <!-- ClipPath to constrain glare shimmer to card bounds -->
+    <clipPath id="card-clip">
+      <rect x="25" y="25" width="800" height="270" rx="20" />
+    </clipPath>
+  </defs>
+
+  
+  <!-- BACKGROUND NEON GLOWS -->
+  <g filter="url(#blur-filter)">
+    <circle cx="80" cy="80" r="45" fill="#00f2fe" opacity="0.18" class="blob-cyan" />
+    <circle cx="310" cy="90" r="45" fill="#ff007f" opacity="0.15" class="blob-pink" />
+  </g>
+  
+  <!-- Main glass card -->
+  <rect x="10" y="10" width="370" height="170" rx="16" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" filter="url(#shadow-filter)" class="glass-card" />
+  
+  <!-- TOP TELEMETRY INFO -->
+  <!-- Left Side: Monthly Commits -->
+  <g>
+    <!-- Cyan 4-Point Star Sparkle -->
+    <path d="M 30,20 Q 30,25 35,25 Q 30,25 30,30 Q 30,25 25,25 Q 30,25 30,20" fill="#00f2fe" filter="url(#text-glow-cyan)" />
+    <text x="42" y="28" fill="#ffffff" fill-opacity="0.5" font-size="9" class="text-mono" font-weight="bold">MONTHLY</text>
+    <text x="28" y="47" fill="#ffffff" font-size="16" class="text-title" font-weight="900" filter="url(#text-glow-cyan)">142 Commits</text>
+    <text x="28" y="59" fill="#00f2fe" font-size="9" class="text-mono" font-weight="bold">↑ 18.5% this month</text>
+  </g>
+  
+  <!-- Right Side: Yearly Total -->
+  <g transform="translate(180, 0)">
+    <!-- Gold 4-Point Star Sparkle -->
+    <path d="M 30,20 Q 30,25 35,25 Q 30,25 30,30 Q 30,25 25,25 Q 30,25 30,20" fill="#fda085" filter="url(#text-glow-gold)" />
+    <text x="42" y="28" fill="#ffffff" fill-opacity="0.5" font-size="9" class="text-mono" font-weight="bold">YEARLY</text>
+    <text x="28" y="47" fill="#ffffff" font-size="16" class="text-title" font-weight="900" filter="url(#text-glow-gold)">1,240 Total</text>
+    <text x="28" y="59" fill="#fda085" font-size="9" class="text-mono" font-weight="bold">↑ 12.4% this year</text>
+  </g>
+  
+  <!-- BAR CHART GRAPHICS -->
+  <!-- Horizontal Grid lines -->
+  <line x1="25" y1="85" x2="365" y2="85" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1" />
+  <line x1="25" y1="120" x2="365" y2="120" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1" />
+  <line x1="25" y1="155" x2="365" y2="155" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1.2" />
+  
+  <!-- Bars Group -->
+  <g>
+
+    <!-- Pair 01 -->
+    <!-- Faded Bar (Right) -->
+    <rect x="49.75" y="130" width="6" height="25" rx="3" fill="url(#neon-cyan)" fill-opacity="0.15" />
+    
+    <!-- Glowing Bright Bar (Left) -->
+    <rect x="41.75" y="115" width="6" height="40" rx="3" fill="url(#neon-cyan)" fill-opacity="0.9" filter="url(#text-glow-cyan)" />
+    
+    <!-- X-Axis Label -->
+    <text x="48.75" y="168" text-anchor="middle" fill="#ffffff" fill-opacity="0.4" font-size="8" class="text-mono" font-weight="bold">01</text>
+
+    <!-- Pair 02 -->
+    <!-- Faded Bar (Right) -->
+    <rect x="87.25" y="120" width="6" height="35" rx="3" fill="url(#neon-cyan)" fill-opacity="0.15" />
+    
+    <!-- Glowing Bright Bar (Left) -->
+    <rect x="79.25" y="100" width="6" height="55" rx="3" fill="url(#neon-cyan)" fill-opacity="0.9" filter="url(#text-glow-cyan)" />
+    
+    <!-- X-Axis Label -->
+    <text x="86.25" y="168" text-anchor="middle" fill="#ffffff" fill-opacity="0.4" font-size="8" class="text-mono" font-weight="bold">02</text>
+
+    <!-- Pair 03 -->
+    <!-- Faded Bar (Right) -->
+    <rect x="124.75" y="110" width="6" height="45" rx="3" fill="url(#neon-cyan)" fill-opacity="0.15" />
+    
+    <!-- Glowing Bright Bar (Left) -->
+    <rect x="116.75" y="90" width="6" height="65" rx="3" fill="url(#neon-cyan)" fill-opacity="0.9" filter="url(#text-glow-cyan)" />
+    
+    <!-- X-Axis Label -->
+    <text x="123.75" y="168" text-anchor="middle" fill="#ffffff" fill-opacity="0.4" font-size="8" class="text-mono" font-weight="bold">03</text>
+
+    <!-- Pair 04 -->
+    <!-- Faded Bar (Right) -->
+    <rect x="162.25" y="123" width="6" height="32" rx="3" fill="url(#neon-purple)" fill-opacity="0.15" />
+    
+    <!-- Glowing Bright Bar (Left) -->
+    <rect x="154.25" y="105" width="6" height="50" rx="3" fill="url(#neon-purple)" fill-opacity="0.9" filter="url(#text-glow-purple)" />
+    
+    <!-- X-Axis Label -->
+    <text x="161.25" y="168" text-anchor="middle" fill="#ffffff" fill-opacity="0.4" font-size="8" class="text-mono" font-weight="bold">04</text>
+
+    <!-- Pair 05 -->
+    <!-- Faded Bar (Right) -->
+    <rect x="199.75" y="135" width="6" height="20" rx="3" fill="url(#neon-purple)" fill-opacity="0.15" />
+    
+    <!-- Glowing Bright Bar (Left) -->
+    <rect x="191.75" y="125" width="6" height="30" rx="3" fill="url(#neon-purple)" fill-opacity="0.9" filter="url(#text-glow-purple)" />
+    
+    <!-- X-Axis Label -->
+    <text x="198.75" y="168" text-anchor="middle" fill="#ffffff" fill-opacity="0.4" font-size="8" class="text-mono" font-weight="bold">05</text>
+
+    <!-- Pair 06 -->
+    <!-- Faded Bar (Right) -->
+    <rect x="237.25" y="145" width="6" height="10" rx="3" fill="url(#neon-purple)" fill-opacity="0.15" />
+    
+    <!-- Glowing Bright Bar (Left) -->
+    <rect x="229.25" y="140" width="6" height="15" rx="3" fill="url(#neon-purple)" fill-opacity="0.9" filter="url(#text-glow-purple)" />
+    
+    <!-- X-Axis Label -->
+    <text x="236.25" y="168" text-anchor="middle" fill="#ffffff" fill-opacity="0.4" font-size="8" class="text-mono" font-weight="bold">06</text>
+
+    <!-- Pair 07 -->
+    <!-- Faded Bar (Right) -->
+    <rect x="274.75" y="115" width="6" height="40" rx="3" fill="url(#neon-pink)" fill-opacity="0.15" />
+    
+    <!-- Glowing Bright Bar (Left) -->
+    <rect x="266.75" y="97" width="6" height="58" rx="3" fill="url(#neon-pink)" fill-opacity="0.9" filter="url(#text-glow-pink)" />
+    
+    <!-- X-Axis Label -->
+    <text x="273.75" y="168" text-anchor="middle" fill="#ffffff" fill-opacity="0.4" font-size="8" class="text-mono" font-weight="bold">07</text>
+
+    <!-- Pair 08 -->
+    <!-- Faded Bar (Right) -->
+    <rect x="312.25" y="125" width="6" height="30" rx="3" fill="url(#neon-pink)" fill-opacity="0.15" />
+    
+    <!-- Glowing Bright Bar (Left) -->
+    <rect x="304.25" y="110" width="6" height="45" rx="3" fill="url(#neon-pink)" fill-opacity="0.9" filter="url(#text-glow-pink)" />
+    
+    <!-- X-Axis Label -->
+    <text x="311.25" y="168" text-anchor="middle" fill="#ffffff" fill-opacity="0.4" font-size="8" class="text-mono" font-weight="bold">08</text>
+
+    <!-- Pair 09 -->
+    <!-- Faded Bar (Right) -->
+    <rect x="349.75" y="107" width="6" height="48" rx="3" fill="url(#neon-pink)" fill-opacity="0.15" />
+    
+    <!-- Glowing Bright Bar (Left) -->
+    <rect x="341.75" y="93" width="6" height="62" rx="3" fill="url(#neon-pink)" fill-opacity="0.9" filter="url(#text-glow-pink)" />
+    
+    <!-- X-Axis Label -->
+    <text x="348.75" y="168" text-anchor="middle" fill="#ffffff" fill-opacity="0.4" font-size="8" class="text-mono" font-weight="bold">09</text>
+  </g>
+</svg>
