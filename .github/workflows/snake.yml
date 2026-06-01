@@ -27,8 +27,8 @@ jobs:
         with:
           github_user_name: ayushX15
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.svg?color_snake=#00f2fe&color_dots=#161b22,#0d2d3a,#0e536b,#0089a8,#00f2fe
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#ff007f&color_dots=#161b22,#3c0022,#6d003d,#bd006a,#ff007f
           
       # Push the generated SVGs to the 'output' branch of the repository
       - name: Push github-contribution-grid-snake.svg to the output branch

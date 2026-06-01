@@ -187,20 +187,18 @@
   <img src="assets/section_stats.svg" alt="GitHub Analytics Header" width="550" />
 </p>
 
+<!-- Custom Glassmorphic Stats Card (Local & Reliable) -->
+<p align="center">
+  <img src="assets/stats_card.svg" alt="GitHub Telemetry Dashboard" width="100%" />
+</p>
+
+<!-- Working Dynamic Streak & Activity Widgets -->
 <table align="center" width="100%">
   <tr>
     <td width="50%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api?username=ayushX15&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0a0c16&title_color=00f2fe&icon_color=ff007f&text_color=ffffff" alt="GitHub Stats" width="100%" />
-    </td>
-    <td width="50%" align="center">
       <img src="https://github-readme-streak-stats.herokuapp.com/?user=ayushX15&theme=tokyonight&hide_border=true&background=0a0c16&ring=00f2fe&fire=ff007f&currStreakLabel=ffffff&sideNums=ffffff&sideLabels=ffffff" alt="Streak Stats" width="100%" />
     </td>
-  </tr>
-  <tr>
-    <td width="40%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ayushX15&layout=compact&theme=tokyonight&hide_border=true&bg_color=0a0c16&title_color=7f00ff&text_color=ffffff" alt="Top Languages" width="100%" />
-    </td>
-    <td width="60%" align="center">
+    <td width="50%" align="center">
       <img src="https://github-readme-activity-graph.vercel.app/graph?username=ayushX15&theme=tokyonight&bg_color=0a0c16&color=00f2fe&line=ff007f&point=ffffff&area=true&hide_border=true" alt="Contribution Graph" width="100%" />
     </td>
   </tr>

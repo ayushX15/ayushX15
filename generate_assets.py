@@ -425,7 +425,99 @@ def generate_achievements_card():
     with open("assets/achievements_card.svg", "w", encoding="utf-8") as f:
         f.write(svg)
 
-# 5. Footer Banner
+# 5. Custom GitHub Analytics Dashboard Card (Replaces the broken external stats cards)
+def generate_stats_card():
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 180" width="850" height="180" fill="none">
+  {COMMON_DEFS}
+  
+  <!-- BACKGROUND NEON GLOWS -->
+  <g filter="url(#blur-filter)">
+    <circle cx="150" cy="90" r="50" fill="#00f2fe" opacity="0.25" class="blob-cyan" />
+    <circle cx="650" cy="90" r="50" fill="#ff007f" opacity="0.2" class="blob-pink" />
+    <circle cx="400" cy="90" r="40" fill="#7f00ff" opacity="0.15" class="blob-purple" />
+  </g>
+
+  <!-- Glass card -->
+  <rect x="25" y="20" width="800" height="140" rx="20" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.5" filter="url(#shadow-filter)" class="glass-card" />
+  
+  <!-- LEFT COLUMN: GENERAL GITHUB TELEMETRY -->
+  <g transform="translate(30, 0)">
+    <!-- Header decoration -->
+    <rect x="30" y="40" width="6" height="14" rx="2" fill="url(#neon-cyan)" />
+    <text x="44" y="52" fill="#ffffff" font-size="12" class="text-title" font-weight="800" letter-spacing="1">TELESCOPIC DATA</text>
+    
+    <!-- Stat 1: Commits -->
+    <g transform="translate(30, 75)">
+      <text x="0" y="0" fill="#ffffff" font-size="20" class="text-title" font-weight="900" filter="url(#text-glow-cyan)">1,240+</text>
+      <text x="0" y="15" fill="#ffffff" fill-opacity="0.5" font-size="10.5" class="text-body" font-weight="600" letter-spacing="0.5">TOTAL COMMITS</text>
+    </g>
+    
+    <!-- Stat 2: Pull Requests -->
+    <g transform="translate(180, 75)">
+      <text x="0" y="0" fill="#ffffff" font-size="20" class="text-title" font-weight="900" filter="url(#text-glow-pink)">45+</text>
+      <text x="0" y="15" fill="#ffffff" fill-opacity="0.5" font-size="10.5" class="text-body" font-weight="600" letter-spacing="0.5">PULL REQUESTS</text>
+    </g>
+    
+    <!-- Stat 3: Stars Earned -->
+    <g transform="translate(30, 120)">
+      <text x="0" y="0" fill="#ffffff" font-size="20" class="text-title" font-weight="900" filter="url(#text-glow-gold)">22+</text>
+      <text x="0" y="15" fill="#ffffff" fill-opacity="0.5" font-size="10.5" class="text-body" font-weight="600" letter-spacing="0.5">STARS EARNED</text>
+    </g>
+    
+    <!-- Stat 4: Issues Resolved -->
+    <g transform="translate(180, 120)">
+      <text x="0" y="0" fill="#ffffff" font-size="20" class="text-title" font-weight="900" filter="url(#text-glow-purple)">32+</text>
+      <text x="0" y="15" fill="#ffffff" fill-opacity="0.5" font-size="10.5" class="text-body" font-weight="600" letter-spacing="0.5">ISSUES RESOLVED</text>
+    </g>
+  </g>
+  
+  <!-- DIVISION LINE -->
+  <line x1="390" y1="40" x2="390" y2="140" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5" />
+  
+  <!-- RIGHT COLUMN: SKILLS & LANGUAGES TELEMETRY -->
+  <g transform="translate(420, 0)">
+    <!-- Header decoration -->
+    <rect x="0" y="40" width="6" height="14" rx="2" fill="url(#neon-pink)" />
+    <text x="14" y="52" fill="#ffffff" font-size="12" class="text-title" font-weight="800" letter-spacing="1">LANGUAGE FREQUENCY</text>
+    
+    <!-- Language 1: Python -->
+    <g transform="translate(0, 68)">
+      <text x="0" y="0" fill="#ffffff" font-size="11" class="text-mono" font-weight="bold">Python</text>
+      <text x="130" y="0" text-anchor="end" fill="#00f2fe" font-size="10.5" class="text-mono" font-weight="bold">55%</text>
+      <rect x="150" y="-8" width="200" height="7" rx="3.5" fill="#ffffff" fill-opacity="0.05" />
+      <rect x="150" y="-8" width="110" height="7" rx="3.5" fill="url(#neon-cyan)" filter="drop-shadow(0 0 3px #00f2fe)" />
+    </g>
+    
+    <!-- Language 2: C++ -->
+    <g transform="translate(0, 90)">
+      <text x="0" y="0" fill="#ffffff" font-size="11" class="text-mono" font-weight="bold">C++</text>
+      <text x="130" y="0" text-anchor="end" fill="#b100ff" font-size="10.5" class="text-mono" font-weight="bold">30%</text>
+      <rect x="150" y="-8" width="200" height="7" rx="3.5" fill="#ffffff" fill-opacity="0.05" />
+      <rect x="150" y="-8" width="60" height="7" rx="3.5" fill="url(#neon-purple)" filter="drop-shadow(0 0 3px #b100ff)" />
+    </g>
+    
+    <!-- Language 3: SQL -->
+    <g transform="translate(0, 112)">
+      <text x="0" y="0" fill="#ffffff" font-size="11" class="text-mono" font-weight="bold">SQL</text>
+      <text x="130" y="0" text-anchor="end" fill="#fda085" font-size="10.5" class="text-mono" font-weight="bold">10%</text>
+      <rect x="150" y="-8" width="200" height="7" rx="3.5" fill="#ffffff" fill-opacity="0.05" />
+      <rect x="150" y="-8" width="20" height="7" rx="3.5" fill="url(#neon-gold)" filter="drop-shadow(0 0 3px #fda085)" />
+    </g>
+    
+    <!-- Language 4: JavaScript -->
+    <g transform="translate(0, 134)">
+      <text x="0" y="0" fill="#ffffff" font-size="11" class="text-mono" font-weight="bold">JavaScript</text>
+      <text x="130" y="0" text-anchor="end" fill="#ff007f" font-size="10.5" class="text-mono" font-weight="bold">5%</text>
+      <rect x="150" y="-8" width="200" height="7" rx="3.5" fill="#ffffff" fill-opacity="0.05" />
+      <rect x="150" y="-8" width="10" height="7" rx="3.5" fill="url(#neon-pink)" filter="drop-shadow(0 0 3px #ff007f)" />
+    </g>
+  </g>
+</svg>
+"""
+    with open("assets/stats_card.svg", "w", encoding="utf-8") as f:
+        f.write(svg)
+
+# 6. Footer Banner
 def generate_footer_banner():
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 70" width="850" height="70" fill="none">
   {COMMON_DEFS}
@@ -464,5 +556,6 @@ if __name__ == "__main__":
     generate_section_headers()
     generate_project_cards()
     generate_achievements_card()
+    generate_stats_card()
     generate_footer_banner()
     print("All assets generated successfully in assets/ directory!")
