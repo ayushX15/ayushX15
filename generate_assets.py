@@ -7,7 +7,6 @@ os.makedirs("assets", exist_ok=True)
 COMMON_DEFS = """
   <defs>
     <style>
-      
       .text-title {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         font-weight: 800;
@@ -41,25 +40,6 @@ COMMON_DEFS = """
         50% { transform: scale(1.15) translate(20px, 20px); opacity: 0.4; }
         100% { transform: scale(1) translate(0px, 0px); opacity: 0.2; }
       }
-      @keyframes card-hover {
-        0% { transform: translateY(0px); }
-        100% { transform: translateY(-4px); }
-      }
-      @keyframes float-node {
-        0% { transform: translateY(0px) translateX(0px); }
-        50% { transform: translateY(-10px) translateX(5px); }
-        100% { transform: translateY(0px) translateX(0px); }
-      }
-      @keyframes scan-line {
-        0% { top: 0%; opacity: 0; }
-        10% { opacity: 0.5; }
-        90% { opacity: 0.5; }
-        100% { top: 100%; opacity: 0; }
-      }
-      @keyframes border-shimmer {
-        0% { stroke-dashoffset: 600; }
-        100% { stroke-dashoffset: 0; }
-      }
       
       .blob-cyan { animation: pulse-cyan 12s ease-in-out infinite; transform-origin: 150px 100px; }
       .blob-pink { animation: pulse-pink 14s ease-in-out infinite; transform-origin: 650px 200px; }
@@ -87,6 +67,20 @@ COMMON_DEFS = """
       <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity="0.6"/>
     </filter>
     
+    <!-- Neon Text Glow Filters -->
+    <filter id="text-glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#00f2fe" flood-opacity="0.9"/>
+    </filter>
+    <filter id="text-glow-pink" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#ff007f" flood-opacity="0.9"/>
+    </filter>
+    <filter id="text-glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#7f00ff" flood-opacity="0.9"/>
+    </filter>
+    <filter id="text-glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#fda085" flood-opacity="0.9"/>
+    </filter>
+    
     <!-- Gradients -->
     <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0a0c16" stop-opacity="0.75" />
@@ -108,7 +102,7 @@ COMMON_DEFS = """
       <stop offset="100%" stop-color="#4facfe" />
     </linearGradient>
     <linearGradient id="neon-pink" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff0844" />
+      <stop offset="0%" stop-color="#ff007f" />
       <stop offset="100%" stop-color="#ffb199" />
     </linearGradient>
     <linearGradient id="neon-purple" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -182,8 +176,8 @@ def generate_hero_banner():
   <circle cx="73" cy="83" r="4" fill="#00f2fe" filter="drop-shadow(0 0 4px #00f2fe)"/>
   <text x="85" y="87" fill="#00f2fe" font-size="12" class="text-mono" font-weight="bold" letter-spacing="1">HELLO WORLD</text>
   
-  <!-- Title / Name -->
-  <text x="60" y="140" fill="#ffffff" font-size="42" class="text-title" font-weight="900" letter-spacing="-0.5">Ayush Prasad</text>
+  <!-- Title / Name with Neon Glow -->
+  <text x="60" y="140" fill="#ffffff" font-size="42" class="text-title" font-weight="900" letter-spacing="-0.5" filter="url(#text-glow-cyan)">Ayush Prasad</text>
   
   <!-- Subtitle -->
   <text x="60" y="180" fill="url(#neon-cyan)" font-size="20" class="text-title" font-weight="700">AI/ML Engineer | Backend Developer</text>
@@ -218,10 +212,11 @@ def generate_section_headers():
         "projects": ("FEATURED PROJECTS", "🚀", "neon-pink"),
         "stats": ("GITHUB ANALYTICS", "📊", "neon-cyan"),
         "profiles": ("CODING DASHBOARD", "🏆", "neon-gold"),
-        "achievements": ("MILESTONES & CERTIFICATIONS", "🎓", "neon-purple")
+        "achievements": ("MILESTONES &amp; CERTIFICATIONS", "🎓", "neon-purple")
     }
     
     for filename, (title, emoji, grad) in headers.items():
+        glow_id = grad.replace("neon-", "text-glow-")
         svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 65" width="450" height="65" fill="none">
   {COMMON_DEFS}
   
@@ -231,9 +226,9 @@ def generate_section_headers():
   <!-- Side highlight pill -->
   <rect x="15" y="15" width="6" height="30" rx="3" fill="url(#{grad})" />
   
-  <!-- Emoji and Title Text -->
-  <text x="35" y="36" fill="#ffffff" font-size="20" class="text-title" font-weight="800" letter-spacing="1.5">
-    <tspan fill-opacity="0.9">{emoji}  {title}</tspan>
+  <!-- Emoji and Title Text with neon glow filter -->
+  <text x="35" y="37" fill="#ffffff" font-size="19" class="text-title" font-weight="800" filter="url(#{glow_id})" letter-spacing="1.5">
+    <tspan>{emoji}  {title}</tspan>
   </text>
   
   <!-- Tech Details decoration -->
@@ -245,13 +240,33 @@ def generate_section_headers():
         with open(f"assets/section_{filename}.svg", "w", encoding="utf-8") as f:
             f.write(svg)
 
+# Safe word wrapper to prevent cutting HTML entities (like &amp;) in half
+def wrap_text(text, max_chars=48):
+    words = text.split()
+    lines = []
+    current_line = []
+    current_length = 0
+    for word in words:
+        # Determine actual display length (count HTML entities as 1 char)
+        disp_word = word.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
+        if current_length + len(disp_word) + len(current_line) > max_chars:
+            lines.append(" ".join(current_line))
+            current_line = [word]
+            current_length = len(disp_word)
+        else:
+            current_line.append(word)
+            current_length += len(disp_word)
+    if current_line:
+        lines.append(" ".join(current_line))
+    return lines
+
 # 3. Project Cards
 def generate_project_cards():
     projects = [
         {
             "filename": "project_liveness.svg",
             "title": "Face Liveness Detection",
-            "desc": "Binary CNN classifier model detecting anti-spoofing attacks (photo, video replay). Optimized and deployed via ONNX runtime for low-latency inference.",
+            "desc": "Binary CNN classifier model detecting anti-spoofing attacks (photo, video replay). Deployed via ONNX runtime for low-latency edge inference.",
             "tags": ["PyTorch", "ONNX", "OpenCV", "FastAPI"],
             "grad": "neon-pink",
             "blob_color": "#ff007f",
@@ -264,12 +279,12 @@ def generate_project_cards():
             "tags": ["OpenAI", "LangChain", "FastAPI", "Python"],
             "grad": "neon-purple",
             "blob_color": "#7f00ff",
-            "stat": "Response Time: &lt;1.2s"
+            "stat": "Latency: &lt;1.2s"
         },
         {
             "filename": "project_rag.svg",
             "title": "Enterprise RAG Chatbot",
-            "desc": "Production-grade Q&amp;A pipeline using semantic search, hybrid vector index retrieval (dense/sparse), query rewriting, and LLM answer generation.",
+            "desc": "Production-grade Q&amp;A pipeline using semantic search, hybrid vector index retrieval (dense/sparse), query rewriting, and LLM generation.",
             "tags": ["LlamaIndex", "VectorDB", "FastAPI", "Docker"],
             "grad": "neon-cyan",
             "blob_color": "#00f2fe",
@@ -282,56 +297,61 @@ def generate_project_cards():
             "tags": ["C++", "STL", "Algorithms", "Optimization"],
             "grad": "neon-gold",
             "blob_color": "#fda085",
-            "stat": "Problems Solved: 500+"
+            "stat": "Solved: 500+"
         }
     ]
     
     for proj in projects:
-        # Construct tags XML
+        glow_id = proj["grad"].replace("neon-", "text-glow-")
+        
+        # Wrap the description text safely
+        wrapped_lines = wrap_text(proj["desc"], max_chars=48)
+        desc_xml = ""
+        for idx, line in enumerate(wrapped_lines[:3]):  # Max 3 lines
+            dy = 0 if idx == 0 else 18
+            desc_xml += f'<tspan x="24" dy="{dy}">{line}</tspan>'
+            
+        # Construct tags XML (positioned safely at y=142)
         tags_xml = ""
         x_offset = 24
-        for idx, tag in enumerate(proj["tags"]):
-            # Calculate width based on text length (approx 8px per char + padding)
+        for tag in proj["tags"]:
             w = len(tag) * 8 + 16
             tags_xml += f"""
-    <rect x="{x_offset}" y="128" width="{w}" height="22" rx="11" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08" />
-    <text x="{x_offset + w/2}" y="142" text-anchor="middle" fill="#ffffff" fill-opacity="0.7" font-size="10" class="text-mono">{tag}</text>
+    <rect x="{x_offset}" y="142" width="{w}" height="22" rx="11" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08" />
+    <text x="{x_offset + w/2}" y="156" text-anchor="middle" fill="#ffffff" fill-opacity="0.7" font-size="10" class="text-mono">{tag}</text>
 """
             x_offset += w + 8
             
-        svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 180" width="390" height="180" fill="none">
+        svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 190" width="390" height="190" fill="none">
   {COMMON_DEFS}
   
   <!-- Glowing blob in background -->
   <g filter="url(#blur-filter)">
-    <circle cx="340" cy="40" r="50" fill="{proj["blob_color"]}" opacity="0.2" class="blob-purple" />
+    <circle cx="340" cy="50" r="50" fill="{proj["blob_color"]}" opacity="0.2" class="blob-purple" />
   </g>
   
   <!-- Main Card Rect -->
-  <rect x="10" y="10" width="370" height="160" rx="16" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" filter="url(#shadow-filter)" class="glass-card" />
+  <rect x="10" y="10" width="370" height="170" rx="16" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" filter="url(#shadow-filter)" class="glass-card" />
   
   <!-- Decorative top gradient bar -->
   <path d="M 22,10 L 80,10" stroke="url(#{proj["grad"]})" stroke-width="2" stroke-linecap="round" />
   
-  <!-- Project Title -->
-  <text x="24" y="42" fill="#ffffff" font-size="17" class="text-title" font-weight="700">{proj["title"]}</text>
+  <!-- Project Title with neon text glow filter -->
+  <text x="24" y="44" fill="#ffffff" font-size="17" class="text-title" font-weight="800" filter="url(#{glow_id})">{proj["title"]}</text>
   
-  <!-- Project Description (Wrap manually or use foreignObject. For compatibility, we use text block or clean structure) -->
-  <text x="24" y="66" fill="#ffffff" fill-opacity="0.55" font-size="11.5" class="text-body" font-weight="400">
-    <tspan x="24" dy="0">{proj["desc"][:52]}...</tspan>
-    <tspan x="24" dy="16">{proj["desc"][52:108]}...</tspan>
-    <tspan x="24" dy="16">{proj["desc"][108:] if len(proj["desc"]) > 108 else ""}</tspan>
+  <!-- Floating Stat Pill Badge (Top Right) -->
+  <g>
+    <rect x="252" y="25" width="112" height="24" rx="12" fill="#0c0e18" fill-opacity="0.7" stroke="url(#{proj["grad"]})" stroke-width="1.2" />
+    <text x="308" y="41" text-anchor="middle" fill="url(#{proj["grad"]})" font-size="9.5" class="text-mono" font-weight="bold">{proj["stat"]}</text>
+  </g>
+  
+  <!-- Project Description (Wrapped cleanly) -->
+  <text x="24" y="74" fill="#ffffff" fill-opacity="0.6" font-size="11.5" class="text-body" font-weight="400">
+    {desc_xml}
   </text>
   
-  <!-- Tags -->
+  <!-- Tags (Positioned at bottom) -->
   {tags_xml}
-  
-  <!-- Bottom Stat Widget -->
-  <g transform="translate(24, 8)">
-    <!-- Info Icon -->
-    <path d="M 310,132 A 6 6 0 1 1 310,132.01" stroke="url(#{proj["grad"]})" stroke-width="2" stroke-linecap="round" />
-    <text x="342" y="144" text-anchor="end" fill="url(#{proj["grad"]})" font-size="10.5" class="text-mono" font-weight="bold">{proj["stat"]}</text>
-  </g>
 </svg>
 """
         with open(f"assets/{proj['filename']}", "w", encoding="utf-8") as f:
@@ -353,7 +373,7 @@ def generate_footer_banner():
   <rect x="25" y="10" width="800" height="50" rx="25" fill="url(#card-bg)" stroke="url(#card-border)" stroke-width="1.2" />
   
   <!-- Footer Content -->
-  <text x="425" y="40" text-anchor="middle" fill="#ffffff" fill-opacity="0.9" font-size="15" class="text-title" font-weight="700" letter-spacing="1">
+  <text x="425" y="41" text-anchor="middle" fill="#ffffff" fill-opacity="0.9" font-size="15" class="text-title" font-weight="700" letter-spacing="1">
     Thanks for visiting! Happy Coding <tspan fill="url(#neon-cyan)">🚀</tspan>
   </text>
   
