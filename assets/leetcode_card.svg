@@ -232,7 +232,7 @@
     <!-- Solved count -->
     <text x="0" y="-8" text-anchor="middle" fill="#FFA116" font-size="36" class="text-title" font-weight="900" filter="url(#text-glow-orange)">53</text>
     <text x="0" y="14" text-anchor="middle" fill="#ffffff" fill-opacity="0.55" font-size="11" class="text-mono" font-weight="bold">SOLVED</text>
-    <text x="0" y="32" text-anchor="middle" fill="#ffffff" fill-opacity="0.35" font-size="10" class="text-mono">/ 3949</text>
+    <text x="0" y="32" text-anchor="middle" fill="#ffffff" fill-opacity="0.35" font-size="10" class="text-mono">/ 3953</text>
   </g>
   
   <!-- Vertical divider -->
@@ -249,7 +249,7 @@
   <!-- Easy solved -->
   <g transform="translate(262, 85)">
     <text x="0" y="10" fill="#2db55d" font-size="12" class="text-title" font-weight="800">Easy</text>
-    <text x="360" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono">10 / 947</text>
+    <text x="360" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono">10 / 948</text>
     <rect x="0" y="18" width="360" height="8" rx="4" fill="#ffffff" fill-opacity="0.05" />
     <rect x="0" y="18" width="3.48" height="8" rx="4" fill="#2db55d" filter="drop-shadow(0 0 3px #2db55d)" />
   </g>
@@ -257,16 +257,16 @@
   <!-- Medium solved -->
   <g transform="translate(262, 126)">
     <text x="0" y="10" fill="#FFA116" font-size="12" class="text-title" font-weight="800">Medium</text>
-    <text x="360" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono">32 / 2063</text>
+    <text x="360" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono">32 / 2065</text>
     <rect x="0" y="18" width="360" height="8" rx="4" fill="#ffffff" fill-opacity="0.05" />
-    <rect x="0" y="18" width="5.12" height="8" rx="4" fill="#FFA116" filter="drop-shadow(0 0 3px #FFA116)" />
+    <rect x="0" y="18" width="5.11" height="8" rx="4" fill="#FFA116" filter="drop-shadow(0 0 3px #FFA116)" />
   </g>
   
   <!-- Hard solved -->
   <g transform="translate(262, 167)">
     <text x="0" y="10" fill="#ef4743" font-size="12" class="text-title" font-weight="800">Hard</text>
-    <text x="360" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono">11 / 939</text>
+    <text x="360" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono">11 / 940</text>
     <rect x="0" y="18" width="360" height="8" rx="4" fill="#ffffff" fill-opacity="0.05" />
-    <rect x="0" y="18" width="3.87" height="8" rx="4" fill="#ef4743" filter="drop-shadow(0 0 3px #ef4743)" />
+    <rect x="0" y="18" width="3.86" height="8" rx="4" fill="#ef4743" filter="drop-shadow(0 0 3px #ef4743)" />
   </g>
 </svg>
