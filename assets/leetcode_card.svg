@@ -232,7 +232,7 @@
     <!-- Solved count -->
     <text x="0" y="-8" text-anchor="middle" fill="#FFA116" font-size="36" class="text-title" font-weight="900" filter="url(#text-glow-orange)">53</text>
     <text x="0" y="14" text-anchor="middle" fill="#ffffff" fill-opacity="0.55" font-size="11" class="text-mono" font-weight="bold">SOLVED</text>
-    <text x="0" y="32" text-anchor="middle" fill="#ffffff" fill-opacity="0.35" font-size="10" class="text-mono">/ 3957</text>
+    <text x="0" y="32" text-anchor="middle" fill="#ffffff" fill-opacity="0.35" font-size="10" class="text-mono">/ 3958</text>
   </g>
   
   <!-- Vertical divider -->
@@ -257,7 +257,7 @@
   <!-- Medium solved -->
   <g transform="translate(262, 126)">
     <text x="0" y="10" fill="#FFA116" font-size="12" class="text-title" font-weight="800">Medium</text>
-    <text x="360" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono">32 / 2066</text>
+    <text x="360" y="10" text-anchor="end" fill="#ffffff" fill-opacity="0.8" font-size="11" class="text-mono">32 / 2067</text>
     <rect x="0" y="18" width="360" height="8" rx="4" fill="#ffffff" fill-opacity="0.05" />
     <rect x="0" y="18" width="5.11" height="8" rx="4" fill="#FFA116" filter="drop-shadow(0 0 3px #FFA116)" />
   </g>
