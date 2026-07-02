@@ -243,7 +243,7 @@
   <g transform="translate(262, 38)">
     <rect x="0" y="0" width="360" height="30" rx="8" fill="#FFA116" fill-opacity="0.08" stroke="#FFA116" stroke-opacity="0.2" stroke-width="1" />
     <text x="12" y="20" fill="#ffffff" font-size="12" class="text-title" font-weight="800">🏆  Global Rank:</text>
-    <text x="370" y="20" text-anchor="end" fill="#FFA116" font-size="13" class="text-mono" font-weight="900" filter="url(#text-glow-orange)">#2,470,791</text>
+    <text x="370" y="20" text-anchor="end" fill="#FFA116" font-size="13" class="text-mono" font-weight="900" filter="url(#text-glow-orange)">#2,472,730</text>
   </g>
   
   <!-- Easy solved -->
